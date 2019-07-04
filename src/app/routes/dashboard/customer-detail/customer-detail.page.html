@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>客户提醒</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card style="height:140px;">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">客户名称</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div>
+              <ion-icon name="contact" style="font-size:32px;"></ion-icon>
+            </div>
+            <div>陈一</div>
+            <div class="row around-span" style="font-size:10px;">
+              <span>女</span> <span>30岁</span>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="customer-info" style="height:140px">
+          <ion-card-content>
+            <div class="customer-item">
+              <div class="title">相关活动</div>
+              <div class="content">
+                <div>中秋节营销活动</div>
+              </div>
+            </div>
+            <div class="customer-item">
+              <div class="title">推荐产品</div>
+              <div class="content">
+                <div>中秋理财产品A_2019年</div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card style="margin:5px 18px; ">
+    <ion-card-content>
+      <div class="row">
+        <div class="col-span-3">
+          <div>提 醒</div>
+          <div>时 间</div>
+        </div>
+        <div class="col-span row middle-span center-span">
+          <div>{{ data.creatorTime }}</div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin:18px;">
+    <ion-card-header>
+      <ion-card-title>详细内容</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div>{{ data.content }}</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

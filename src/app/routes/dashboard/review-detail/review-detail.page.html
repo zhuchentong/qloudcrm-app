@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>核准提醒</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card
+      style="margin:18px;background: #a984ec;color:white;box-shadow:2px 2px 2px gray;"
+      *ngFor="let item of items"
+    >
+      <ion-card-content class="data-item">
+        <div>商户名称: {{ item.name }}</div>
+        <div class="row">
+          <div class="row-span-6">所在城市: {{ item.city }}</div>
+          <div class="row-span-6">联系电话: {{ item.phone }}</div>
+        </div>
+        <div>所在地址: {{ item.address }}</div>
+        <div class="row">
+          <div class="row-span-6">贷款金额: {{ item.amount }}</div>
+          <div class="row-span-6">当流流程: {{ item.status }}</div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

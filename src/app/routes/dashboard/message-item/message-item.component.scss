@@ -1,0 +1,52 @@
+.new-item {
+  border-radius: 20px;
+  height: 120px;
+  margin: 10px 0;
+  box-shadow: -2px 5px 5px gray;
+
+  .left-item {
+    width: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+  }
+
+  .middle-item {
+    padding: 10px;
+    font-size: 10px;
+    .title {
+      font-weight: bold;
+      font-size: 12px;
+    }
+  }
+
+  .right-item {
+    padding: 5px;
+    border-radius: 0 10px 10px 0;
+    flex: 1;
+    .title {
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .content {
+      font-size: 12px;
+    }
+  }
+
+  .title {
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    font-weight: 400;
+  }
+  .sub-title {
+    font-size: 10px;
+    font-weight: 300;
+  }
+  .title,
+  .sub-title {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

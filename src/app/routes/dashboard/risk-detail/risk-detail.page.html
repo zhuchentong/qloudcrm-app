@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>风险预警</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">用户信息</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div>
+              <ion-icon name="contact" style="font-size:32px;"></ion-icon>
+            </div>
+            <div>张三</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="risk-info">
+          <ion-card-content>
+            <div class="risk-item">
+              <div class="title">风险类型</div>
+              <div class="content">{{ data.title }}</div>
+            </div>
+            <div class="risk-item">
+              <div class="title">风险等级</div>
+              <div class="content">2</div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card style="margin:5px 18px;">
+    <ion-card-content>
+      <div class="row">
+        <div class="col-span-2">
+          <div>预 警</div>
+          <div>时 间</div>
+        </div>
+        <div class="col-span row middle-span center-span">
+          {{ data.creatorTime }}
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin:18px;">
+    <ion-card-header>
+      <ion-card-title>预警内容</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div>{{ data.content }}</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

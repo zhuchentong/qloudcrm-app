@@ -1,0 +1,7 @@
+{
+  "name": "smart-bank-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,31 @@
+.modal {
+  &.top-50 {
+    --height: 50%;
+    .modal-wrapper {
+      transform: translateY(50%) !important;
+    }
+  }
+
+  &.top-75 {
+    --height: 25%;
+    .modal-wrapper {
+      transform: translateY(150%) !important;
+    }
+  }
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+ion-searchbar.no-right-radius {
+  .searchbar-input {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+ion-loading.under-alert {
+  z-index: 10000 !important;
+}

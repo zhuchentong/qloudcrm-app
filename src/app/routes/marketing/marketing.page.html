@@ -1,0 +1,43 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="font-size:14px;">贷款业绩</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="row around-span" style="font-weight: bold;">
+        <div>月度贷款额</div>
+        <div>350.21万</div>
+      </div>
+      <div class="row around-span" style="font-weight: bold;">
+        <div>目标贷款额</div>
+        <div>700.21万</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="font-size:14px;">业务进度</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div
+        echarts
+        [options]="option_1"
+        class="demo-chart"
+        style="height:250px;"
+      ></div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title style="font-size:14px;">绩效评分</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div
+        echarts
+        [options]="option_2"
+        class="demo-chart"
+        style="height:400px;"
+      ></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

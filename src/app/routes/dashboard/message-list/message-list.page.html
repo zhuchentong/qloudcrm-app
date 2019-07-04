@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>消息列表</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="message-list">
+    <app-message-item
+      *ngFor="let item of newsList"
+      [data]="item"
+    ></app-message-item>
+  </ion-list>
+</ion-content>

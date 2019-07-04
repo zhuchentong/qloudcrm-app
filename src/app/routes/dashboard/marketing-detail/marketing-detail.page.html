@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>营销提醒</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card style="height:140px;">
+          <ion-card-header>
+            <ion-card-title class="ion-text-center">活动名称</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <div>{{ data.title }}</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card class="marketing-info" style="height:140px">
+          <ion-card-content>
+            <div class="marketing-item">
+              <div class="title">客户范围</div>
+              <div class="content">
+                <div>年龄 >= 30</div>
+                <div>月均余额 >= 20000</div>
+              </div>
+            </div>
+            <div class="marketing-item">
+              <div class="title">购买要求</div>
+              <div class="content">
+                <div>最低购买10000元</div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card style="margin:5px 18px; ">
+    <ion-card-content>
+      <div class="row">
+        <div class="col-span-3">
+          <div>开始时间</div>
+          <div>结束时间</div>
+        </div>
+        <div class="col-span row middle-span center-span">
+          <div>{{ data.creatorTime }}</div>
+          <div>{{ data.creatorTime }}</div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin:18px;">
+    <ion-card-header>
+      <ion-card-title>活动内容</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div>{{ data.content }}</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

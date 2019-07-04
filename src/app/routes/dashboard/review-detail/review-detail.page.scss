@@ -1,0 +1,8 @@
+.data-item {
+  font-size: 12px;
+  font-weight: bold;
+  & > div {
+    padding: 5px;
+  }
+  margin: 10px 2px;
+}

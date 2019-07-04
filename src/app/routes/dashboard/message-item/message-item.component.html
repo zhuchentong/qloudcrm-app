@@ -1,0 +1,27 @@
+<div
+  class="new-item row no-wrap"
+  [ngStyle]="{ color: data.color.text }"
+  (click)="onOpenDetail()"
+>
+  <div class="left-item" [ngStyle]="{ background: data.color.icon }"></div>
+  <div
+    class="middle-item col between-span"
+    [ngStyle]="{ background: data.color.background1 }"
+  >
+    <div class="title">{{ data.type }}</div>
+    <div class="time">
+      <div>{{ data.creatorTime }}</div>
+    </div>
+  </div>
+  <div class="right-item" [ngStyle]="{ background: data.color.background2 }">
+    <div class="title">{{ data.title }}</div>
+    <div class="content">
+      {{
+        data.content.length > 40
+          ? data.content.slice(0, 40) + '...'
+          : data.content
+      }}
+    </div>
+  </div>
+  <!-- <div class="icon"></div> -->
+</div>
