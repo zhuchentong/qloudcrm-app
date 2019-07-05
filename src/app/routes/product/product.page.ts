@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 @Component({
   selector: 'app-product',
@@ -31,7 +31,7 @@ export class ProductPage implements OnInit {
       background1: '#43af7d',
       background2: '#49bd88'
     }
-  };
+  }
 
   public menuList = [
     {
@@ -42,19 +42,19 @@ export class ProductPage implements OnInit {
     {
       icon: 'search',
       label: '产品查询',
-      url: '',
+      url: ''
     },
     {
       icon: 'pricetags',
       label: '产品对比',
-      url: '',
+      url: ''
     },
     {
       icon: 'stats',
       label: '产品排名',
-      url: '',
+      url: ''
     }
-  ];
+  ]
 
   public productList = [
     {
@@ -81,11 +81,9 @@ export class ProductPage implements OnInit {
       amount: '1-15万',
       num: '150'
     }
-  ];
+  ]
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -1,42 +1,43 @@
 <ion-content>
-    <div class="menu-container">
-        <div class="menu-items row">
-            <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
-                <div class="menu-item" [routerLink]="item.url">
-                    <div class="icon row middle-psan center-span">
-                        <ion-icon [name]="item.icon"></ion-icon>
-                    </div>
-                    <div class="text">{{ item.label }}</div>
-                </div>
-            </div>
+  <div class="menu-container">
+    <div class="menu-items row">
+
+      <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
+        <div class="menu-item" [routerLink]="item.url">
+          <div class="icon row middle-psan center-span">
+            <ion-icon [name]="item.icon"></ion-icon>
+          </div>
+          <div class="text">{{ item.label }}</div>
         </div>
+      </div>
     </div>
-    <ion-card>
-        <ion-card-header>
-            <ion-card-title class="news-title">
-                <div class="row between-span news-title">
-                    <div class="title row middle-span">
-                        <ion-icon color="secondary" name="rocket"></ion-icon>
-                        <span>热销产品</span>
-                    </div>
-                </div>
-            </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-            <ion-list>
-                <!-- <app-message-item *ngFor="let item of newsList" [data]="item"></app-message-item> -->
-                <div class="productWrap" *ngFor="let item of productList" routerLink="/product/product-detail">
-                    <div class="row">
-                        <b class="col-span-6 leftTitle">{{item.type}}</b>
-                        <div class="col-span-6 rightTitle">贷款要求：<span class="lowcolor">{{item.level}}</span></div>
-                    </div>
-                    <div class="marginNum">{{item.content}}</div>
-                    <div class="row">
-                        <div class="col-span-6 leftTitle">单款额度：<span class="owercolor">{{item.amount}}</span></div>
-                        <div class="col-span-6 rightTitle">已售数量：<span class="owercolor">{{item.num}}</span></div>
-                    </div>
-                </div>
-            </ion-list>
-        </ion-card-content>
-    </ion-card>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="news-title">
+        <div class="row between-span news-title">
+          <div class="title row middle-span">
+            <ion-icon color="secondary" name="rocket"></ion-icon>
+            <span>热销产品</span>
+          </div>
+        </div>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <!-- <app-message-item *ngFor="let item of newsList" [data]="item"></app-message-item> -->
+        <div class="productWrap" *ngFor="let item of productList" routerLink="/product/product-detail">
+          <div class="row">
+            <b class="col-span-6 leftTitle">{{item.type}}</b>
+            <div class="col-span-6 rightTitle">贷款要求：<span class="lowcolor">{{item.level}}</span></div>
+          </div>
+          <div class="marginNum">{{item.content}}</div>
+          <div class="row">
+            <div class="col-span-6 leftTitle">单款额度：<span class="owercolor">{{item.amount}}</span></div>
+            <div class="col-span-6 rightTitle">已售数量：<span class="owercolor">{{item.num}}</span></div>
+          </div>
+        </div>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
