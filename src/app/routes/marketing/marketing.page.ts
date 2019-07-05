@@ -6,7 +6,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core'
   styleUrls: ['./marketing.page.scss']
 })
 export class MarketingPage {
-  public option_1 = {
+  public option1 = {
     tooltip: {
       formatter: '{a} <br/>{b} : {c}%'
     },
@@ -27,7 +27,7 @@ export class MarketingPage {
     ]
   }
 
-  public option_2 = {
+  public option2 = {
     tooltip: {},
     legend: {
       data: ['贷款', '理财']
