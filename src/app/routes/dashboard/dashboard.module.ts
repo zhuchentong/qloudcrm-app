@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { IonicModule } from '@ionic/angular'
 import { DashboardPage } from './dashboard.page'
-import { SharedModule } from 'src/app/shared/shared.module'
+import { SharedModule } from 'app/shared/shared.module'
 import { RiskDetailPage } from './risk-detail/risk-detail.page'
 import { MarketingDetailPage } from './marketing-detail/marketing-detail.page'
 import { WorkDetailPage } from './work-detail/work-detail.page'
@@ -16,6 +16,7 @@ import { BusinessDetailPage } from './business-detail/business-detail.page'
 import { ApplyDetailPage } from './apply-detail/apply-detail.page'
 import { ReviewDetailPage } from './review-detail/review-detail.page'
 import { OverdueDetailPage } from './overdue-detail/overdue-detail.page'
+import { HttpClientModule } from '@angular/common/http'
 
 const routes: Routes = [
   {

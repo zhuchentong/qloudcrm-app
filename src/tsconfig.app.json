@@ -6,7 +6,10 @@
   },
   "exclude": ["test.ts", "**/*.spec.ts"],
   "paths": {
-    "app/*": ["./app/*"],
-    "assets/*": ["./assets/*"]
+    "app/*": ["app/*"],
+    "assets/*": ["assets/*"],
+    "@core/*": ["app/core/*"],
+    "@shared/*": ["app/shared/*"],
+    "@env/*": ["environments/*"]
   }
 }

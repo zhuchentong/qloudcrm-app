@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { HttpClient } from '@angular/common/http'
+import { NetService } from 'app/core/http'
+import { DashboardService } from 'app/services/dashboard.service'
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
-  styleUrls: ['./dashboard.page.scss']
+  styleUrls: ['./dashboard.page.scss'],
+  providers: [DashboardService]
 })
 export class DashboardPage implements OnInit {
   public colorList = {
@@ -207,7 +211,14 @@ export class DashboardPage implements OnInit {
     }
   ]
 
-  constructor(public router: Router) {}
+  constructor(
+    public router: Router,
+    private dashboardService: DashboardService
+  ) {}
 
-  ngOnInit() {}
+  public ngOnInit() {
+    this.dashboardService.getMessageList().subscribe(data => {
+      console.log(data)
+    })
+  }
 }

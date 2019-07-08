@@ -21,7 +21,7 @@ export class MessageItemComponent implements OnInit {
   }
   constructor(public router: Router) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 
   public onOpenDetail() {
     localStorage.setItem('current-message', JSON.stringify(this.data))

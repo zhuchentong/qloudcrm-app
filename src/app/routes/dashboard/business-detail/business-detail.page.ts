@@ -40,5 +40,5 @@ export class BusinessDetailPage implements OnInit {
   ]
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }
