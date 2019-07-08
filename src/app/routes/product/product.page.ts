@@ -42,7 +42,7 @@ export class ProductPage implements OnInit {
     {
       icon: 'search',
       label: '产品查询',
-      url: ''
+      url: '/product/product-query'
     },
     {
       icon: 'pricetags',
@@ -52,7 +52,7 @@ export class ProductPage implements OnInit {
     {
       icon: 'stats',
       label: '产品排名',
-      url: ''
+      url: '/product/product-rank'
     }
   ]
 
@@ -63,7 +63,8 @@ export class ProductPage implements OnInit {
       level: '低',
       content: '针对中小企业的商户贷款，快速放款',
       amount: '1-15万',
-      num: '150'
+      num: '150',
+      url: '/product/product-detail'
     },
     {
       type: 'E时代商户贷款',
@@ -71,7 +72,8 @@ export class ProductPage implements OnInit {
       level: '低',
       content: '针对中小企业的商户贷款，快速放款',
       amount: '1-15万',
-      num: '150'
+      num: '150',
+      url: '/product/product-detail'
     },
     {
       type: 'E时代商户贷款',
@@ -79,7 +81,8 @@ export class ProductPage implements OnInit {
       level: '低',
       content: '针对中小企业的商户贷款，快速放款',
       amount: '1-15万',
-      num: '150'
+      num: '150',
+      url: '/product/product-detail'
     }
   ]
 

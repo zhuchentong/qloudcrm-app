@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>产品排名</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card-content>
+        <ion-list class="listcss">
+            <app-product-list *ngFor="let item of productList" [data]="item"></app-product-list>
+        </ion-list>
+    </ion-card-content>
+</ion-content>
