@@ -51,5 +51,5 @@ export class ApplyDetailPage implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

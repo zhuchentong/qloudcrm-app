@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { IonicModule } from '@ionic/angular'
 
 import { ProductPage } from './product.page'
-import { SharedModule } from 'src/app/shared/shared.module'
+import { SharedModule } from 'app/shared/shared.module'
 
 const routes: Routes = [
   {

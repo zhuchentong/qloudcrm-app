@@ -10,7 +10,7 @@ export class WorkDetailPage implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.data = JSON.parse(localStorage.getItem('current-message'))
   }
 }

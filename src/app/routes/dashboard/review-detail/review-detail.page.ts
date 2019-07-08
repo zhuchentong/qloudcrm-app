@@ -51,5 +51,5 @@ export class ReviewDetailPage implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }
