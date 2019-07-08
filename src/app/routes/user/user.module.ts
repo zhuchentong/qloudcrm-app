@@ -1,12 +1,7 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
 import { Routes, RouterModule } from '@angular/router'
-
-import { IonicModule } from '@ionic/angular'
-
 import { UserPage } from './user.page'
-import { SharedModule } from 'src/app/shared/shared.module'
+import { SharedModule } from 'app/shared/shared.module'
 import { UserFocusPage } from 'app/routes/user/user-focus/user-focus.page'
 import { UserPerformPage } from 'app/routes/user/user-perform/user-perform.page'
 import { UserSchedulePage } from 'app/routes/user/user-schedule/user-schedule.page'

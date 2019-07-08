@@ -88,5 +88,5 @@ export class ProductPage implements OnInit {
 
   constructor(public router: Router) {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

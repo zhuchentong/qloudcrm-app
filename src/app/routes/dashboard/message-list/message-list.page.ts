@@ -150,5 +150,5 @@ export class MessageListPage implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

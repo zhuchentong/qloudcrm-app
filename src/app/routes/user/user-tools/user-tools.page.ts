@@ -8,5 +8,5 @@ import { Component, OnInit } from '@angular/core'
 export class UserToolsPage implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  private ngOnInit() {}
 }

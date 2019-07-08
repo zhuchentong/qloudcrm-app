@@ -1,39 +1,39 @@
 .productWrap {
-    margin: 0 auto;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid skyblue;
-    border-radius: 10px;
-    position: relative;
-    .marginNum {
-        margin: 20px 0 20px 0;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid skyblue;
+  border-radius: 10px;
+  .marginNum {
+    margin: 20px 0 20px 0;
+  }
+  .leftTitle {
+    text-align: left;
+  }
+  .rightTitle {
+    text-align: right;
+  }
+  .lowcolor {
+    color: palevioletred;
+  }
+  .owercolor {
+    color: blue;
+  }
+  .rankcss {
+    text-align: center;
+    span {
+      position: absolute;
+      top: 5%;
+      right: 1%;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+      color: white;
+      line-height: 20px;
+      background: red;
+      border: 1px solid red;
+      border-radius: 8px;
     }
-    .leftTitle {
-        text-align: left;
-    }
-    .rightTitle {
-        text-align: right;
-    }
-    .lowcolor {
-        color: palevioletred;
-    }
-    .owercolor {
-        color: blue;
-    }
-    .rankcss {
-        text-align: center;
-        span {
-            display: inline-block;
-            background: red;
-            color: white;
-            width: 40px;
-            height: 20px;
-            line-height: 20px;
-            border-radius: 8px;
-            border: 1px solid red;
-            position: absolute;
-            top: 1%;
-            right: 1%;
-        }
-    }
+  }
 }

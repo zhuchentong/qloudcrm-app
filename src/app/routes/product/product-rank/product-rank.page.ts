@@ -42,7 +42,7 @@ export class ProductRankPage implements OnInit {
       amount: '1-15万',
       num: '150',
       url: '/product/product-detail',
-      rank:'1'
+      rank: '1'
     },
     {
       type: '民营企业小户贷款',
@@ -52,7 +52,7 @@ export class ProductRankPage implements OnInit {
       amount: '2-10万',
       num: '1000',
       url: '/product/product-detail',
-      rank:'1'
+      rank: '1'
     },
     {
       type: '大数据高端商户贷款',
@@ -62,7 +62,7 @@ export class ProductRankPage implements OnInit {
       amount: '50-100万',
       num: '200',
       url: '/product/product-detail',
-      rank:'2',
+      rank: '2'
     },
     {
       type: '资金链危机商户贷款',
@@ -72,7 +72,7 @@ export class ProductRankPage implements OnInit {
       amount: '50-200万',
       num: '20',
       url: '/product/product-detail',
-      rank:'2'
+      rank: '2'
     },
     {
       type: '政府扶持企业商户贷款',
@@ -82,7 +82,7 @@ export class ProductRankPage implements OnInit {
       amount: '20-40万',
       num: '1950',
       url: '/product/product-detail',
-      rank:'3'
+      rank: '3'
     },
     {
       type: '试营业商户贷款',
@@ -92,11 +92,11 @@ export class ProductRankPage implements OnInit {
       amount: '15-30万',
       num: '300',
       url: '/product/product-detail',
-      rank:'3'
+      rank: '3'
     }
   ]
 
   constructor() {}
 
-  ngOnInit() {}
+  public ngOnInit() {}
 }

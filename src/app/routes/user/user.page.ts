@@ -25,9 +25,9 @@ export class UserPage implements OnInit {
     this.user = new UserInfo('张三', 'zhangsan', 'seller', '销售经理')
   }
 
-  ngOnInit() {}
+  private ngOnInit() {}
 
-  menuControl(requrl: string) {
+  public menuControl(requrl: string) {
     this.router.navigateByUrl(requrl)
   }
 }

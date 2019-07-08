@@ -10,7 +10,7 @@ export class MarketingDetailPage implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.data = JSON.parse(localStorage.getItem('current-message'))
   }
 }

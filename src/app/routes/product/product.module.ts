@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms'
 import { Routes, RouterModule } from '@angular/router'
 import { IonicModule } from '@ionic/angular'
 import { ProductPage } from './product.page'
-import { SharedModule } from 'src/app/shared/shared.module'
 import { ProductDetailPage } from './product-detail/product-detail.page'
 import { ProductDirectoryPage } from './product-directory/product-directory.page'
 import { ProductListComponent } from './product-list/product-list.component'
 import { ProductQueryPage } from './product-query/product-query.page'
 import { ProductRankPage } from './product-rank/product-rank.page'
+import { SharedModule } from 'app/shared/shared.module'
+
 const routes: Routes = [
   {
     path: '',
