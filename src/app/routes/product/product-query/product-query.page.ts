@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-product-query',
   templateUrl: './product-query.page.html',
-  styleUrls: ['./product-query.page.scss'],
+  styleUrls: ['./product-query.page.scss']
 })
 export class ProductQueryPage implements OnInit {
   public colorList = {
@@ -90,8 +90,7 @@ export class ProductQueryPage implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {}
-
+  public ngOnInit() {}
 }
