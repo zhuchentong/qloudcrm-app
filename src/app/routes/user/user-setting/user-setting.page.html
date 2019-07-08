@@ -1,7 +1,23 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>user-setting</ion-title>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-label class="center-span" style="padding-left: 3%">个人中心</ion-label>
+
   </ion-toolbar>
+  <div class="col center-span">
+    <br>
+    <div class="row">
+      <ion-avatar class="ion-margin-start">
+        <img src="./assets/images/avatar.svg" >
+      </ion-avatar>
+      <div  class="row center-span" style="padding-left: 10%">
+        <div  class="row center-span" style="padding-left: 5%">{{user.userName}}</div>
+        <div  class="row center-span" style="padding-left: 5%">{{user.userPosition}}</div>
+      </div>
+    </div>
+  </div>
 </ion-header>
 
 <ion-content>
