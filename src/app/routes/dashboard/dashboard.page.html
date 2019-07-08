@@ -139,5 +139,11 @@
       </div>
     </ion-card-content>
   </ion-card>
-  {{ a.test }}
+  <ion-select cancelText="取消" okText="确定">
+    <ion-select-option [value]="dict.code" *ngFor="let dict of getDict()">{{
+      dict.name
+    }}</ion-select-option>
+
+    {{ data.a | dict }}
+  </ion-select>
 </ion-content>

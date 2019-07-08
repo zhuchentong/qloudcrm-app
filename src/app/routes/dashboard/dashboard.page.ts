@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http'
 import { NetService } from 'app/core/http'
 import { DashboardService } from 'app/services/dashboard.service'
 import { MessageModel } from 'app/model/message.model'
+import { LoggerService } from '@ngx-toolkit/logger'
+import { Store } from '@ngxs/store'
+import { DictType } from 'app/config/enum.config'
+import { DictState } from 'app/store/state/dict.state'
 
 @Component({
   selector: 'app-dashboard',
@@ -215,13 +219,19 @@ export class DashboardPage implements OnInit {
 
   constructor(
     public router: Router,
-    private dashboardService: DashboardService
+    private dashboardService: DashboardService,
+    public store: Store,
+    private logger: LoggerService
   ) {}
+
+  public getDict() {
+    return this.store.selectSnapshot(DictState.getDict(DictType.SexState))
+  }
 
   public ngOnInit() {
     this.dashboardService.getMessageList().subscribe(data => {
       this.a = data
-      console.log(data.a)
+      this.logger.log(data.a)
     })
   }
 }
