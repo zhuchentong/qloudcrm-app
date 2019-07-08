@@ -3,6 +3,7 @@ import { Router } from '@angular/router'
 import { HttpClient } from '@angular/common/http'
 import { NetService } from 'app/core/http'
 import { DashboardService } from 'app/services/dashboard.service'
+import { MessageModel } from 'app/model/message.model'
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +12,7 @@ import { DashboardService } from 'app/services/dashboard.service'
   providers: [DashboardService]
 })
 export class DashboardPage implements OnInit {
+  public a: MessageModel
   public colorList = {
     color1: {
       icon: '#d5a441',
@@ -218,7 +220,8 @@ export class DashboardPage implements OnInit {
 
   public ngOnInit() {
     this.dashboardService.getMessageList().subscribe(data => {
-      console.log(data)
+      this.a = data
+      console.log(data.a)
     })
   }
 }
