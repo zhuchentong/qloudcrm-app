@@ -1,0 +1,33 @@
+.customerWrap {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 4px 2px 8px gainsboro;
+  div {
+    line-height: 30px;
+  }
+  p {
+    line-height: 30px;
+  }
+  .picfont {
+    text-align: center;
+    img {
+      width: 70px;
+      margin-top: 13px;
+      border-radius: 50px;
+    }
+  }
+  .namecss {
+    font-weight: 700;
+  }
+  .customercss {
+    padding: 0 0 0 13px;
+    .levecss {
+      color: blue;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .lowcolor {
+      color: palevioletred;
+    }
+  }
+}
