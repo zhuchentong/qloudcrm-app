@@ -1,16 +1,30 @@
 import { Injectable } from '@angular/core'
-import { Router } from '@angular/router'
+import { NetService } from '@core/http'
+import { Observable } from 'rxjs'
+import { userController } from 'app/config/service/user.controller'
+import { UserinfoModel } from 'app/model/userInfo.model'
+import { MessageModel } from 'app/model/message.model'
 
 @Injectable()
 export class UserService {
-  public userInfo: UserInfo
+  //  public userInfo: UserinfoModel
 
-  constructor(private router: Router) {
-    this.userInfo = new UserInfo('张三', 'zhangsan', 'saler', '销售经理')
+  constructor(private net: NetService) {}
+
+  public getUserInfo(params): Observable<any> {
+    return this.net.send({
+      service: userController.getUserInfo,
+      params,
+      model: UserinfoModel
+    })
   }
 
-  public menuControl2(requrl: string) {
-    this.router.navigate([requrl])
+  public getUserLogin(params): Observable<any> {
+    return this.net.send({
+      service: userController.userLogin,
+      params,
+      model: UserinfoModel
+    })
   }
 
   public getUserInfoSettingMenu() {
@@ -24,14 +38,14 @@ export class UserService {
   }
 }
 
-export class UserInfo {
-  constructor(
-    public userName: string,
-    public userId: string,
-    public userRole: string,
-    public userPosition: string
-  ) {}
-}
+// export class UserInfo {
+//   constructor(
+//     public userName: string,
+//     public userId: string,
+//     public userRole: string,
+//     public userPosition: string
+//   ) {}
+// }
 
 export class UserManagerMenu {
   constructor(public lable: string, public url: string) {}

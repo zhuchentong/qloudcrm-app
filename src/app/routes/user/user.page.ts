@@ -1,7 +1,8 @@
 import { Component, Injectable, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
-import { UserInfo, UserService } from 'app/services/user.service'
-
+import { UserService } from 'app/services/user.service'
+import { UserinfoModel } from 'app/model/userInfo.model'
+import { LoggerService } from '@ngx-toolkit/logger'
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
@@ -16,20 +17,26 @@ export class UserPage implements OnInit {
     { lable: '我的工具', url: '/user/user-tools' },
     { lable: '设置', url: '/user/user-setting' }
   ]
-  private user: UserInfo
+  private user: UserinfoModel
   private userIcon = 'menu'
   private pic = './assets/images/avatar.svg'
-  private userName = '张三'
+
   private userInfoMenu = [{ lable: '退出', url: '' }]
 
-  constructor(private router: Router, private userService: UserService) {
-    this.user = userService.userInfo
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private logger: LoggerService
+  ) {
+    this.userService.getUserInfo({ userId: 'zhangsan' }).subscribe(data => {
+      logger.info('sadsadsa:' + data)
+      this.user = data
+    })
   }
 
   public ngOnInit() {}
 
   public menuControl(requrl: string) {
-    // this.router.navigate([requrl,])
-    this.userService.menuControl2(requrl)
+    this.router.navigate([requrl])
   }
 }

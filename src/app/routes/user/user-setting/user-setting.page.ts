@@ -1,9 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core'
-import {
-  UserInfo,
-  UserManagerMenu,
-  UserService
-} from 'app/services/user.service'
+import { UserManagerMenu, UserService } from 'app/services/user.service'
+import { UserinfoModel } from 'app/model/userInfo.model'
 
 @Component({
   selector: 'app-user-setting',
@@ -12,12 +9,14 @@ import {
 })
 @Injectable()
 export class UserSettingPage implements OnInit {
-  private user: UserInfo
+  private user: UserinfoModel
   private menu: any[]
   constructor(private userService: UserService) {}
 
   public ngOnInit() {
-    this.user = this.userService.userInfo
+    this.userService.getUserInfo({ userId: 'zhangsan' }).subscribe(data => {
+      this.user = data
+    })
     this.menu = this.userService.getUserInfoSettingMenu()
   }
 }
