@@ -4,19 +4,20 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpResponse
+  HttpResponse,
+  HttpParams
 } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
 import * as MockServices from './services'
 import { IReqestService } from 'app/core/http'
-import { callbackify } from 'util'
+import * as qs from 'qs'
 
 @Injectable()
 export class MockHttpRequestInterceptor implements HttpInterceptor {
   public services: {
     url: string
     method: any
-    callback: () => any
+    callback: (...args: any[]) => any
   }[] = []
 
   constructor(private injector: Injector) {
@@ -44,9 +45,34 @@ export class MockHttpRequestInterceptor implements HttpInterceptor {
     )
 
     if (mockService) {
-      return of(new HttpResponse({ status: 200, body: mockService.callback() }))
+      const data =
+        this.getRequestParams(request) || this.getRequestBody(request)
+
+      return of(
+        new HttpResponse({ status: 200, body: mockService.callback(data) })
+      )
     }
 
     return next.handle(request)
+  }
+
+  private getRequestParams(request) {
+    if (!['GET', 'DELETE'].includes(request.method)) {
+      return null
+    }
+
+    return qs.parse(request.params.toString())
+  }
+
+  /**
+   * 根据服务配置返回Body参数
+   * @param options 请求选项
+   */
+  private getRequestBody(request): object {
+    if (!['POST', 'PUT'].includes(request.method)) {
+      return null
+    }
+
+    return request.body
   }
 }

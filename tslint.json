@@ -3,7 +3,7 @@
   "extends": ["tslint:recommended", "tslint-config-standard", "tslint-config-prettier"],
   "defaultSeverity": "error",
   "linterOptions": {
-    "exclude": ["*.json", "**/*.json"]
+    "exclude": ["*.json", "**/*.json", "**/*.spec.ts"]
   },
   "rules": {
     "object-literal-sort-keys": [
@@ -39,7 +39,7 @@
     ],
     "no-string-literal": false,
     "no-consecutive-blank-lines": false,
-    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+    "no-console": [true, "log", "info"],
     "no-empty": false,
     "no-inferrable-types": [true, "ignore-params"],
     "no-non-null-assertion": true,

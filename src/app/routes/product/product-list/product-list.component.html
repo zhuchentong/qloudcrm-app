@@ -1,16 +1,16 @@
 <div class="productWrap" [routerLink]="data.url">
-    <div class="row">
-        <b class="col-span-5 leftTitle">{{data.type}}</b>
-        <div class="col-span-5 rightTitle">贷款要求：<span class="lowcolor">{{data.level}}</span></div>
-        <div class="col-span-2 rankcss">
-            <span *ngIf="data.rank=='1'">热销</span>
-            <span *ngIf="data.rank=='2'">好评</span>
-            <span *ngIf="data.rank=='3'">推荐</span>
-        </div>
+  <div class="row">
+    <b class="col-span-6 leftTitle">{{data.type}}</b>
+    <div class="col-span-4 rightTitle">贷款要求：<span class="lowcolor">{{data.level}}</span></div>
+    <div class="col-span-2 rankcss">
+      <span *ngIf="data.rank=='1'">热销</span>
+      <span *ngIf="data.rank=='2'">好评</span>
+      <span *ngIf="data.rank=='3'">推荐</span>
     </div>
-    <div class="marginNum">{{data.content}}</div>
-    <div class="row">
-        <div class="col-span-6 leftTitle">单款额度：<span class="owercolor">{{data.amount}}</span></div>
-        <div class="col-span-6 rightTitle">已售数量：<span class="owercolor">{{data.num}}</span></div>
-    </div>
+  </div>
+  <div class="marginNum">{{data.content}}</div>
+  <div class="row">
+    <div class="col-span-6 leftTitle">单款额度：<span class="owercolor">{{data.amount}}</span></div>
+    <div class="col-span-6 rightTitle">已售数量：<span class="owercolor">{{data.num}}</span></div>
+  </div>
 </div>

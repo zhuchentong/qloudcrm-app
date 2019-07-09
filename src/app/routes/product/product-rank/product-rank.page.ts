@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core'
-
+import { Router } from '@angular/router'
+import { HttpClient } from '@angular/common/http'
+import { NetService } from 'app/core/http'
+import { ProductService } from 'app/services/product.service'
 @Component({
   selector: 'app-product-rank',
   templateUrl: './product-rank.page.html',
-  styleUrls: ['./product-rank.page.scss']
+  styleUrls: ['./product-rank.page.scss'],
+  providers: [ProductService]
 })
 export class ProductRankPage implements OnInit {
+  public productList = []
   public colorList = {
     color1: {
       icon: '#d5a441',
@@ -33,70 +38,11 @@ export class ProductRankPage implements OnInit {
     }
   }
 
-  public productList = [
-    {
-      type: 'E时代商户贷款',
-      color: this.colorList.color1,
-      level: '低',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '1-15万',
-      num: '150',
-      url: '/product/product-detail',
-      rank: '1'
-    },
-    {
-      type: '民营企业小户贷款',
-      color: this.colorList.color2,
-      level: '低',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '2-10万',
-      num: '1000',
-      url: '/product/product-detail',
-      rank: '1'
-    },
-    {
-      type: '大数据高端商户贷款',
-      color: this.colorList.color3,
-      level: '低',
-      content: '针对中高端商户贷款商户贷款，快速放款',
-      amount: '50-100万',
-      num: '200',
-      url: '/product/product-detail',
-      rank: '2'
-    },
-    {
-      type: '资金链危机商户贷款',
-      color: this.colorList.color3,
-      level: '高',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '50-200万',
-      num: '20',
-      url: '/product/product-detail',
-      rank: '2'
-    },
-    {
-      type: '政府扶持企业商户贷款',
-      color: this.colorList.color3,
-      level: '低',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '20-40万',
-      num: '1950',
-      url: '/product/product-detail',
-      rank: '3'
-    },
-    {
-      type: '试营业商户贷款',
-      color: this.colorList.color3,
-      level: '高',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '15-30万',
-      num: '300',
-      url: '/product/product-detail',
-      rank: '3'
-    }
-  ]
+  constructor(public router: Router, public productService: ProductService) {}
 
-  constructor() {}
-
-  public ngOnInit() {}
+  public ngOnInit() {
+    this.productService.getProductList().subscribe(data => {
+      this.productList = data.slice(6, 13)
+    })
+  }
 }

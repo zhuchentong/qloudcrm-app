@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { HttpClient } from '@angular/common/http'
+import { NetService } from 'app/core/http'
+import { ProductService } from 'app/services/product.service'
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.page.html',
-  styleUrls: ['./product.page.scss']
+  styleUrls: ['./product.page.scss'],
+  providers: [ProductService]
 })
 export class ProductPage implements OnInit {
+  public productList = []
   public colorList = {
     color1: {
       icon: '#d5a441',
@@ -56,37 +62,11 @@ export class ProductPage implements OnInit {
     }
   ]
 
-  public productList = [
-    {
-      type: 'E时代商户贷款',
-      color: this.colorList.color1,
-      level: '低',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '1-15万',
-      num: '150',
-      url: '/product/product-detail'
-    },
-    {
-      type: 'E时代商户贷款',
-      color: this.colorList.color2,
-      level: '低',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '1-15万',
-      num: '150',
-      url: '/product/product-detail'
-    },
-    {
-      type: 'E时代商户贷款',
-      color: this.colorList.color3,
-      level: '低',
-      content: '针对中小企业的商户贷款，快速放款',
-      amount: '1-15万',
-      num: '150',
-      url: '/product/product-detail'
-    }
-  ]
+  constructor(public router: Router, public productService: ProductService) {}
 
-  constructor(public router: Router) {}
-
-  public ngOnInit() {}
+  public ngOnInit() {
+    this.productService.getProductList().subscribe(data => {
+      this.productList = data.slice(0, 6)
+    })
+  }
 }

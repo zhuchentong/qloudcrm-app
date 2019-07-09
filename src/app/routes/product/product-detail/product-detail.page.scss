@@ -1,31 +1,35 @@
+ion-card {
+  color: #000 !important;
+}
+
 .productInfo {
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 15px;
-    p {
-        margin: 15px 0 15px 0;
-        line-height: 30px;
-        font-size: 14px;
-    }
-    .leftclass {
-        text-align: left;
-    }
-    .rightclass {
-        text-align: right;
-    }
-    .content {
-        text-indent: 20px;
-    }
-    .lineheight {
-        line-height: 38px;
-    }
-    .sycolor {
-        color: palevioletred;
-    }
-    .fxcolor {
-        color: blue;
-    }
-    .zqcolor {
-        color: palevioletred;
-    }
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  p {
+    margin: 15px 0 15px 0;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .leftclass {
+    text-align: left;
+  }
+  .rightclass {
+    text-align: right;
+  }
+  .content {
+    text-indent: 20px;
+  }
+  .lineheight {
+    line-height: 38px;
+  }
+  .sycolor {
+    color: palevioletred;
+  }
+  .fxcolor {
+    color: blue;
+  }
+  .zqcolor {
+    color: palevioletred;
+  }
 }

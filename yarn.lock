@@ -608,6 +608,34 @@
     tree-kill "1.2.1"
     webpack-sources "1.3.0"
 
+"@ngx-toolkit/logger@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@ngx-toolkit/logger/-/logger-8.0.0.tgz#4bcf666e7bc0f2eda2126e7c46d9605dbe15f6f4"
+  integrity sha512-3VNqEezvgpCgYR6LB6zxprjVgW+RxPG3mup12voR8ePv4/R4cBhyG9QUJbMR/zlDKRMO8CGsCiBJqnUZ8CmX0w==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/devtools-plugin@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.4.3.tgz#437e8599d24babee2c08cdd93a789585248a1a5c"
+  integrity sha512-bbfTDQtc+5/ZpRvWj1xttzasU70hAVCaMcf+RNrfpei+IiROK/YvVNBhb1XovTQdQtYG4RnzMvA3YAB/wIaTBA==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/storage-plugin@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@ngxs/storage-plugin/-/storage-plugin-3.4.3.tgz#f9cd20f544fd8d61b8c260121eebc26c0d682010"
+  integrity sha512-TaRwO2BpMtCN2q/LQYs+J5cXIxBl0B5W05+gG8j+w5YpDWgJvGvFQjIAE2JnZMKGIILCmM59DX9rLyCoCthdKw==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/store@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.4.3.tgz#cf2f3b95e6be814742754c7f24e53b2b6392bb47"
+  integrity sha512-pVwxFxCxr09+zL37ot1hf6EhgpftNLSAseBZwHUlx40x2qAT+jat8XJlj4j0p+BoVEjlaVZn8zE6qMm2oSPlZw==
+  dependencies:
+    tslib "^1.9.0"
+
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"

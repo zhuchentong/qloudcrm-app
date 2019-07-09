@@ -3,6 +3,11 @@ import { Router } from '@angular/router'
 import { HttpClient } from '@angular/common/http'
 import { NetService } from 'app/core/http'
 import { DashboardService } from 'app/services/dashboard.service'
+import { MessageModel } from 'app/model/message.model'
+import { LoggerService } from '@ngx-toolkit/logger'
+import { Store } from '@ngxs/store'
+import { DictType } from 'app/config/enum.config'
+import { DictState } from 'app/store/state/dict.state'
 
 @Component({
   selector: 'app-dashboard',
@@ -11,6 +16,7 @@ import { DashboardService } from 'app/services/dashboard.service'
   providers: [DashboardService]
 })
 export class DashboardPage implements OnInit {
+  public a: MessageModel[]
   public colorList = {
     color1: {
       icon: '#d5a441',
@@ -213,12 +219,19 @@ export class DashboardPage implements OnInit {
 
   constructor(
     public router: Router,
-    private dashboardService: DashboardService
+    private dashboardService: DashboardService,
+    public store: Store,
+    private logger: LoggerService
   ) {}
 
+  public getDict() {
+    return this.store.selectSnapshot(DictState.getDict(DictType.SexState))
+  }
+
   public ngOnInit() {
-    this.dashboardService.getMessageList().subscribe(data => {
-      console.log(data)
+    this.dashboardService.getMessageList({ name: '123' }).subscribe(data => {
+      this.a = data
+      this.logger.log(data)
     })
   }
 }
