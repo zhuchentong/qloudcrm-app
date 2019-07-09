@@ -17,3 +17,15 @@ a {
 ion-card-title {
   font-size: 14px;
 }
+
+ion-icon {
+  .big {
+    width: 100px;
+    height: 100px;
+  }
+
+  .bigger {
+    width: 150px;
+    height: 150px;
+  }
+}
