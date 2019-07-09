@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Injectable, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { UserInfo, UserService } from 'app/services/user.service'
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
   styleUrls: ['./user.page.scss']
 })
+@Injectable()
 export class UserPage implements OnInit {
   private userMenu = [
     { lable: '我的关注', url: '/user/user-focus' },
@@ -14,29 +16,20 @@ export class UserPage implements OnInit {
     { lable: '我的工具', url: '/user/user-tools' },
     { lable: '设置', url: '/user/user-setting' }
   ]
-
   private user: UserInfo
   private userIcon = 'menu'
   private pic = './assets/images/avatar.svg'
   private userName = '张三'
   private userInfoMenu = [{ lable: '退出', url: '' }]
 
-  constructor(private router: Router) {
-    this.user = new UserInfo('张三', 'zhangsan', 'seller', '销售经理')
+  constructor(private router: Router, private userService: UserService) {
+    this.user = userService.userInfo
   }
 
-  private ngOnInit() {}
+  public ngOnInit() {}
 
   public menuControl(requrl: string) {
-    this.router.navigateByUrl(requrl)
+    // this.router.navigate([requrl,])
+    this.userService.menuControl2(requrl)
   }
-}
-
-export class UserInfo {
-  constructor(
-    public userName: string,
-    public userId: string,
-    public userRole: string,
-    public userPosition: string
-  ) {}
 }

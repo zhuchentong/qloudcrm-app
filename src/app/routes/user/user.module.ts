@@ -7,6 +7,8 @@ import { UserPerformPage } from 'app/routes/user/user-perform/user-perform.page'
 import { UserSchedulePage } from 'app/routes/user/user-schedule/user-schedule.page'
 import { UserSettingPage } from 'app/routes/user/user-setting/user-setting.page'
 import { UserToolsPage } from 'app/routes/user/user-tools/user-tools.page'
+import { UserService } from 'app/services/user.service'
+import { LoginPage } from 'app/routes/user/login/login.page'
 
 const routes: Routes = [
   {
@@ -32,6 +34,10 @@ const routes: Routes = [
   {
     path: 'user-tools',
     component: UserToolsPage
+  },
+  {
+    path: 'user-login',
+    component: LoginPage
   }
 ]
 
@@ -43,7 +49,9 @@ const routes: Routes = [
     UserPerformPage,
     UserSchedulePage,
     UserSettingPage,
-    UserToolsPage
-  ]
+    UserToolsPage,
+    LoginPage
+  ],
+  providers: [UserService]
 })
 export class UserPageModule {}

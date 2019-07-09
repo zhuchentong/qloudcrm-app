@@ -8,5 +8,5 @@ import { Component, OnInit } from '@angular/core'
 export class UserFocusPage implements OnInit {
   constructor() {}
 
-  private ngOnInit() {}
+  public ngOnInit() {}
 }
