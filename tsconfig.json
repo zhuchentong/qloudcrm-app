@@ -1,6 +1,6 @@
 {
   "compileOnSave": false,
-  "include": ["**/*.ts", "**/*.spec.ts"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"],
   "compilerOptions": {
     "baseUrl": "src/",
