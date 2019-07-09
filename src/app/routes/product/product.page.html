@@ -11,21 +11,21 @@
       </div>
     </div>
   </div>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="news-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="rocket"></ion-icon>
-            <span>热销产品</span>
-          </div>
+  <!-- <ion-card> -->
+  <ion-card-header>
+    <ion-card-title class="news-title">
+      <div class="row between-span news-title">
+        <div class="title row middle-span">
+          <ion-icon color="secondary" name="rocket"></ion-icon>
+          <span>热销产品</span>
         </div>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <app-product-list *ngFor="let item of productList" [data]="item"></app-product-list>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+      </div>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <app-product-list *ngFor="let item of productList" [data]="item"></app-product-list>
+    </ion-list>
+  </ion-card-content>
+  <!-- </ion-card> -->
 </ion-content>
