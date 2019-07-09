@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Observable, throwError } from 'rxjs'
-import { map, finalize } from 'rxjs/operators'
+import { map, finalize, catchError } from 'rxjs/operators'
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http'
 import { Model } from 'app/model'
 import { classToPlain, plainToClass } from 'class-transformer'

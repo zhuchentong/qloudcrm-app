@@ -229,6 +229,10 @@ export class DashboardPage implements OnInit {
   }
 
   public ngOnInit() {
+    this.asdasd()
+  }
+
+  private asdasd() {
     this.dashboardService.getMessageList({ name: '123' }).subscribe(data => {
       this.a = data
       this.logger.log(data)

@@ -17,6 +17,7 @@ import { LoggerModule, Level } from '@ngx-toolkit/logger'
 import { environment } from '@env/environment'
 import { states } from 'app/store'
 import { StartupService } from './core'
+import { CoreModule } from './core/core.module'
 
 const isDev = !environment.production
 // #region global third module
@@ -55,6 +56,7 @@ const APPINIT_PROVIDES = [
     IonicModule.forRoot(),
     RoutesModule,
     HttpClientModule,
+    CoreModule.forRoot(),
     MockModule.forRoot(),
     GLOBAL_THIRD_MODULES,
     LOG_MODULES
