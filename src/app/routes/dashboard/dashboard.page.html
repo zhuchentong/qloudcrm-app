@@ -1,90 +1,45 @@
 <ion-content>
-  <!-- <ion-slides class="slider-container" pager="true" [options]="slideOpts">
-    <ion-slide *ngFor="let notify of notifyList">
-      <div class="notify-item">
-        <img [src]="notify.picture" />
-        <div class="content">{{ notify.content }}</div>
-      </div>
-    </ion-slide>
-  </ion-slides> -->
-  <ion-slides class="slider-container" pager="true" [options]="slideOpts">
-    <ion-slide>
-      <div class="menu-container">
-        <div class="menu-items row">
-          <div class="col-span-3" *ngFor="let item of menuList.slice(0, 4)">
-            <div class="menu-item">
-              <div class="icon row middle-psan center-span">
-                <ion-icon [name]="item.icon"></ion-icon>
-              </div>
-              <div class="text">{{ item.label }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </ion-slide>
-    <ion-slide>
-      <div class="menu-container">
-        <div class="menu-items row">
-          <div class="col-span-3" *ngFor="let item of menuList.slice(4, 8)">
-            <div class="menu-item">
-              <div class="icon row middle-psan center-span">
-                <ion-icon [name]="item.icon"></ion-icon>
-              </div>
-              <div class="text">{{ item.label }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </ion-slide>
-  </ion-slides>
+  <ion-grid class="message-number">
+    <ion-row>
+      <ion-col size="4" *ngFor="let item of messageTypeNumber">
+        <ion-chip>
+          <ion-label>{{ item.name }}</ion-label>
+          <ion-badge>{{ item.length }}</ion-badge>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <nzm-tabs
+    [activeTab]="tabIndex"
+    [page]="4"
+    style="height: 44px;"
+    [prerenderingSiblingsNumber]="2"
+    [useOnPan]="false"
+    [animated]="false"
+    (onChange)="onTabChange($event)"
+  >
+    <nzm-tab-pane [title]="'全部消息'"> </nzm-tab-pane>
+    <nzm-tab-pane
+      [title]="titleTemplate"
+      *ngFor="let item of messageTypeNumber"
+    >
+      <ng-template #titleTemplate>
+        <nzm-badge [text]="item.length">
+          <div>{{ item.name }}</div>
+        </nzm-badge>
+      </ng-template>
+    </nzm-tab-pane>
+  </nzm-tabs>
+  <div class="message-list">
+    <ion-list>
+      <app-message-item
+        *ngFor="let item of currentMessageList"
+        [data]="item"
+      ></app-message-item>
+    </ion-list>
+  </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="news-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="paper"></ion-icon>
-            <span>消息动态</span>
-          </div>
-          <div>
-            <a routerLink="/dashboard/message-list">更多</a>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <ion-list>
-        <app-message-item
-          *ngFor="let item of newsList"
-          [data]="item"
-        ></app-message-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-
-  <!-- <ion-card>
-    <ion-card-header>
-      <ion-card-title class="alarm-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="paper"></ion-icon>
-            <span>预警信息</span>
-          </div>
-          <div>
-            <a routerLink="/user/register">更多</a>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="alarm-content row middle-span center-span">
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-        <span>暂无预警信息</span>
-      </div>
-    </ion-card-content>
-  </ion-card> -->
-
+  <!--
   <ion-card>
     <ion-card-header>
       <ion-card-title class="static-title">
@@ -138,12 +93,5 @@
         </div>
       </div>
     </ion-card-content>
-  </ion-card>
-  <ion-select cancelText="取消" okText="确定">
-    <ion-select-option [value]="dict.code" *ngFor="let dict of getDict()">{{
-      dict.name
-    }}</ion-select-option>
-
-    <div *ngFor="let item of a">{{ item.name }}</div>
-  </ion-select>
+  </ion-card> -->
 </ion-content>

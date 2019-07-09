@@ -19,3 +19,30 @@ export const CommonState = [
     name: '停用'
   }
 ]
+
+export const MessageType = [
+  {
+    code: 'INNER-NEWS',
+    name: '行内咨询'
+  },
+  {
+    code: 'OUTER-NEWS',
+    name: '行外咨询'
+  },
+  {
+    code: 'RISK-MSG',
+    name: '风险提醒'
+  },
+  {
+    code: 'MARKETING-MSG',
+    name: '营销提醒'
+  },
+  {
+    code: 'CUSTOMER-MSG',
+    name: '客户提醒'
+  },
+  {
+    code: 'WORK-MSG',
+    name: '工作提醒'
+  }
+]
