@@ -8,6 +8,12 @@ a {
   cursor: pointer;
 }
 
+.dot-badge,
+.am-badge-dot,
+.am-badge-text {
+  right: -13px;
+}
+
 ion-card-title {
   font-size: 14px;
 }

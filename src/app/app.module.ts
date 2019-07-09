@@ -18,6 +18,9 @@ import { environment } from '@env/environment'
 import { states } from 'app/store'
 import { StartupService } from './core'
 import { CoreModule } from './core/core.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { FormsModule } from '@angular/forms'
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile'
 
 const isDev = !environment.production
 // #region global third module
@@ -59,7 +62,10 @@ const APPINIT_PROVIDES = [
     CoreModule.forRoot(),
     MockModule.forRoot(),
     GLOBAL_THIRD_MODULES,
-    LOG_MODULES
+    LOG_MODULES,
+    BrowserAnimationsModule,
+    FormsModule,
+    NgZorroAntdMobileModule
   ],
   providers: [
     StatusBar,

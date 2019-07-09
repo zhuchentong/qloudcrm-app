@@ -1,10 +1,11 @@
-$colors: red, orange, yellow, green, blue, purple;
-$repeat: 8;
-
 :host {
-  .test {
-    color: red;
+  .message-number {
+    ion-label {
+      padding: 0 5px;
+      font-size: 10px;
+    }
   }
+
   .menu-container {
     width: 100%;
     margin: 10px 0 30px 0;
@@ -15,7 +16,6 @@ $repeat: 8;
       .icon {
         width: 40px;
         height: 40px;
-        // background: random(length($colors));
         margin: auto;
         font-size: 24px;
         text-align: center;
@@ -73,7 +73,6 @@ $repeat: 8;
     .title {
       font-weight: bold;
       font-size: 10px;
-      // text-align: right;
     }
     .data {
       font-weight: bold;

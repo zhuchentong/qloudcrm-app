@@ -48,6 +48,7 @@
     "cordova-android": "8.0.0",
     "core-js": "^2.5.4",
     "echarts": "^4.2.1",
+    "ng-zorro-antd-mobile": "^0.12.5",
     "ngx-echarts": "^4.2.1",
     "rxjs": "^6.5.2",
     "tslib": "^1.9.0",
@@ -135,7 +136,6 @@
       ],
       "*.scss": [
         "prettier --write",
-        "prettier-stylelint --write",
         "npm run lint:style",
         "git add"
       ]
