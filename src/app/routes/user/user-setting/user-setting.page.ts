@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core'
 import { UserManagerMenu, UserService } from 'app/services/user.service'
-import { UserinfoModel } from 'app/model/userInfo.model'
+import { UserInfoModel } from 'app/model/user-info.model'
 
 @Component({
   selector: 'app-user-setting',
@@ -9,7 +9,7 @@ import { UserinfoModel } from 'app/model/userInfo.model'
 })
 @Injectable()
 export class UserSettingPage implements OnInit {
-  private user: UserinfoModel
+  private user: UserInfoModel
   private menu: any[]
   constructor(private userService: UserService) {}
 

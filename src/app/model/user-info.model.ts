@@ -1,7 +1,7 @@
 import { Model } from 'app/model'
 import { Type } from 'class-transformer'
 
-export class UserinfoModel extends Model {
+export class UserInfoModel extends Model {
   public userName: string
   public userId: string
   public userRole: string

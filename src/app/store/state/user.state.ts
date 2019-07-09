@@ -2,7 +2,7 @@ import { State, Action, StateContext, Selector } from '@ngxs/store'
 import { LoginAction } from 'app/store/action/user.action'
 import { ExtendState } from 'app/store/extend'
 import { plainToClass, classToPlain } from 'class-transformer'
-import { UserModel } from 'app/model/user.model'
+import { UserInfoModel } from 'app/model/user-info.model'
 
 @State<any>({
   name: 'user',
@@ -13,9 +13,9 @@ export class UserState extends ExtendState {
    * 获取当前登录用户
    */
   @Selector()
-  public static getUser(state: UserModel) {
+  public static getUser(state: UserInfoModel) {
     if (state) {
-      return plainToClass(UserModel, state)
+      return plainToClass(UserInfoModel, state)
     } else {
       return null
     }

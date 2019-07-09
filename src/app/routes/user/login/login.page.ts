@@ -1,6 +1,9 @@
 import { Component, Injectable, OnInit } from '@angular/core'
 import { LoggerService } from '@ngx-toolkit/logger'
 import { UserService } from 'app/services/user.service'
+import { UpdateDictAction } from 'app/store/action/dict.action'
+import * as dict from 'app/config/dict.config'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -11,24 +14,30 @@ import { UserService } from 'app/services/user.service'
 export class LoginPage implements OnInit {
   private userId: string
   private loginPwd: string
-  constructor(private logger: LoggerService, private userService: UserService) {
+  private loginInfo: string
+  private loginInfoDisplay: boolean
+  constructor(
+    private router: Router,
+    private logger: LoggerService,
+    private userService: UserService
+  ) {
     this.userId = ''
     this.loginPwd = ''
+    this.loginInfo = ''
+    this.loginInfoDisplay = false
   }
 
   public ngOnInit() {}
 
   public logIn() {
     this.logger.info(this.userId + ' @@@@@@ ' + this.loginPwd)
-    this.userService
-      .getUserLogin({ userId: this.userId, loginPwd: this.loginPwd })
-      .subscribe(data => {
-        this.logger.info('sadsadsa:' + data)
-        if (data == null) {
-          this.logger.info('用户不存在@@@@' + data)
-        } else {
-          this.logger.info('用户存在@@@@' + data)
-        }
-      })
+    if (
+      this.userService.login({ userId: this.userId, loginPwd: this.loginPwd })
+    ) {
+      this.router.navigate([''])
+    } else {
+      this.loginInfoDisplay = true
+      this.loginInfo = '用户名或密码错误！'
+    }
   }
 }
