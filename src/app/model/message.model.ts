@@ -17,9 +17,9 @@ export class MessageModel extends Model {
   // @Expose()
   // public type: 'PATH' | 'ITEM'
 
-  public test: string
+  public name: string
 
   public get a() {
-    return this.test.substr(0, 3)
+    return this.name.substr(0, 2)
   }
 }

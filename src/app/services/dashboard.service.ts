@@ -8,9 +8,10 @@ import { MessageModel } from 'app/model/message.model'
 export class DashboardService {
   constructor(private net: NetService) {}
 
-  public getMessageList(): Observable<MessageModel> {
+  public getMessageList(params): Observable<MessageModel[]> {
     return this.net.send({
       service: dashboardController.getMessageList,
+      params,
       model: MessageModel
     })
   }

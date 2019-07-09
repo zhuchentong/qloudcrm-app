@@ -16,7 +16,7 @@ import { DictState } from 'app/store/state/dict.state'
   providers: [DashboardService]
 })
 export class DashboardPage implements OnInit {
-  public a: MessageModel
+  public a: MessageModel[]
   public colorList = {
     color1: {
       icon: '#d5a441',
@@ -229,9 +229,9 @@ export class DashboardPage implements OnInit {
   }
 
   public ngOnInit() {
-    this.dashboardService.getMessageList().subscribe(data => {
+    this.dashboardService.getMessageList({ name: '123' }).subscribe(data => {
       this.a = data
-      this.logger.log(data.a)
+      this.logger.log(data)
     })
   }
 }

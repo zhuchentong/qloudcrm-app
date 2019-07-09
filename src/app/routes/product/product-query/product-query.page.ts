@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router'
+
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.page.html',
-  styleUrls: ['./product.page.scss']
+  selector: 'app-product-query',
+  templateUrl: './product-query.page.html',
+  styleUrls: ['./product-query.page.scss']
 })
-export class ProductPage implements OnInit {
+export class ProductQueryPage implements OnInit {
   public colorList = {
     color1: {
       icon: '#d5a441',
@@ -33,29 +33,6 @@ export class ProductPage implements OnInit {
     }
   }
 
-  public menuList = [
-    {
-      icon: 'menu',
-      label: '产品目录',
-      url: '/product/product-directory'
-    },
-    {
-      icon: 'search',
-      label: '产品查询',
-      url: '/product/product-query'
-    },
-    {
-      icon: 'pricetags',
-      label: '产品对比',
-      url: ''
-    },
-    {
-      icon: 'stats',
-      label: '产品排名',
-      url: '/product/product-rank'
-    }
-  ]
-
   public productList = [
     {
       type: 'E时代商户贷款',
@@ -67,26 +44,53 @@ export class ProductPage implements OnInit {
       url: '/product/product-detail'
     },
     {
-      type: 'E时代商户贷款',
+      type: '民营企业小户贷款',
       color: this.colorList.color2,
       level: '低',
       content: '针对中小企业的商户贷款，快速放款',
-      amount: '1-15万',
-      num: '150',
+      amount: '2-10万',
+      num: '1000',
       url: '/product/product-detail'
     },
     {
-      type: 'E时代商户贷款',
+      type: '大数据高端商户贷款',
+      color: this.colorList.color3,
+      level: '低',
+      content: '针对中高端商户贷款商户贷款，快速放款',
+      amount: '50-100万',
+      num: '200',
+      url: '/product/product-detail'
+    },
+    {
+      type: '资金链危机商户贷款',
+      color: this.colorList.color3,
+      level: '高',
+      content: '针对中小企业的商户贷款，快速放款',
+      amount: '50-200万',
+      num: '20',
+      url: '/product/product-detail'
+    },
+    {
+      type: '政府扶持企业商户贷款',
       color: this.colorList.color3,
       level: '低',
       content: '针对中小企业的商户贷款，快速放款',
-      amount: '1-15万',
-      num: '150',
+      amount: '20-40万',
+      num: '1950',
+      url: '/product/product-detail'
+    },
+    {
+      type: '试营业商户贷款',
+      color: this.colorList.color3,
+      level: '高',
+      content: '针对中小企业的商户贷款，快速放款',
+      amount: '15-30万',
+      num: '300',
       url: '/product/product-detail'
     }
   ]
 
-  constructor(public router: Router) {}
+  constructor() {}
 
   public ngOnInit() {}
 }

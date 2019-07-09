@@ -144,6 +144,6 @@
       dict.name
     }}</ion-select-option>
 
-    {{ data.a | dict }}
+    <div *ngFor="let item of a">{{ item.name }}</div>
   </ion-select>
 </ion-content>
