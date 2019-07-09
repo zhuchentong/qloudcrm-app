@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
-  "include": ["**/*.ts", "**/*.spec.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"],
+  "include": ["src/**/*.ts"],
+  "exclude": ["test.ts", "src/**/*.spec.ts"],
   "compilerOptions": {
     "baseUrl": "src/",
     "outDir": "./dist/out-tsc",
