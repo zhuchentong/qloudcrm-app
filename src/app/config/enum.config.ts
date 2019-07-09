@@ -10,5 +10,6 @@ export enum SexState {
 
 export enum DictType {
   CommonState = 'CommonState',
-  SexState = 'SexState'
+  SexState = 'SexState',
+  MessageType = 'MessageType'
 }

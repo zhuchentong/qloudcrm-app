@@ -5,9 +5,10 @@ import {
   HttpEvent,
   HttpInterceptor,
   HttpResponse,
-  HttpParams
+  HttpParams,
+  HttpErrorResponse
 } from '@angular/common/http'
-import { Observable, of } from 'rxjs'
+import { Observable, of, throwError } from 'rxjs'
 import * as MockServices from './services'
 import { IReqestService } from 'app/core/http'
 import * as qs from 'qs'
@@ -48,9 +49,14 @@ export class MockHttpRequestInterceptor implements HttpInterceptor {
       const data =
         this.getRequestParams(request) || this.getRequestBody(request)
 
-      return of(
-        new HttpResponse({ status: 200, body: mockService.callback(data) })
-      )
+      try {
+        const body = mockService.callback(data)
+        return of(new HttpResponse({ status: 200, body }))
+      } catch (ex) {
+        return throwError(
+          new HttpErrorResponse({ status: 400, statusText: ex.message })
+        )
+      }
     }
 
     return next.handle(request)

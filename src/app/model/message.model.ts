@@ -2,24 +2,30 @@ import { Model } from 'app/model'
 import { Type } from 'class-transformer'
 
 export class MessageModel extends Model {
-  // @Expose()
-  // public id
-  // @Expose()
-  // public itemNumber: string
-  // @Expose()
-  // public itemPoint: string
-  // @Expose()
-  // public itemTitle: string
-  // @Expose()
-  // public riskLevel: number
-  // @Expose()
-  // public parentId: string
-  // @Expose()
-  // public type: 'PATH' | 'ITEM'
+  // 消息ID
+  public id: string
 
-  public name: string
+  // 消息标题
+  public title: string
 
-  public get a() {
-    return this.name.substr(0, 2)
-  }
+  // 消息内容
+  public content: string
+
+  // 消息类型
+  public type: string
+
+  // 发送时间
+  public time: Date
+
+  // 发送用户
+  public sender: string
+
+  // 消息目标
+  public target: string
+
+  // 目标类型
+  public targetType: string
+
+  // 消息数据
+  public data: any
 }

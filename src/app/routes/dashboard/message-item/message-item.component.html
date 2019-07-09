@@ -1,19 +1,16 @@
-<div
-  class="new-item row no-wrap"
-  [ngStyle]="{ color: data.color.text }"
-  (click)="onOpenDetail()"
->
-  <div class="left-item" [ngStyle]="{ background: data.color.icon }"></div>
-  <div
-    class="middle-item col between-span"
-    [ngStyle]="{ background: data.color.background1 }"
-  >
+<div class="new-item row no-wrap" (click)="onOpenDetail()">
+  <!-- [ngStyle]="{ color: data.color.text }" -->
+  <div class="left-item" ></div>
+  <!-- [ngStyle]="{ background: data.color.icon }" -->
+  <div class="middle-item col between-span">
+    <!-- [ngStyle]="{ background: data.color.background1 }" -->
     <div class="title">{{ data.type }}</div>
     <div class="time">
-      <div>{{ data.creatorTime }}</div>
+      <div>{{ data.time }}</div>
     </div>
   </div>
-  <div class="right-item" [ngStyle]="{ background: data.color.background2 }">
+  <div class="right-item">
+    <!-- [ngStyle]="{ background: data.color.background2 }" -->
     <div class="title">{{ data.title }}</div>
     <div class="content">
       {{
