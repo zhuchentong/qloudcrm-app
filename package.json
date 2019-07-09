@@ -11,7 +11,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "lint:ts": "tslint -c tslint.json -p src/tsconfig.app.json ",
+    "lint:ts": "tslint -p src/tsconfig.app.json -c tslint.json 'src/**/*.ts'",
     "lint:style": "stylelint 'src/**/*.scss' --syntax scss",
     "lint-staged": "lint-staged",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
@@ -141,7 +141,8 @@
       ]
     },
     "ignore": [
-      "src/assets/*"
+      "src/assets/*",
+      "**/*.spec.ts"
     ]
   },
   "husky": {
