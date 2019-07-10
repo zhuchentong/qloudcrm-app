@@ -35,3 +35,8 @@ export enum MessageTagType {
   WORKVISIT = 'WORK-VISIT',
   WORKTELEPHONE = 'WORK-TELEPHONE'
 }
+
+export enum ProductType {
+  SHANGHUDAI = 'SHANGHUDAI',
+  QIYEDAI = 'QIYEDAI'
+}

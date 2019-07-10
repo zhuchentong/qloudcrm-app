@@ -20,6 +20,17 @@ export const CommonState = [
   }
 ]
 
+export const ProductType = [
+  {
+    code: 'SHANGHUDAI',
+    name: '商户贷'
+  },
+  {
+    code: 'QIYEDAI',
+    name: '企业贷'
+  }
+]
+
 export const MessageType = [
   {
     code: 'RISK',

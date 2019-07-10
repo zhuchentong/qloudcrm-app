@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <app-back-button slot="start" [modal]="true"></app-back-button>
+    <ion-title>选择产品</ion-title>
+    <div class="row middle-span" slot="end">
+      <div class="ion-padding">{{ selectList.length }}/{{ count }}</div>
+      <ion-button
+        [disabled]="selectList.length < count"
+        size="small"
+        (click)="onSubmit()"
+        >提交</ion-button
+      >
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <nzm-tabs
+    [activeTab]="tabIndex"
+    [page]="4"
+    style="height: 44px;"
+    [prerenderingSiblingsNumber]="2"
+    [useOnPan]="false"
+    [animated]="false"
+    (onChange)="onTabChange($event)"
+  >
+    <nzm-tab-pane [title]="titleTemplate" *ngFor="let item of productTypeList">
+      <ng-template #titleTemplate>
+        <div>{{ item.name }}</div>
+      </ng-template>
+    </nzm-tab-pane>
+  </nzm-tabs>
+  <div class="product-list">
+    <ion-list *ngIf="currentProductList.length; else empty">
+      <ion-grid>
+        <ion-row *ngFor="let item of currentProductList">
+          <ion-col size="10">
+            <app-product-item [data]="item"></app-product-item>
+          </ion-col>
+          <ion-col size="2" class="row middle-span center-span">
+            <div (click)="onSelect(item)">
+              <ion-icon
+                style="height:25px;width:25px;"
+                [name]="
+                  selectList.includes(item)
+                    ? 'checkmark-circle'
+                    : 'radio-button-off'
+                "
+              ></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+
+    <ng-template #empty> <app-empty> </app-empty> </ng-template>
+  </div>
+</ion-content>

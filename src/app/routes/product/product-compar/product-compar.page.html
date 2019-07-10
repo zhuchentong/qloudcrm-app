@@ -6,3 +6,31 @@
     <ion-title>产品对比</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <div>
+    <ion-list *ngIf="compareList.length; else empty">
+      <app-product-item
+        *ngFor="let item of compareList"
+        [data]="item"
+      ></app-product-item>
+    </ion-list>
+    <ng-template #empty>
+      <app-empty></app-empty>
+    </ng-template>
+  </div>
+  <div>
+    <ion-button expand="full" class="ion-padding" (click)="onSelectProduct()">
+      <ion-icon slot="start" name="add"></ion-icon>
+      <span>{{ compareList.length === 0 ? '添加产品' : '重新选择' }}</span>
+    </ion-button>
+    <ion-button
+      expand="full"
+      color="tertiary"
+      class="ion-padding"
+      [disabled]="compareList.length < 2"
+    >
+      <ion-icon slot="start" name="send"></ion-icon>
+      <span (click)="onProductCompare()">开始对比</span>
+    </ion-button>
+  </div>
+</ion-content>

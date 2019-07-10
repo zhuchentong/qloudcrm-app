@@ -1,12 +1,16 @@
-[{
+[
+  {
     "type": "E时代商户贷款",
+    "tag": "SHANGHUDAI",
     "level": "低",
     "content": "针对中小企业的商户贷款，快速放款",
     "amount": "1-15万",
     "num": "150",
     "url": "/product/product-detail"
-  }, {
+  },
+  {
     "type": "试营业商户贷款",
+    "tag": "SHANGHUDAI",
     "level": "高",
     "content": "针对中小企业的商户贷款，快速放款",
     "amount": "15-30万",
@@ -15,6 +19,7 @@
   },
   {
     "type": "小型企业贷款",
+    "tag": "QIYEDAI",
     "level": "高",
     "content": "针对中小企业的商户贷款，快速放款",
     "amount": "15-20万",
@@ -23,6 +28,7 @@
   },
   {
     "type": "国家扶持企业贷款",
+    "tag": "QIYEDAI",
     "level": "高",
     "content": "针对中小企业的商户贷款，快速放款",
     "amount": "15-30万",
@@ -31,6 +37,7 @@
   },
   {
     "type": "重点小型农科企业贷款",
+    "tag": "QIYEDAI",
     "level": "高",
     "content": "针对中小企业的商户贷款，快速放款",
     "amount": "40-100万",
@@ -39,6 +46,7 @@
   },
   {
     "type": "资深企业用户贷款",
+    "tag": "QIYEDAI",
     "level": "高",
     "content": "针对中小企业的商户贷款，快速放款",
     "amount": "55-100万",

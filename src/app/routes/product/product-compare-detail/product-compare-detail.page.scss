@@ -1,0 +1,17 @@
+:host {
+  .container {
+    background: white;
+    .header {
+      padding: 10px;
+    }
+    .compare-item {
+      margin: 10px 0;
+      color: #000;
+    }
+  }
+  ion-content {
+    margin: 5px 0;
+
+    --background: #e5e5e5;
+  }
+}

@@ -11,6 +11,8 @@ import { ProductQueryPage } from './product-query/product-query.page'
 import { ProductRankPage } from './product-rank/product-rank.page'
 import { SharedModule } from 'app/shared/shared.module'
 import { ProductComparPage } from './product-compar/product-compar.page'
+import { ProductSelectPage } from './product-select/product-select.page'
+import { ProductCompareDetailPage } from './product-compare-detail/product-compare-detail.page'
 
 const routes: Routes = [
   {
@@ -36,20 +38,26 @@ const routes: Routes = [
   {
     path: 'product-compar',
     component: ProductComparPage
+  },
+  {
+    path: 'product-compare-detail',
+    component: ProductCompareDetailPage
   }
 ]
 
 @NgModule({
   imports: [SharedModule, RouterModule.forChild(routes)],
   declarations: [
+    ProductSelectPage,
     ProductPage,
     ProductDetailPage,
     ProductDirectoryPage,
     ProductQueryPage,
     ProductRankPage,
     ProductComparPage,
-    ProductItemComponent
+    ProductItemComponent,
+    ProductCompareDetailPage
   ],
-  entryComponents: [ProductItemComponent]
+  entryComponents: [ProductItemComponent, ProductSelectPage]
 })
 export class ProductPageModule {}
