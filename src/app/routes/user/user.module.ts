@@ -9,6 +9,8 @@ import { UserSettingPage } from 'app/routes/user/user-setting/user-setting.page'
 import { UserToolsPage } from 'app/routes/user/user-tools/user-tools.page'
 import { UserService } from 'app/services/user.service'
 import { LoginPage } from 'app/routes/user/login/login.page'
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FocusItemPage } from 'app/routes/user/user-focus/focus-item/focus-item.page'
 
 const routes: Routes = [
   {
@@ -42,7 +44,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [SharedModule, RouterModule.forChild(routes)],
+  imports: [SharedModule, ReactiveFormsModule, RouterModule.forChild(routes)],
   declarations: [
     UserPage,
     UserFocusPage,
@@ -50,7 +52,8 @@ const routes: Routes = [
     UserSchedulePage,
     UserSettingPage,
     UserToolsPage,
-    LoginPage
+    LoginPage,
+    FocusItemPage
   ],
   providers: [UserService]
 })

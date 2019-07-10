@@ -1,4 +1,5 @@
 import userinfos from 'assets/mock/userInfo.json'
+import userFocus from 'assets/mock/user-focus.json'
 import { MockService } from '../mock.decorators'
 import { userController } from 'app/config/service/user.controller'
 import { LoggerService } from '@ngx-toolkit/logger'
@@ -43,5 +44,23 @@ export class UserMockService {
       }
     })
     return result
+  }
+
+  @MockService({
+    service: userController.getUserFocus
+  })
+  public static getUserFocus() {
+    let result = null
+    result = userFocus
+    return result
+    //  if(params.type === 'all'){
+    //    result = userFocus
+    //  }
+    // result = new Array()
+    //   userFocus.filter(item => {
+    //    if(params.type === item ['type'])
+    //      result.push(item)
+    //  } )
+    //  return result
   }
 }

@@ -8,6 +8,7 @@ import { UpdateDictAction } from 'app/store/action/dict.action'
 import { LoggerService } from '@ngx-toolkit/logger'
 import { Store } from '@ngxs/store'
 import { LoginAction } from 'app/store/action/user.action'
+import { UserFocusModel } from 'app/model/user-focus.model'
 
 @Injectable()
 export class UserService {
@@ -48,6 +49,13 @@ export class UserService {
       service: userController.userLogin,
       params,
       model: UserInfoModel
+    })
+  }
+
+  public getUserFocus(): Observable<any> {
+    return this.net.send({
+      service: userController.getUserFocus,
+      model: UserFocusModel
     })
   }
 

@@ -15,7 +15,7 @@ export class UserPage implements OnInit {
   private userMenu = [
     { lable: '我的关注', url: '/user/user-focus' },
     { lable: '我的计划', url: '/user/user-schedule' },
-    { lable: '我的业绩', url: '/user/user-perform' },
+    { lable: '我的业绩', url: '/tabs/marketing' },
     { lable: '我的工具', url: '/user/user-tools' },
     { lable: '设置', url: '/user/user-setting' }
   ]
