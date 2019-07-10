@@ -1,0 +1,21 @@
+[{
+  "userName": "张三",
+  "userId": "zhangsan",
+  "userRole": "seller",
+  "userPosition": "销售经理",
+  "loginPwd":"zhangsan123"
+},{
+  "userName": "李四",
+  "userId": "lisi",
+  "userRole": "seller",
+  "userPosition": "销售经理",
+  "loginPwd":"lisi123"
+},
+  {
+    "userName": "王五",
+    "userId": "wangwu",
+    "userRole": "seller",
+    "userPosition": "销售经理",
+    "loginPwd":"wangwu123"
+  }
+]
