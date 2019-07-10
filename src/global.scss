@@ -15,6 +15,8 @@
 @import 'assets/styles/common.scss';
 @import 'assets/styles/theme.scss';
 
-@import '~@swimlane/ngx-datatable/release/index.css';
-@import '~@swimlane/ngx-datatable/release/themes/material.css';
-@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import '~ngx-easy-table/style.scss';
+
+:host ::ng-deep #table {
+  font-family: 'Montserrat', sans-serif;
+}

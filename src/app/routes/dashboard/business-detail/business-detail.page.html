@@ -8,7 +8,36 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ngx-table
+    [configuration]="tableConfig.config"
+    [data]="rows"
+    [columns]="columns"
+    [detailsTemplate]="detailTpl"
+  >
+  </ngx-table>
+</ion-content>
+<ng-template #detailTpl let-row>
+  <ion-item>
+    <ion-label color="primary">商户姓名</ion-label>
+    <ion-label slot="end">{{ row.name }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">所在城市</ion-label>
+    <ion-label slot="end">{{ row.city }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">联系电话</ion-label>
+    <ion-label slot="end">{{ row.phone }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">所在地址</ion-label>
+    <ion-label slot="end">{{ row.address }}</ion-label>
+  </ion-item>
+  <div class="ion-text-center ion-padding">
+    <a>查看更多</a>
+  </div>
+</ng-template>
+<!-- <ion-list>
     <ion-card
       style="margin:18px;background: #dfac45;color:white;box-shadow:2px 2px 2px gray;"
       *ngFor="let item of items"
@@ -22,5 +51,4 @@
         <div>所在地址: {{ item.address }}</div>
       </ion-card-content>
     </ion-card>
-  </ion-list>
-</ion-content>
+  </ion-list> -->

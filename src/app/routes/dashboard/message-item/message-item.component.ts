@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { Router } from '@angular/router'
-import { DictType, MessageType } from 'app/config/enum.config'
+import { DictType, MessageType, MessageTagType } from 'app/config/enum.config'
 
 @Component({
   selector: 'app-message-item',
@@ -11,14 +11,14 @@ export class MessageItemComponent implements OnInit {
   @Input()
   public data
   public routeList = {
-    [MessageType.RISKMSG]: '/dashboard/risk-detail',
-    [MessageType.MARKETINGMSG]: '/dashboard/marketing-detail',
-    [MessageType.CUSTOMERMSG]: '/dashboard/customer-detail',
-    [MessageType.WORKMSG]: '/dashboard/work-detail'
-    // 商机提醒: '/dashboard/business-detail',
-    // 申请提醒: '/dashboard/apply-detail',
-    // 核准提醒: '/dashboard/review-detail',
-    // 逾期提醒: '/dashboard/overdue-detail'
+    [MessageType.RISK]: '/dashboard/risk-detail',
+    [MessageType.MARKETING]: '/dashboard/marketing-detail',
+    [MessageType.CUSTOMER]: '/dashboard/customer-detail',
+    [MessageType.WORK]: '/dashboard/work-detail',
+    [MessageTagType.CUSTOMERPOTENTIAL]: '/dashboard/business-detail',
+    [MessageTagType.LOANAPPLICATION]: '/dashboard/apply-detail',
+    [MessageTagType.LOADAPPROVAL]: '/dashboard/review-detail',
+    [MessageTagType.LOANOVERDUE]: '/dashboard/overdue-detail'
   }
   constructor(public router: Router) {}
 
@@ -26,8 +26,7 @@ export class MessageItemComponent implements OnInit {
 
   public onOpenDetail() {
     localStorage.setItem('current-message', JSON.stringify(this.data))
-
-    const url = this.routeList[this.data.type]
+    const url = this.routeList[this.data.tag] || this.routeList[this.data.type]
     url && this.router.navigateByUrl(url)
   }
 
