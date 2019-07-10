@@ -1,4 +1,4 @@
-import { Type } from 'class-transformer';
+import { Type } from 'class-transformer'
 import { IMockInterface } from '../mock.interface'
 import productJson from 'assets/mock/product.json'
 import { productController } from 'app/config/service/product.controller'
@@ -10,9 +10,9 @@ export class ProductMockService {
     service: productController.getProductList
   })
   public static getProductList(params) {
-    if(params.type === undefined){
+    if (params.type === undefined) {
       return productJson
-    }else{
+    } else {
       return productJson.filter(x => x.type.includes(params.type))
     }
   }
