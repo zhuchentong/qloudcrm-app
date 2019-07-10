@@ -1,3 +1,41 @@
 .toolbar-title-md {
   text-align: center;
 }
+ion-label {
+  --color: #00629f;
+}
+
+ion-item {
+  --background: transparent;
+}
+.logo {
+  height: 200px;
+  img {
+    height: 150px;
+    animation: circle 3s infinite linear;
+    @keyframes circle {
+      0% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+.content {
+  .submit {
+    margin: 20px 0;
+  }
+  .footer {
+    a {
+      color: #00629f;
+      text-decoration: none;
+    }
+  }
+}
+
+ion-button {
+  --background: black;
+}

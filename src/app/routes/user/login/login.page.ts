@@ -4,6 +4,7 @@ import { UserService } from 'app/services/user.service'
 import { UpdateDictAction } from 'app/store/action/dict.action'
 import * as dict from 'app/config/dict.config'
 import { Router } from '@angular/router'
+import { FormBuilder, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -16,10 +17,13 @@ export class LoginPage implements OnInit {
   private loginPwd: string
   private loginInfo: string
   private loginInfoDisplay: boolean
+
+  private loginForm: FormGroup
   constructor(
     private router: Router,
     private logger: LoggerService,
-    private userService: UserService
+    private userService: UserService,
+    public formBuilder: FormBuilder
   ) {
     this.userId = ''
     this.loginPwd = ''
@@ -27,13 +31,16 @@ export class LoginPage implements OnInit {
     this.loginInfoDisplay = false
   }
 
-  public ngOnInit() {}
+  public ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      userId: [''],
+      loginPwd: ['']
+    })
+  }
 
   public logIn() {
-    this.logger.info(this.userId + ' @@@@@@ ' + this.loginPwd)
-    if (
-      this.userService.login({ userId: this.userId, loginPwd: this.loginPwd })
-    ) {
+    this.logger.info(this.loginForm)
+    if (this.userService.login(this.loginForm.value)) {
       this.router.navigate([''])
     } else {
       this.loginInfoDisplay = true
