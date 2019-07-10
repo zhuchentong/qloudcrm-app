@@ -27,11 +27,14 @@
       padding: 2px;
     }
     ion-chip {
+      width: 80%;
       height: 24px;
       padding: 2px 4px;
       padding-right: 0;
       ion-label {
+        width: 100%;
         padding: 0 3px;
+        text-align: center;
       }
       .badge {
         display: flex;

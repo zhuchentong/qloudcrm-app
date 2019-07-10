@@ -15,8 +15,6 @@ export enum DictType {
 }
 
 export enum MessageType {
-  INNER = 'INNER',
-  OUTER = 'OUTER',
   RISK = 'RISK',
   MARKETING = 'MARKETING',
   CUSTOMER = 'CUSTOMER',

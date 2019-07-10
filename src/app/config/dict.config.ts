@@ -22,14 +22,6 @@ export const CommonState = [
 
 export const MessageType = [
   {
-    code: 'INNER',
-    name: '行内咨询'
-  },
-  {
-    code: 'OUTER',
-    name: '行外咨询'
-  },
-  {
     code: 'RISK',
     name: '风险提醒'
   },
