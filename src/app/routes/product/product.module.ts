@@ -6,10 +6,11 @@ import { IonicModule } from '@ionic/angular'
 import { ProductPage } from './product.page'
 import { ProductDetailPage } from './product-detail/product-detail.page'
 import { ProductDirectoryPage } from './product-directory/product-directory.page'
-import { ProductListComponent } from './product-list/product-list.component'
+import { ProductItemComponent } from './product-item/product-item.component'
 import { ProductQueryPage } from './product-query/product-query.page'
 import { ProductRankPage } from './product-rank/product-rank.page'
 import { SharedModule } from 'app/shared/shared.module'
+import { ProductComparPage } from './product-compar/product-compar.page'
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'product-rank',
     component: ProductRankPage
+  },
+  {
+    path: 'product-compar',
+    component: ProductComparPage
   }
 ]
 
@@ -42,8 +47,9 @@ const routes: Routes = [
     ProductDirectoryPage,
     ProductQueryPage,
     ProductRankPage,
-    ProductListComponent
+    ProductComparPage,
+    ProductItemComponent
   ],
-  entryComponents: [ProductListComponent]
+  entryComponents: [ProductItemComponent]
 })
 export class ProductPageModule {}

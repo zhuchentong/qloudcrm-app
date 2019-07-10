@@ -1,8 +1,29 @@
-<iframe
-  src="https://org.modao.cc/app/4b382a0c0e1e8b1211614951493339a431ad200c/embed"
-  width="360"
-  onload="this.height=screen.height;"
-  style="margin:auto;"
-  allowTransparency="true"
-  frameborder="0"
-></iframe>
+<ion-content>
+  <div class="menu-container">
+    <div class="menu-items row">
+      <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
+        <div class="menu-item" [routerLink]="item.url">
+          <div class="icon row middle-psan center-span">
+            <ion-icon [name]="item.icon"></ion-icon>
+          </div>
+          <div class="text">{{ item.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-card-header>
+    <ion-card-title class="news-title">
+      <div class="row between-span news-title">
+        <div class="title row middle-span">
+          <ion-icon color="secondary" name="person"></ion-icon>
+          <span>我的客户: <a>{{this.customerlength}}</a></span>
+        </div>
+      </div>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list *ngFor="let item of customerList">
+      <app-customer-item [data]="item"></app-customer-item>
+    </ion-list>
+  </ion-card-content>
+</ion-content>

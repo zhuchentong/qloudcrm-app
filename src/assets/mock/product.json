@@ -1,0 +1,48 @@
+[{
+    "type": "E时代商户贷款",
+    "level": "低",
+    "content": "针对中小企业的商户贷款，快速放款",
+    "amount": "1-15万",
+    "num": "150",
+    "url": "/product/product-detail"
+  }, {
+    "type": "试营业商户贷款",
+    "level": "高",
+    "content": "针对中小企业的商户贷款，快速放款",
+    "amount": "15-30万",
+    "num": "300",
+    "url": "/product/product-detail"
+  },
+  {
+    "type": "小型企业贷款",
+    "level": "高",
+    "content": "针对中小企业的商户贷款，快速放款",
+    "amount": "15-20万",
+    "num": "900",
+    "url": "/product/product-detail"
+  },
+  {
+    "type": "国家扶持企业贷款",
+    "level": "高",
+    "content": "针对中小企业的商户贷款，快速放款",
+    "amount": "15-30万",
+    "num": "300",
+    "url": "/product/product-detail"
+  },
+  {
+    "type": "重点小型农科企业贷款",
+    "level": "高",
+    "content": "针对中小企业的商户贷款，快速放款",
+    "amount": "40-100万",
+    "num": "10",
+    "url": "/product/product-detail"
+  },
+  {
+    "type": "资深企业用户贷款",
+    "level": "高",
+    "content": "针对中小企业的商户贷款，快速放款",
+    "amount": "55-100万",
+    "num": "30",
+    "url": "/product/product-detail"
+  }
+]
