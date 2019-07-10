@@ -22,27 +22,78 @@ export const CommonState = [
 
 export const MessageType = [
   {
-    code: 'INNER-NEWS',
+    code: 'INNER',
     name: '行内咨询'
   },
   {
-    code: 'OUTER-NEWS',
+    code: 'OUTER',
     name: '行外咨询'
   },
   {
-    code: 'RISK-MSG',
+    code: 'RISK',
     name: '风险提醒'
   },
   {
-    code: 'MARKETING-MSG',
+    code: 'MARKETING',
     name: '营销提醒'
   },
   {
-    code: 'CUSTOMER-MSG',
+    code: 'CUSTOMER',
     name: '客户提醒'
   },
   {
-    code: 'WORK-MSG',
+    code: 'WORK',
     name: '工作提醒'
+  }
+]
+
+export const MessageTagType = [
+  {
+    code: 'CUSTOMER-POTENTIAL',
+    name: '潜在客户提醒'
+  },
+  {
+    code: 'LOAN-APPLICATION',
+    name: '贷款申请结果'
+  },
+  {
+    code: 'LOAD-APPROVAL',
+    name: '贷款核准消息'
+  },
+  {
+    code: 'LOAN-OVERDUE',
+    name: '贷款逾期提醒'
+  },
+  {
+    code: 'RISK-LOSS',
+    name: '客户流失风险'
+  },
+  {
+    code: 'RISK-DOWNGRADE',
+    name: '客户降级风险'
+  },
+  {
+    code: 'MARKETING-ACTIVITY',
+    name: '秋节营销活动'
+  },
+  {
+    code: 'CUSTOMER-RECOMMEND',
+    name: '营销客户提醒'
+  },
+  {
+    code: 'CUSTOMER-SIGNING',
+    name: '客户签约提醒'
+  },
+  {
+    code: 'WORK-PERFORMANCE',
+    name: '工作绩效提醒'
+  },
+  {
+    code: 'WORK-VISIT',
+    name: '客户拜访提醒'
+  },
+  {
+    code: 'WORK-TELEPHONE',
+    name: '电话拜访提醒'
   }
 ]

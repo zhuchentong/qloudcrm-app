@@ -1,31 +1,3 @@
-// $color1: {
-//   icon: '#d5a441';
-//   text: '#ffffff';
-//   background1: '#d5a441';
-//   background2: '#dfac45';
-// };
-
-// $color2: {
-//   icon: '#5ea8d6',
-//   text: '#ffffff',
-//   background1: '#5ea8d6',
-//   background2: '#69baec'
-// };
-
-// $color3: {
-//   icon: '#9978d6',
-//   text: '#ffffff',
-//   background1: '#9978d6',
-//   background2: '#a984ec'
-// };
-
-// $color4: {
-//   icon: '#43af7d',
-//   text: '#FFFFF3',
-//   background1: '#43af7d',
-//   background2: '#49bd88'
-// };
-
 .new-item {
   height: 120px;
   margin: 10px 0;
@@ -71,10 +43,12 @@
     font-size: 14px;
     line-height: 35px;
   }
+
   .sub-title {
     font-weight: 300;
     font-size: 10px;
   }
+
   .title,
   .sub-title {
     overflow: hidden;
