@@ -142,7 +142,8 @@
     },
     "ignore": [
       "src/assets/*",
-      "**/*.spec.ts"
+      "**/*.spec.ts",
+      "**/*.mock-service.ts"
     ]
   },
   "husky": {

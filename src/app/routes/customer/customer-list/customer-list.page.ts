@@ -45,6 +45,7 @@ export class CustomerListPage implements OnInit {
 
   public ngOnInit() {
     this.customerlistService.getCustomerList({ name: '' }).subscribe(data => {
+      this.logger.log(data)
       this.customerList = data
       this.customerlength = data.length
     })

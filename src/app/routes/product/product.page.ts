@@ -12,32 +12,6 @@ import { ProductService } from 'app/services/product.service'
 })
 export class ProductPage implements OnInit {
   public productList = []
-  public colorList = {
-    color1: {
-      icon: '#d5a441',
-      text: '#ffffff',
-      background1: '#d5a441',
-      background2: '#dfac45'
-    },
-    color2: {
-      icon: '#5ea8d6',
-      text: '#ffffff',
-      background1: '#5ea8d6',
-      background2: '#69baec'
-    },
-    color3: {
-      icon: '#9978d6',
-      text: '#ffffff',
-      background1: '#9978d6',
-      background2: '#a984ec'
-    },
-    color4: {
-      icon: '#43af7d',
-      text: '#FFFFF3',
-      background1: '#43af7d',
-      background2: '#49bd88'
-    }
-  }
 
   public menuList = [
     {
@@ -53,7 +27,7 @@ export class ProductPage implements OnInit {
     {
       icon: 'pricetags',
       label: '产品对比',
-      url: ''
+      url: '/product/product-compar'
     },
     {
       icon: 'stats',
@@ -65,8 +39,8 @@ export class ProductPage implements OnInit {
   constructor(public router: Router, public productService: ProductService) {}
 
   public ngOnInit() {
-    this.productService.getProductList().subscribe(data => {
-      this.productList = data.slice(0, 6)
+    this.productService.getProductList({ type: '' }).subscribe(data => {
+      this.productList = data
     })
   }
 }
