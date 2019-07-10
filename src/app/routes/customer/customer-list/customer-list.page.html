@@ -22,7 +22,7 @@
     </ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <ion-list *ngFor="let item of customerList">
+    <ion-list *ngFor="let item of customerList" routerLink="customer-detail">
       <app-customer-item [data]="item"></app-customer-item>
     </ion-list>
   </ion-card-content>

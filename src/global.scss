@@ -9,14 +9,16 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
-
 @import 'assets/styles/default.scss';
 @import 'assets/styles/layout.scss';
 @import 'assets/styles/common.scss';
 @import 'assets/styles/theme.scss';
-
 @import '~ngx-easy-table/style.scss';
-
 :host ::ng-deep #table {
   font-family: 'Montserrat', sans-serif;
+}
+
+.am-tabs-default-bar-left .am-tabs-default-bar-content,
+.am-tabs-default-bar-right .am-tabs-default-bar-content {
+  height: 270px !important;
 }

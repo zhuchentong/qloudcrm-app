@@ -1,9 +1,79 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>customer-detail</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>客户详情</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <nzm-tabs [activeTab]="index" [page]="2" [useOnPan]="false" [animated]="false">
+      <nzm-tab-pane [title]="'基本信息'">
+        <div class="infoclass">
+          <b>用户信息</b>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">用户头像</div>
+            <div class="col-span-6 picimg">
+              <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
+            </div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">用户姓名</div>
+            <div class="col-span-6">王翠平</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">用户性别</div>
+            <div class="col-span-6">女</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">用户年龄</div>
+            <div class="col-span-6">56</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">用户等级</div>
+            <div class="col-span-6">4</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">用户积分</div>
+            <div class="col-span-6">2499</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">归属机构</div>
+            <div class="col-span-6">陕西省高新区中信支行</div>
+          </div>
+        </div>
+      </nzm-tab-pane>
+      <nzm-tab-pane [title]="'资产信息'">
+        <div class="infoclass">
+          <b>资产信息</b>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">资产认证</div>
+            <div class="col-span-6">WACC认证</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">资产收益</div>
+            <div class="col-span-6">2.3%</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">资产期望增长值</div>
+            <div class="col-span-6">5%</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">资产办理机构</div>
+            <div class="col-span-6">高新区中心支行</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">资产交易风险</div>
+            <div class="col-span-6">低</div>
+          </div>
+          <div class="row rowlistcss ion-text-center">
+            <div class="col-span-6">资产警告</div>
+            <div class="col-span-6">投资风险过大</div>
+          </div>
+        </div>
+      </nzm-tab-pane>
+    </nzm-tabs>
+  </ion-card>
 </ion-content>

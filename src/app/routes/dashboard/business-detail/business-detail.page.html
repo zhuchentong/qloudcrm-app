@@ -8,12 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <ngx-table
-    [configuration]="tableConfig.config"
-    [data]="rows"
-    [columns]="columns"
-    [detailsTemplate]="detailTpl"
-  >
+  <ngx-table [configuration]="tableConfig.config" [data]="rows" [columns]="columns" [detailsTemplate]="detailTpl">
   </ngx-table>
 </ion-content>
 <ng-template #detailTpl let-row>

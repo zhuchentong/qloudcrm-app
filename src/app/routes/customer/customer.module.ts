@@ -8,6 +8,7 @@ import { CustomerQueryPage } from './customer-query/customer-query.page'
 import { CustomerGroupPage } from './customer-group/customer-group.page'
 import { CustomerHistoryPage } from './customer-history/customer-history.page'
 import { CustomerStatisPage } from './customer-statis/customer-statis.page'
+import { CustomerDepqueryPage } from './customer-depquery/customer-depquery.page'
 
 const routes: Routes = [
   {
@@ -29,6 +30,14 @@ const routes: Routes = [
   {
     path: 'customer-statis',
     component: CustomerStatisPage
+  },
+  {
+    path: 'customer-detail',
+    component: CustomerDetailPage
+  },
+  {
+    path: 'customer-depquery',
+    component: CustomerDepqueryPage
   }
 ]
 
@@ -40,6 +49,8 @@ const PAGES = [CustomerListPage, CustomerDetailPage]
     CustomerQueryPage,
     CustomerGroupPage,
     CustomerStatisPage,
+    CustomerDetailPage,
+    CustomerDepqueryPage,
     CustomerHistoryPage
   ],
   entryComponents: [CustomerItemComponent],
