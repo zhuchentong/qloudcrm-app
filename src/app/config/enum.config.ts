@@ -11,7 +11,8 @@ export enum SexState {
 export enum DictType {
   CommonState = 'CommonState',
   SexState = 'SexState',
-  MessageType = 'MessageType'
+  MessageType = 'MessageType',
+  FocusType = 'FocusType'
 }
 
 export enum MessageType {
@@ -21,4 +22,12 @@ export enum MessageType {
   MARKETINGMSG = ' MARKETING-MSG',
   CUSTOMERMSG = 'CUSTOMER-MSG',
   WORKMSG = ' WORK-MSG'
+}
+
+export enum FocusType {
+  ACTIVE = 'FOCUS-ACTIVE',
+  CUSTOMER = 'FOCUS-CUSTOMER',
+  PRODUCT = 'FOCUS-PRODUCT',
+  CHANNEL = 'FOCUS-CHANNEL',
+  INCIDENT = 'FOCUS-INCIDENT'
 }

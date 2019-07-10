@@ -10,5 +10,10 @@ export const userController = {
     controller,
     action: 'userLogin',
     method: 'POST'
+  },
+  getUserFocus: {
+    controller,
+    action: 'getUserFocus',
+    method: 'GET'
   }
 }

@@ -1,0 +1,96 @@
+[{
+  "title": "营销活动1",
+  "time": "2019-07-10 11:00:00",
+  "info": "营销活动1",
+  "type": "FOCUS-ACTIVE"
+},{
+  "title": "营销活动2",
+  "time": "2019-07-10 11:00:00",
+  "info": "营销活动2",
+  "type": "FOCUS-ACTIVE"
+},
+  {
+    "title": "营销活动3",
+    "time": "2019-07-10 11:00:00",
+    "info": "营销活动3",
+    "type": "FOCUS-ACTIVE"
+  },
+  {
+    "title": "张三",
+    "time": "2019-07-10 11:00:00",
+    "info": "张三有了新的意向",
+    "type": "FOCUS-CUSTOMER"
+  },
+  {
+    "title": "李四",
+    "time": "2019-07-10 11:00:00",
+    "info": "李四有了新的意向",
+    "type": "FOCUS-CUSTOMER"
+  },
+  {
+    "title": "王五",
+    "time": "2019-07-10 11:00:00",
+    "info": "王五有了新的意向",
+    "type": "FOCUS-CUSTOMER"
+  },
+  {
+    "title": "六六",
+    "time": "2019-07-10 11:00:00",
+    "info": "六六有了新的意向",
+    "type": "FOCUS-CUSTOMER"
+  },
+  {
+    "title": "理财产品摇钱树发行",
+    "time": "2019-07-10 11:00:00",
+    "info": "理财产品摇钱树发行",
+    "type": "FOCUS-PRODUCT"
+  },
+  {
+    "title": "我爱财理财产品上线",
+    "time": "2019-07-10 11:00:00",
+    "info": "我爱财理财产品上线",
+    "type": "FOCUS-PRODUCT"
+  },
+  {
+    "title": "五毛儿理财产品上线",
+    "time": "2019-07-10 11:00:00",
+    "info": "五毛儿理财产品上线",
+    "type": "FOCUS-PRODUCT"
+  },
+  {
+    "title": "线下渠道发行独占产品",
+    "time": "2019-07-10 11:00:00",
+    "info": "线下渠道发行独占产品",
+    "type": "FOCUS-CHANNEL"
+  },
+  {
+    "title": "线下渠道发行独占产品2",
+    "time": "2019-07-10 11:00:00",
+    "info": "线下渠道发行独占产品",
+    "type": "FOCUS-CHANNEL"
+  },
+  {
+    "title": "线下渠道发行独占产品3",
+    "time": "2019-07-10 11:00:00",
+    "info": "线下渠道发行独占产品",
+    "type": "FOCUS-CHANNEL"
+  },
+  {
+    "title": "线下渠道发行独占产品4",
+    "time": "2019-07-10 11:00:00",
+    "info": "线下渠道发行独占产品",
+    "type": "FOCUS-CHANNEL"
+  },
+  {
+  "title": "新版手机银行上线",
+  "time": "2019-07-10 11:00:00",
+  "info": "新版手机银行上线",
+  "type": "FOCUS-INCIDENT"
+},
+  {
+    "title": "BI系统上线",
+    "time": "2019-07-10 11:00:00",
+    "info": "BI系统上线",
+    "type": "FOCUS-INCIDENT"
+  }
+]

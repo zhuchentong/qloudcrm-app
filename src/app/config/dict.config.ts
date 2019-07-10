@@ -46,3 +46,26 @@ export const MessageType = [
     name: '工作提醒'
   }
 ]
+
+export const FocusType = [
+  {
+    code: 'FOCUS-ACTIVE',
+    name: '营销'
+  },
+  {
+    code: 'FOCUS-CUSTOMER',
+    name: '客户'
+  },
+  {
+    code: 'FOCUS-PRODUCT',
+    name: '产品'
+  },
+  {
+    code: 'FOCUS-CHANNEL',
+    name: '渠道'
+  },
+  {
+    code: 'FOCUS-INCIDENT',
+    name: '事件'
+  }
+]

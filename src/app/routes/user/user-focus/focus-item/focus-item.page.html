@@ -1,0 +1,23 @@
+<div
+  class="new-item row no-wrap"
+  [ngClass]="getItemClass()"
+  (click)="onOpenDetail()"
+>
+  <div class="left-item"></div>
+  <div class="middle-item col between-span">
+    <div class="title">{{ data.type | dict }}</div>
+    <div class="time">
+      <div>{{ data.time }}</div>
+    </div>
+  </div>
+  <div class="right-item">
+    <div class="title">{{ data.title }}</div>
+    <div class="content">
+      {{
+      data.info.length > 40
+      ? data.info.slice(0, 40) + '...'
+      : data.info
+      }}
+    </div>
+  </div>
+</div>

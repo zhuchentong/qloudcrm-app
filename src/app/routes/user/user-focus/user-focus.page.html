@@ -8,7 +8,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content (ionScroll)="onScroll($event)" >
+
+  <ion-refresher slot="fixed" (ionRefresh)="getFocusList($event)">
+    <ion-refresher-content> </ion-refresher-content>
+  </ion-refresher>
   <nzm-tabs
 
     [activeTab]="tabIndex"
@@ -22,13 +26,23 @@
     <nzm-tab-pane [title]="myFocus"> </nzm-tab-pane>
     <nzm-tab-pane
       [title]="titleTemplate"
-      *ngFor="let item of userFocusTabs"
+      *ngFor="let item of focusTypeNumber"
     >
       <ng-template #titleTemplate>
         <nzm-badge [text]="item.length">
-          <div>{{ item.tabName }}</div>
+          <div>{{ item.name }}</div>
         </nzm-badge>
       </ng-template>
     </nzm-tab-pane>
   </nzm-tabs>
+  <div class="focus-list">
+    <ion-list *ngIf="currentFocusList.length; else empty">
+      <app-focus-item
+        *ngFor="let item of currentFocusList"
+        [data]="item"
+      ></app-focus-item>
+    </ion-list>
+
+    <ng-template #empty> <app-empty> </app-empty> </ng-template>
+  </div>
 </ion-content>
