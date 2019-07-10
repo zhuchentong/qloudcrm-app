@@ -1,57 +1,40 @@
 <ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
-  <ion-refresher slot="fixed" (ionRefresh)="getMessageList($event)">
-    <ion-refresher-content> </ion-refresher-content>
-  </ion-refresher>
-  <ion-grid class="message-number">
-    <ion-row>
-      <ion-col
-        size="4"
-        *ngFor="let item of messageTypeNumber; index as i"
-        (click)="tabIndex = i + 1"
-      >
-        <ion-chip>
-          <ion-label>{{ item.name }}</ion-label>
-          <div class="badge">{{ item.length }}</div>
-        </ion-chip>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <div>
-    <nzm-tabs
-      [ngClass]="{ 'fixed-tabs': fixedTabs }"
-      [activeTab]="tabIndex"
-      [page]="4"
-      style="height: 44px;"
-      [prerenderingSiblingsNumber]="2"
-      [useOnPan]="false"
-      [animated]="false"
-      (onChange)="onTabChange($event)"
-    >
-      <nzm-tab-pane [title]="'全部消息'"> </nzm-tab-pane>
-      <nzm-tab-pane
-        [title]="titleTemplate"
-        *ngFor="let item of messageTypeNumber"
-      >
-        <ng-template #titleTemplate>
-          <nzm-badge [text]="item.length">
-            <div>{{ item.name }}</div>
-          </nzm-badge>
-        </ng-template>
-      </nzm-tab-pane>
-    </nzm-tabs>
-    <div class="message-list">
-      <ion-list *ngIf="currentMessageList.length; else empty">
-        <app-message-item
-          *ngFor="let item of currentMessageList"
-          [data]="item"
-        ></app-message-item>
-      </ion-list>
+    <ion-refresher slot="fixed" (ionRefresh)="getMessageList($event)">
+        <ion-refresher-content> </ion-refresher-content>
+    </ion-refresher>
+    <ion-grid class="message-number">
+        <ion-row>
+            <ion-col size="3" *ngFor="let item of messageTypeNumber; index as i" (click)="tabIndex = i + 1">
+                <ion-chip>
+                    <ion-label>{{ item.name }}</ion-label>
+                    <div class="badge">{{ item.length }}</div>
+                </ion-chip>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div>
+        <nzm-tabs [ngClass]="{ 'fixed-tabs': fixedTabs }" [activeTab]="tabIndex" [page]="4" style="height: 44px;" [prerenderingSiblingsNumber]="2" [useOnPan]="false" [animated]="false" (onChange)="onTabChange($event)">
+            <nzm-tab-pane [title]="'全部消息'"> </nzm-tab-pane>
+            <nzm-tab-pane [title]="titleTemplate" *ngFor="let item of messageTypeNumber">
+                <ng-template #titleTemplate>
+                    <nzm-badge [text]="item.length">
+                        <div>{{ item.name }}</div>
+                    </nzm-badge>
+                </ng-template>
+            </nzm-tab-pane>
+        </nzm-tabs>
+        <div class="message-list">
+            <ion-list *ngIf="currentMessageList.length; else empty">
+                <app-message-item *ngFor="let item of currentMessageList" [data]="item"></app-message-item>
+            </ion-list>
 
-      <ng-template #empty> <app-empty> </app-empty> </ng-template>
+            <ng-template #empty>
+                <app-empty> </app-empty>
+            </ng-template>
+        </div>
     </div>
-  </div>
 
-  <!--
+    <!--
   <ion-card>
     <ion-card-header>
       <ion-card-title class="static-title">

@@ -1,10 +1,17 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
-  </ion-toolbar>
+  <div class="row">
+    <div class="col-span-11">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
+      </ion-toolbar>
+    </div>
+    <div class="col-span-1 searchcss">
+      <ion-icon size="large" color="secondary" name="menu" routerLink="../customer-depquery"></ion-icon>
+    </div>
+  </div>
 </ion-header>
 <ion-content>
   <ion-card-content>

@@ -1,0 +1,24 @@
+.detailtitle {
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
+
+.infoclass {
+  padding: 10px;
+  .picimg {
+    img {
+      width: 60px;
+      margin: 0 auto;
+      border-radius: 50px;
+    }
+  }
+}
+
+.rowlistcss {
+  height: 50px;
+  line-height: 50px;
+}
