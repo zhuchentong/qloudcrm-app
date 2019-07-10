@@ -3,23 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>产品查询</ion-title>
+    <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索产品" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card-content>
-    <div class="row">
-      <div class="col-span-11">
-        <!-- <ion-input clearInput value="clear me"></ion-input> -->
-        <ion-input clearInput placeholder="产品查询" class="searchcss"></ion-input>
-      </div>
-      <div class="col-span-1 btncss">
-        <ion-icon color="secondary" size="large" name="search"></ion-icon>
-      </div>
-    </div>
     <ion-list class="listcss">
-      <app-product-list *ngFor="let item of productList" [data]="item"></app-product-list>
+      <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
     </ion-list>
   </ion-card-content>
 </ion-content>

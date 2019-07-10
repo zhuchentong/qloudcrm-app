@@ -1,42 +1,54 @@
-<ion-content>
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+  <ion-refresher slot="fixed" (ionRefresh)="getMessageList($event)">
+    <ion-refresher-content> </ion-refresher-content>
+  </ion-refresher>
   <ion-grid class="message-number">
     <ion-row>
-      <ion-col size="4" *ngFor="let item of messageTypeNumber">
+      <ion-col
+        size="3"
+        *ngFor="let item of messageTypeNumber; index as i"
+        (click)="tabIndex = i + 1"
+      >
         <ion-chip>
           <ion-label>{{ item.name }}</ion-label>
-          <ion-badge>{{ item.length }}</ion-badge>
+          <div class="badge">{{ item.length }}</div>
         </ion-chip>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <nzm-tabs
-    [activeTab]="tabIndex"
-    [page]="4"
-    style="height: 44px;"
-    [prerenderingSiblingsNumber]="2"
-    [useOnPan]="false"
-    [animated]="false"
-    (onChange)="onTabChange($event)"
-  >
-    <nzm-tab-pane [title]="'全部消息'"> </nzm-tab-pane>
-    <nzm-tab-pane
-      [title]="titleTemplate"
-      *ngFor="let item of messageTypeNumber"
+  <div>
+    <nzm-tabs
+      [ngClass]="{ 'fixed-tabs': fixedTabs }"
+      [activeTab]="tabIndex"
+      [page]="4"
+      style="height: 44px;"
+      [prerenderingSiblingsNumber]="2"
+      [useOnPan]="false"
+      [animated]="false"
+      (onChange)="onTabChange($event)"
     >
-      <ng-template #titleTemplate>
-        <nzm-badge [text]="item.length">
-          <div>{{ item.name }}</div>
-        </nzm-badge>
-      </ng-template>
-    </nzm-tab-pane>
-  </nzm-tabs>
-  <div class="message-list">
-    <ion-list>
-      <app-message-item
-        *ngFor="let item of currentMessageList"
-        [data]="item"
-      ></app-message-item>
-    </ion-list>
+      <nzm-tab-pane [title]="'全部消息'"> </nzm-tab-pane>
+      <nzm-tab-pane
+        [title]="titleTemplate"
+        *ngFor="let item of messageTypeNumber"
+      >
+        <ng-template #titleTemplate>
+          <nzm-badge [text]="item.length">
+            <div>{{ item.name }}</div>
+          </nzm-badge>
+        </ng-template>
+      </nzm-tab-pane>
+    </nzm-tabs>
+    <div class="message-list">
+      <ion-list *ngIf="currentMessageList.length; else empty">
+        <app-message-item
+          *ngFor="let item of currentMessageList"
+          [data]="item"
+        ></app-message-item>
+      </ion-list>
+
+      <ng-template #empty> <app-empty> </app-empty> </ng-template>
+    </div>
   </div>
 
   <!--

@@ -13,3 +13,12 @@ export enum DictType {
   SexState = 'SexState',
   MessageType = 'MessageType'
 }
+
+export enum MessageType {
+  INNERNEWS = 'INNER-NEWS',
+  OUTERNEWS = 'OUTER-NEWS',
+  RISKMSG = 'RISK-MSG',
+  MARKETINGMSG = ' MARKETING-MSG',
+  CUSTOMERMSG = 'CUSTOMER-MSG',
+  WORKMSG = ' WORK-MSG'
+}

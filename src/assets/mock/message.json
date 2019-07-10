@@ -1,20 +1,20 @@
 [
   {
-    "type": "WORK_MSG",
+    "type": "WORK-MSG",
     "title": "潜在客户提醒",
     "content": "本周你经管的潜在客户中有7个客户有相应的贷款需求.",
     "sender": "华软科技GCST",
     "time": "2019-06-28 12:33"
   },
   {
-    "type": "WORK_MSG",
+    "type": "WORK-MSG",
     "title": "贷款申请结果",
     "content": "截止今天(2019-07-01)你的客户申请贷款件数为8件，其中6件合格，1件驳回，一件数据不完整.",
     "sender": "华软科技GCST",
     "time": "2019-06-28 12:33"
   },
   {
-    "type": "WORK_MSG",
+    "type": "WORK-MSG",
     "title": "贷款数据核准",
     "content": "截止今天(2019-07-01),你的累计商户送件为28件,其中20件已经开户且拨贷,总计857万元 ",
     "sender": "华软科技GCST",
@@ -28,14 +28,14 @@
     "time": "2019-06-28 12:33"
   },
   {
-    "type": "RISK_MSG",
+    "type": "RISK-MSG",
     "title": "客户流失风险",
     "content": "客户“李三”已有1个月没有互动、余额没有发生变动，存在流失的可能",
     "sender": "华软科技GCST",
     "time": "2019-06-28 12:33"
   },
   {
-    "type": "RISK_MSG",
+    "type": "RISK-MSG",
     "title": "客户降级风险",
     "content": "客户“李三”的近一个月的月均余额都低于100000以下，存在从“金卡”客户降级为“普卡”客户",
     "sender": "华软科技GCST",
