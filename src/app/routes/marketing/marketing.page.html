@@ -1,43 +1,179 @@
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title style="font-size:14px;">贷款业绩</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="row around-span" style="font-weight: bold;">
-        <div>月度贷款额</div>
-        <div>350.21万</div>
-      </div>
-      <div class="row around-span" style="font-weight: bold;">
-        <div>目标贷款额</div>
-        <div>700.21万</div>
-      </div>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title style="font-size:14px;">业务进度</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div
-        echarts
-        [options]="option1"
-        class="demo-chart"
-        style="height:250px;"
-      ></div>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title style="font-size:14px;">绩效评分</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <div
-        echarts
-        [options]="option2"
-        class="demo-chart"
-        style="height:400px;"
-      ></div>
-    </ion-card-content>
-  </ion-card>
+  <ion-grid>
+    <ion-row style="font-size:12px;">
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="font-size:14px;"
+              >本月业绩目标</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <div class="row between-span">
+              <div>贷款目标</div>
+              <div>200万</div>
+            </div>
+            <div class="row between-span">
+              <div>理财目标</div>
+              <div>150万</div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="font-size:14px;"
+              >本月业绩额度</ion-card-title
+            >
+          </ion-card-header>
+          <ion-card-content>
+            <div class="row between-span">
+              <div>贷款额度</div>
+              <div>120万</div>
+            </div>
+            <div class="row between-span">
+              <div>理财额度</div>
+              <div>83万</div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="font-size:14px;">任务进度</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="row middle-span">
+              <div>月度进度</div>
+              <div class="progress-container col-span ion-padding">
+                <nzm-progress
+                  [percent]="42"
+                  [position]="'normal'"
+                ></nzm-progress>
+              </div>
+              <div>42%</div>
+            </div>
+            <div class="row middle-span">
+              <div>季度进度</div>
+              <div class="progress-container col-span ion-padding">
+                <nzm-progress
+                  [percent]="21"
+                  [position]="'normal'"
+                ></nzm-progress>
+              </div>
+              <div>12%</div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" class="yeji">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="font-size:14px;">本月业绩</ion-card-title>
+          </ion-card-header>
+          <ion-card-content style="font-size:12px;">
+            <ion-item>
+              <ion-label slot="start">员工姓名</ion-label>
+              <ion-label>张三</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">月度业绩</ion-label>
+              <ion-label>2019-07</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">所属机构</ion-label>
+              <ion-label>成都高新支行</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">存款余额-末期时点</ion-label>
+              <ion-label>￥23,245,854元</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">存款余额-增量</ion-label>
+              <ion-label>￥25,854元</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">存款月日均余额</ion-label>
+              <ion-label>￥125,854元</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">活期存款余额-期末时点</ion-label>
+              <ion-label>￥725,854元</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">活期存款余额-增量</ion-label>
+              <ion-label>￥65,854元</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">活期存款月日均余额-增量</ion-label>
+              <ion-label>￥93,864元</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label slot="start">活期存款月日均余额</ion-label>
+              <ion-label>￥645,334元</ion-label>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="font-size:14px;">绩效评分</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="option2"
+              class="demo-chart"
+              style="height:400px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title style="font-size:14px;">历史绩效</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div>
+              <div class="ion-padding row between-span">
+                <div>2019-06</div>
+                <a
+                  [routerLink]="[
+                    '/marketing/performance-detail',
+                    { date: '2019-06' }
+                  ]"
+                  >查看</a
+                >
+              </div>
+              <div class="ion-padding row between-span">
+                <div>2019-05</div>
+                <a
+                  [routerLink]="[
+                    '/marketing/performance-detail',
+                    { date: '2019-05' }
+                  ]"
+                  >查看</a
+                >
+              </div>
+              <div class="ion-padding row between-span">
+                <div>2019-04</div>
+                <a
+                  [routerLink]="[
+                    '/marketing/performance-detail',
+                    { date: '2019-04' }
+                  ]"
+                  >查看</a
+                >
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
