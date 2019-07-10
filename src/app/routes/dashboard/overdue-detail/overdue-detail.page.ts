@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { TableConfig } from 'app/config/table.config'
+import { Columns } from 'ngx-easy-table'
 
 @Component({
   selector: 'app-overdue-detail',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./overdue-detail.page.scss']
 })
 export class OverdueDetailPage implements OnInit {
-  public items = [
+  public rows = [
     {
       name: '商户003',
       address: '西安市高新六路212号',
@@ -32,7 +34,21 @@ export class OverdueDetailPage implements OnInit {
       date: '45天'
     }
   ]
-  constructor() {}
 
-  public ngOnInit() {}
+  public columns: Columns[]
+
+  constructor(public tableConfig: TableConfig) {
+    this.tableConfig.update({
+      detailsTemplate: true,
+      showDetailsArrow: true
+    })
+  }
+
+  public ngOnInit() {
+    this.columns = [
+      { key: 'name', title: '商户名称' },
+      { key: 'city', title: '城市' },
+      { key: 'date', title: '逾期天数' }
+    ]
+  }
 }

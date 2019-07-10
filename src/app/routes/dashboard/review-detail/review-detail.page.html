@@ -8,23 +8,41 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-card
-      style="margin:18px;background: #a984ec;color:white;box-shadow:2px 2px 2px gray;"
-      *ngFor="let item of items"
-    >
-      <ion-card-content class="data-item">
-        <div>商户名称: {{ item.name }}</div>
-        <div class="row">
-          <div class="row-span-6">所在城市: {{ item.city }}</div>
-          <div class="row-span-6">联系电话: {{ item.phone }}</div>
-        </div>
-        <div>所在地址: {{ item.address }}</div>
-        <div class="row">
-          <div class="row-span-6">贷款金额: {{ item.amount }}</div>
-          <div class="row-span-6">当流流程: {{ item.status }}</div>
-        </div>
-      </ion-card-content>
-    </ion-card>
-  </ion-list>
+  <ngx-table
+    [configuration]="tableConfig.config"
+    [data]="rows"
+    [columns]="columns"
+    [detailsTemplate]="detailTpl"
+  >
+  </ngx-table>
 </ion-content>
+
+<ng-template #detailTpl let-row>
+  <ion-item>
+    <ion-label color="primary">商户姓名</ion-label>
+    <ion-label slot="end">{{ row.name }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">所在城市</ion-label>
+    <ion-label slot="end">{{ row.city }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">联系电话</ion-label>
+    <ion-label slot="end">{{ row.phone }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">所在地址</ion-label>
+    <ion-label slot="end">{{ row.address }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">贷款金额</ion-label>
+    <ion-label slot="end">{{ row.amount }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">当流流程</ion-label>
+    <ion-label slot="end">{{ row.status }}</ion-label>
+  </ion-item>
+  <div class="ion-text-center ion-padding">
+    <a>查看更多</a>
+  </div>
+</ng-template>

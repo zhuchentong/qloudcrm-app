@@ -8,9 +8,6 @@ import { TableConfig } from 'app/config/table.config'
   styleUrls: ['./business-detail.page.scss']
 })
 export class BusinessDetailPage implements OnInit {
-  // public efaultConfig = DefaultConfig
-  @ViewChild('nameRowTpl') public nameRowTpl: TemplateRef<any>
-
   public rows = [
     {
       name: '商户003',
