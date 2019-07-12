@@ -9,6 +9,7 @@ import { LoggerService } from '@ngx-toolkit/logger'
 import { Store } from '@ngxs/store'
 import { LoginAction } from 'app/store/action/user.action'
 import { UserFocusModel } from 'app/model/user-focus.model'
+import { UserSchedule } from 'app/model/user-schedule.model'
 
 @Injectable()
 export class UserService {
@@ -40,6 +41,22 @@ export class UserService {
     return this.net.send({
       service: userController.getUserFocus,
       model: UserFocusModel
+    })
+  }
+
+  public searchUserSchedule(params): Observable<any> {
+    return this.net.send({
+      service: userController.getUserSchedule,
+      params,
+      model: UserFocusModel
+    })
+  }
+
+  public createUserSchedule(params): Observable<any> {
+    return this.net.send({
+      service: userController.createUserSchedule,
+      params,
+      model: UserSchedule
     })
   }
 

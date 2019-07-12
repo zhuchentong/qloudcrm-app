@@ -7,6 +7,7 @@ import { Router, ActivationEnd, ActivatedRoute } from '@angular/router'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { LoginAction } from 'app/store/action/user.action'
 import { Store } from '@ngxs/store'
+import { debounceTime } from 'rxjs/internal/operators'
 
 @Component({
   selector: 'app-login',
