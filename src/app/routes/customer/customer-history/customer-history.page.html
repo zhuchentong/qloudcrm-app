@@ -8,7 +8,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let item of customerList">
-    <app-customer-item [data]="item"></app-customer-item>
-  </ion-list>
+  <div class="row contenttitle ion-padding-top ion-padding-bottom">
+    <div class="col-span-11">
+      <span class="leftlogo ion-margin-right"></span>
+      <span class="titlecss">今日访问</span>
+    </div>
+    <div class="col-span-1">
+      <span>2</span>
+    </div>
+  </div>
+  <ion-card-content>
+    <ion-list *ngFor="let item of customerList.slice(2,4)">
+      <app-customer-item [data]="item"></app-customer-item>
+    </ion-list>
+  </ion-card-content>
 </ion-content>

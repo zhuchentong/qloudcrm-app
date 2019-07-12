@@ -1,16 +1,16 @@
-<div class="productWrap" [routerLink]="data.url">
-  <div class="row">
-    <b class="col-span-6 leftTitle">{{data.type}}</b>
-    <div class="col-span-4 rightTitle">贷款要求：<span class="lowcolor">{{data.level}}</span></div>
-    <div class="col-span-2 rankcss">
-      <span *ngIf="data.rank=='1'">热销</span>
-      <span *ngIf="data.rank=='2'">好评</span>
-      <span *ngIf="data.rank=='3'">推荐</span>
+<ion-card>
+  <div class="productWrap ion-padding" [routerLink]="data.url">
+    <div class="row">
+      <div class="col-span-8 ion-text-left">
+        <span class="hotscss">热</span>&nbsp;
+        <span class="productnamecss">{{data.type}}</span>
+      </div>
+      <div class="col-span-4 ion-text-right"><span class="colorgray">已售出:&nbsp;</span><span class="productnamecss">{{data.num}}</span></div>
+    </div>
+    <div class="marginNum">{{data.amount}}</div>
+    <div class="row">
+      <div class="col-span-8"><span class="colorgray littlefont">{{data.content}}</span></div>
+      <div class="col-span-4 ion-text-right"><span class="lowcss">低要求</span>&nbsp;&nbsp;<span class="fastcss">放款快</span></div>
     </div>
   </div>
-  <div class="marginNum">{{data.content}}</div>
-  <div class="row">
-    <div class="col-span-6 leftTitle">单款额度：<span class="owercolor">{{data.amount}}</span></div>
-    <div class="col-span-6 rightTitle">已售数量：<span class="owercolor">{{data.num}}</span></div>
-  </div>
-</div>
+</ion-card>

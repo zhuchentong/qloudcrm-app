@@ -3,11 +3,11 @@ import { ModalController } from '@ionic/angular'
 import { ProductSelectPage } from '../product-select/product-select.page'
 import { Router } from '@angular/router'
 @Component({
-  selector: 'app-product-compar',
-  templateUrl: './product-compar.page.html',
-  styleUrls: ['./product-compar.page.scss']
+  selector: 'app-product-compare',
+  templateUrl: './product-compare.page.html',
+  styleUrls: ['./product-compare.page.scss']
 })
-export class ProductComparPage implements OnInit {
+export class ProductComparePage implements OnInit {
   // 对比列表
   public compareList: any[] = []
   constructor(

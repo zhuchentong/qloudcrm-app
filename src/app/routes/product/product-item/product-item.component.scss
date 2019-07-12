@@ -1,40 +1,43 @@
 .productWrap {
   position: relative;
-  margin: 0 auto;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 10px;
-  // border: 1px solid skyblue;
-  box-shadow: 4px 2px 8px gainsboro;
+  border-bottom: 1px solid #efeff1;
   .marginNum {
-    margin: 20px 0 20px 0;
+    // margin: 20px 0 20px 0;
+    font-family: DIN-Bold;
+    font-size: 24px;
+    color: #e75a24;
+    letter-spacing: -1.2px;
   }
-  .leftTitle {
-    text-align: left;
+  .productnamecss {
+    font-weight: 700;
   }
-  .rightTitle {
-    text-align: right;
-  }
-  .lowcolor {
-    color: palevioletred;
-  }
-  .owercolor {
-    color: blue;
-  }
-  .rankcss {
+  .hotscss {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
     text-align: center;
-    span {
-      position: absolute;
-      top: 5%;
-      right: 1%;
-      display: inline-block;
-      width: 40px;
-      height: 20px;
-      color: white;
-      line-height: 20px;
-      background: red;
-      border: 1px solid red;
-      border-radius: 8px;
-    }
+    font-size: 10px;
+    color: white;
+    background-image: linear-gradient(135deg, #ffb05e 0%, #fd1700 100%);
+    border-radius: 1px;
+  }
+  .colorgray {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #9a9a9a;
+    letter-spacing: 0;
+  }
+  .lowcss {
+    font-family: PingFangSC-Regular;
+    font-size: 10px;
+    color: #7ed321;
+    letter-spacing: 0;
+  }
+  .fastcss {
+    font-family: PingFangSC-Regular;
+    font-size: 10px;
+    color: #4c6afc;
+    letter-spacing: 0;
   }
 }

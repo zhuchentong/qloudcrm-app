@@ -27,7 +27,7 @@ export class ProductPage implements OnInit {
     {
       icon: 'pricetags',
       label: '产品对比',
-      url: '/product/product-compar'
+      url: '/product/product-compare'
     },
     {
       icon: 'stats',

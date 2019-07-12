@@ -10,7 +10,7 @@ import { ProductItemComponent } from './product-item/product-item.component'
 import { ProductQueryPage } from './product-query/product-query.page'
 import { ProductRankPage } from './product-rank/product-rank.page'
 import { SharedModule } from 'app/shared/shared.module'
-import { ProductComparPage } from './product-compar/product-compar.page'
+import { ProductComparePage } from './product-compare/product-compare.page'
 import { ProductSelectPage } from './product-select/product-select.page'
 import { ProductCompareDetailPage } from './product-compare-detail/product-compare-detail.page'
 
@@ -36,8 +36,8 @@ const routes: Routes = [
     component: ProductRankPage
   },
   {
-    path: 'product-compar',
-    component: ProductComparPage
+    path: 'product-compare',
+    component: ProductComparePage
   },
   {
     path: 'product-compare-detail',
@@ -54,7 +54,7 @@ const routes: Routes = [
     ProductDirectoryPage,
     ProductQueryPage,
     ProductRankPage,
-    ProductComparPage,
+    ProductComparePage,
     ProductItemComponent,
     ProductCompareDetailPage
   ],
