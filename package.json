@@ -142,6 +142,7 @@
       ],
       "*.scss": [
         "prettier --write",
+        "npm run lint:style",
         "git add"
       ]
     },
