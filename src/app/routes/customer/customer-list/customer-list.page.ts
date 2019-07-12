@@ -18,22 +18,26 @@ export class CustomerListPage implements OnInit {
     {
       icon: 'search',
       label: '客户查询',
-      url: 'customer-query'
+      url: 'customer-query',
+      imgurl: 'assets/images/query.png'
     },
     {
       icon: 'people',
       label: '客户分组',
-      url: 'customer-group'
+      url: 'customer-group',
+      imgurl: 'assets/images/group.png'
     },
     {
       icon: 'pulse',
       label: '客户统计',
-      url: 'customer-statis'
+      url: 'customer-statis',
+      imgurl: 'assets/images/statis.png'
     },
     {
       icon: 'timer',
       label: '访问历史',
-      url: 'customer-history'
+      url: 'customer-history',
+      imgurl: 'assets/images/history.png'
     }
   ]
 

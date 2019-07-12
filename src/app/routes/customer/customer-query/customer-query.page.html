@@ -1,19 +1,32 @@
-<ion-header>
-  <div class="row">
-    <div class="col-span-11">
-      <ion-toolbar>
+<!-- <ion-header>
+  <ion-toolbar>
+    <div class="row">
+      <div class="col-span-11">
         <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
         </ion-buttons>
         <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
-      </ion-toolbar>
+      </div>
     </div>
-    <div class="col-span-1 searchcss">
-      <ion-icon size="large" color="secondary" name="menu" routerLink="../customer-depquery"></ion-icon>
-    </div>
-  </div>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>客户</ion-title>
+  </ion-toolbar>
 </ion-header>
 <ion-content>
+  <div class="row">
+    <div class="col-span-1 depsearchcss">
+      <img src="assets/images/depsearch.png" alt="" srcset="" routerLink="../customer-depquery">
+    </div>
+    <div class="col-span-11">
+      <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
+    </div>
+  </div>
   <ion-card-content>
     <ion-list *ngFor="let item of customerList">
       <app-customer-item [data]="item"></app-customer-item>
