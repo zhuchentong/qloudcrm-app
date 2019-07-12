@@ -46,7 +46,7 @@ export class DashboardPage implements OnInit {
   /**
    * 获取消息列表
    */
-  private getMessageList(event?) {
+  public getMessageList(event?) {
     this.dashboardService.getMessageList().subscribe(data => {
       this.messageDataSet = data
       this.getMessageNumber()

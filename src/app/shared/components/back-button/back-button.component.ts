@@ -21,10 +21,10 @@ export class BackButtonComponent implements OnInit {
     return
   }
 
-  private onClick() {
+  public onClick() {
     if (this.modal) {
       this.modalController.dismiss()
     }
-    // this.navCtrl.goBack()
+    this.navCtrl.back()
   }
 }
