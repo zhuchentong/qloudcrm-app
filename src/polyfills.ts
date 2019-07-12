@@ -59,7 +59,9 @@ import './zone-flags.ts'
  */
 
 import 'zone.js/dist/zone' // Included with Angular CLI.
-
+import 'core-js/es7/reflect'
+import 'core-js/es7/array'
+import 'core-js/es7/object'
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
