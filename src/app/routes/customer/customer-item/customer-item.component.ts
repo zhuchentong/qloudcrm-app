@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, HostListener } from '@angular/core'
 import { Router } from '@angular/router'
 
 @Component({
@@ -9,7 +9,13 @@ import { Router } from '@angular/router'
 export class CustomerItemComponent implements OnInit {
   @Input()
   public data
-  constructor() {}
+
+  @HostListener('click')
+  private onCickItem() {
+    this.router.navigateByUrl('/customer/customer-detail')
+  }
+
+  constructor(private router: Router) {}
 
   public ngOnInit() {}
 }

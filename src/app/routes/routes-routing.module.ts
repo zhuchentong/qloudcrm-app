@@ -54,6 +54,10 @@ const routes: Routes = [
     loadChildren: './user/user.module#UserPageModule'
   },
   {
+    path: 'customer',
+    loadChildren: './customer/customer.module#CustomerPageModule'
+  },
+  {
     path: '',
     redirectTo: '/tabs/dashboard',
     pathMatch: 'full'
