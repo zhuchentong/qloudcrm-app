@@ -5,6 +5,7 @@ import { UserInfoModel } from 'app/model/user-info.model'
 import { LoggerService } from '@ngx-toolkit/logger'
 import { Store } from '@ngxs/store'
 import { UserState } from 'app/store/state/user.state'
+import { LogoutAction } from 'app/store/action/user.action'
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
@@ -17,7 +18,8 @@ export class UserPage implements OnInit {
     { lable: '我的计划', url: '/user/user-schedule' },
     { lable: '我的业绩', url: '/tabs/marketing' },
     { lable: '我的工具', url: '/user/user-tools' },
-    { lable: '设置', url: '/user/user-setting' }
+    { lable: '设置', url: '/user/user-setting' },
+    { lable: '退出', url: 'logout' }
   ]
   public user: UserInfoModel
   public userIcon = 'menu'
@@ -41,6 +43,11 @@ export class UserPage implements OnInit {
   public ngOnInit() {}
 
   public menuControl(requrl: string) {
-    this.router.navigate([requrl])
+    if (requrl === 'logout') {
+      this.store.dispatch(LogoutAction)
+      this.router.navigate(['/user/user-login'])
+    } else {
+      this.router.navigate([requrl])
+    }
   }
 }

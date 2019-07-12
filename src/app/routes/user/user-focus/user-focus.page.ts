@@ -31,9 +31,9 @@ export class UserFocusPage implements OnInit {
   public fixedTabs = false
   constructor(
     public router: Router,
-    public userService: UserService,
+    private userService: UserService,
     public store: Store,
-    public logger: LoggerService
+    private logger: LoggerService
   ) {}
 
   public ngOnInit() {
@@ -46,7 +46,7 @@ export class UserFocusPage implements OnInit {
     )
   }
 
-  public getFocusList(event?) {
+  private getFocusList(event?) {
     this.userService.getUserFocus().subscribe(data => {
       this.userFocusDataSet = data
       this.getFocusNumber()

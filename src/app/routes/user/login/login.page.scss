@@ -36,6 +36,17 @@ ion-item {
   }
 }
 
+.labelFont {
+  font-size: large;
+}
+
 ion-button {
   --background: black;
+}
+
+.formPadding {
+  padding-top: 50%;
+}
+.login-warning-color {
+  color: #f25454;
 }
