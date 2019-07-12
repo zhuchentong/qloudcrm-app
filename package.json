@@ -93,6 +93,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "lint-staged": "^8.1.0",
+    "native-run": "^0.2.7",
     "prettier": "^1.18.2",
     "prettier-stylelint": "^0.4.2",
     "prettier-stylelint-temp": "^0.4.4",
