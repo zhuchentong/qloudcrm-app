@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
 import { RoutesComponent } from './routes.component'
+import { AuthGuard } from 'app/core/guards/auth.guard'
 
 const routes: Routes = [
   {
     path: 'tabs',
     component: RoutesComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
