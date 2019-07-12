@@ -4,47 +4,34 @@ import userSchedules from 'assets/mock/users-chedule.json'
 import { MockService } from '../mock.decorators'
 import { userController } from 'app/config/service/user.controller'
 import { LoggerService } from '@ngx-toolkit/logger'
+import { UserInfoModel } from 'app/model/user-info.model'
 
 export class UserMockService {
   //  private static logger: LoggerService =new LoggerService()
   @MockService({
     service: userController.getUserInfo
   })
-  public static getUserInfo(params) {
-    let result = null
-    userinfos.forEach((value, index, array) => {
-      // console.log('params.userId :'+params.userId+'@item :' + value+'@value.userId:'+value.userId)
-      if (value.userId === params.userId) {
-        // console.log('eacho')
-        result = value
-        return result
-      } else {
-        return null
-      }
-    })
-    return result
+  public static getUserInfo(params: UserInfoModel) {
+    const user = userinfos.find(x => x.userId === params.userId)
+    if (user) {
+      return user
+    } else {
+      throw new Error('用户不存在')
+    }
   }
 
   @MockService({
     service: userController.userLogin
   })
   public static userLogin(params) {
-    let result = null
-    //  console.log('params.userId :'+params.userId+'@loginPwd :' + params.loginPwd)
-    userinfos.forEach((value, index, array) => {
-      //      console.log('params.userId :'+params.userId+'@item :' + value+'@value.userId:'+value.userId)
-      if (
-        value.userId === params.userId &&
-        value.loginPwd === params.loginPwd
-      ) {
-        //   console.log('eacho')
-        result = value
-        return result
-      } else {
-        return null
-      }
-    })
-    return result
+    const user = userinfos.find(
+      x => x.userId === params.userId && x.loginPwd === params.loginPwd
+    )
+    if (user) {
+      return user
+    } else {
+      throw new Error('用户名密码错误')
+    }
   }
 
   @MockService({

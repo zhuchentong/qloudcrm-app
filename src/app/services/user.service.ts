@@ -28,23 +28,7 @@ export class UserService {
     })
   }
 
-  public login(params): boolean {
-    let result = false
-    this.getUserLogin(params).subscribe(data => {
-      this.logger.info('sadsadsa:' + data)
-      if (data == null) {
-        this.logger.info('用户不存在@@@@' + data)
-        result = false
-      } else {
-        this.logger.info('用户存在@@@@' + data)
-        this.store.dispatch(new LoginAction(data))
-        result = true
-      }
-    })
-    return result
-  }
-
-  private getUserLogin(params): Observable<any> {
+  public getUserLogin(params): Observable<any> {
     return this.net.send({
       service: userController.userLogin,
       params,
