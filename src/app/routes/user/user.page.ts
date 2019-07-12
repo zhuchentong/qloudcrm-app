@@ -12,18 +12,18 @@ import { UserState } from 'app/store/state/user.state'
 })
 @Injectable()
 export class UserPage implements OnInit {
-  private userMenu = [
+  public userMenu = [
     { lable: '我的关注', url: '/user/user-focus' },
     { lable: '我的计划', url: '/user/user-schedule' },
     { lable: '我的业绩', url: '/tabs/marketing' },
     { lable: '我的工具', url: '/user/user-tools' },
     { lable: '设置', url: '/user/user-setting' }
   ]
-  private user: UserInfoModel
-  private userIcon = 'menu'
-  private pic = './assets/images/avatar.svg'
+  public user: UserInfoModel
+  public userIcon = 'menu'
+  public pic = './assets/images/avatar.svg'
 
-  private userInfoMenu = [{ lable: '退出', url: '' }]
+  public userInfoMenu = [{ lable: '退出', url: '' }]
 
   constructor(
     private store: Store,

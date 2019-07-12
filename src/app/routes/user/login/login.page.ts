@@ -13,16 +13,16 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 })
 @Injectable()
 export class LoginPage implements OnInit {
-  private userId: string
-  private loginPwd: string
-  private loginInfo: string
-  private loginInfoDisplay: boolean
+  public userId: string
+  public loginPwd: string
+  public loginInfo: string
+  public loginInfoDisplay: boolean
 
-  private loginForm: FormGroup
+  public loginForm: FormGroup
   constructor(
-    private router: Router,
-    private logger: LoggerService,
-    private userService: UserService,
+    public router: Router,
+    public logger: LoggerService,
+    public userService: UserService,
     public formBuilder: FormBuilder
   ) {
     this.userId = ''

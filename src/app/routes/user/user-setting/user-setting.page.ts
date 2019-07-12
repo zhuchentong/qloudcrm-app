@@ -9,9 +9,9 @@ import { UserInfoModel } from 'app/model/user-info.model'
 })
 @Injectable()
 export class UserSettingPage implements OnInit {
-  private user: UserInfoModel
-  private menu: any[]
-  constructor(private userService: UserService) {}
+  public user: UserInfoModel
+  public menu: any[]
+  constructor(public userService: UserService) {}
 
   public ngOnInit() {
     this.userService.getUserInfo({ userId: 'zhangsan' }).subscribe(data => {

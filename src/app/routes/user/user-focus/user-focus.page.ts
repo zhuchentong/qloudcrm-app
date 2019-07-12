@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms'
   styleUrls: ['./user-focus.page.scss']
 })
 export class UserFocusPage implements OnInit {
-  private myFocus = '所有'
+  public myFocus = '所有'
   // private userFocusTabs = [
   //   { tabName: '营销活动', length: 1 ,type: 'active'},
   //   { tabName: '客户', length: 1 ,type: 'customer'},
@@ -31,9 +31,9 @@ export class UserFocusPage implements OnInit {
   public fixedTabs = false
   constructor(
     public router: Router,
-    private userService: UserService,
+    public userService: UserService,
     public store: Store,
-    private logger: LoggerService
+    public logger: LoggerService
   ) {}
 
   public ngOnInit() {
@@ -46,7 +46,7 @@ export class UserFocusPage implements OnInit {
     )
   }
 
-  private getFocusList(event?) {
+  public getFocusList(event?) {
     this.userService.getUserFocus().subscribe(data => {
       this.userFocusDataSet = data
       this.getFocusNumber()
