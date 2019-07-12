@@ -9,5 +9,26 @@
 </ion-header>
 
 <ion-content>
-
+  <!--<ion-segment (ionChange)="segmentChanged($event)">-->
+    <!--<ion-segment-button value="friends">-->
+      <!--<ion-label>{{mySchedule}}</ion-label>-->
+    <!--</ion-segment-button>-->
+    <!--<ion-segment-button value="enemies">-->
+      <!--<ion-label>{{createSchedule}}</ion-label>-->
+    <!--</ion-segment-button>-->
+  <!--</ion-segment>-->
+  <div class="ion-margin">
+    <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
+      <nzm-tab-pane [title]="mySchedule">
+        <div class="customerwrap ion-margin">
+         <ion-searchbar placeholder="请输入你想查询的关键字" (ionInput) = "onInputInfo($event)"></ion-searchbar>
+        </div>
+      </nzm-tab-pane>
+      <nzm-tab-pane [title]="createSchedule">
+        <div class="infoclass">
+          addSchedule
+        </div>
+      </nzm-tab-pane>
+    </nzm-tabs>
+  </div>
 </ion-content>

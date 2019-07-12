@@ -1,5 +1,5 @@
 import { State, Action, StateContext, Selector } from '@ngxs/store'
-import { LoginAction } from 'app/store/action/user.action'
+import { LoginAction, LogoutAction } from 'app/store/action/user.action'
 import { ExtendState } from 'app/store/extend'
 import { plainToClass, classToPlain } from 'class-transformer'
 import { UserInfoModel } from 'app/model/user-info.model'
@@ -24,5 +24,10 @@ export class UserState extends ExtendState {
   @Action(LoginAction)
   public login<T>({ setState }: StateContext<any>, { user }: LoginAction) {
     setState(classToPlain(user))
+  }
+
+  @Action(LogoutAction)
+  public logout<T>({ setState }: StateContext<any>) {
+    setState(null)
   }
 }

@@ -15,5 +15,15 @@ export const userController = {
     controller,
     action: 'getUserFocus',
     method: 'GET'
+  },
+  getUserSchedule: {
+    controller,
+    action: 'getUserSchedule',
+    method: 'GET'
+  },
+  createUserSchedule: {
+    controller,
+    action: 'createUserSchedule',
+    method: 'POST'
   }
 }

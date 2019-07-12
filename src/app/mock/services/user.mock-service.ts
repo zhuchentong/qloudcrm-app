@@ -1,5 +1,6 @@
 import userinfos from 'assets/mock/userInfo.json'
 import userFocus from 'assets/mock/user-focus.json'
+import userSchedules from 'assets/mock/users-chedule.json'
 import { MockService } from '../mock.decorators'
 import { userController } from 'app/config/service/user.controller'
 import { LoggerService } from '@ngx-toolkit/logger'
@@ -62,5 +63,42 @@ export class UserMockService {
     //      result.push(item)
     //  } )
     //  return result
+  }
+
+  @MockService({
+    service: userController.getUserSchedule
+  })
+  public static getUserSchedule(params) {
+    let result = null
+    result = userSchedules
+    return result
+  }
+  @MockService({
+    service: userController.createUserSchedule
+  })
+  public static createUserSchedule(params) {
+    userSchedules.push({
+      topic: params.topic,
+      statu: params.statu,
+      targetName: params.targetName,
+      targetLeve: params.targetLeve,
+      contactWay: params.contactWay,
+      recommendProduct: params.recommendProduct,
+      contactDate: params.contactDate,
+      infoKeyWords:
+        params.topic +
+        ' ' +
+        params.statu +
+        ' ' +
+        params.targetName +
+        ' ' +
+        params.targetLeve +
+        ' ' +
+        params.contactWay +
+        ' ' +
+        params.recommendProduct +
+        ' ' +
+        params.contactDate
+    })
   }
 }

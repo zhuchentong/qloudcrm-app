@@ -9,4 +9,5 @@ export class UserSchedule extends Model {
   public contactWay: string // 联系方式
   public recommendProduct: string // 推荐产品
   public contactDate: string // 计划联络时间
+  public infoKeyWords: string // 搜索关键字
 }
