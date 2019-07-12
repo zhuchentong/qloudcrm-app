@@ -8,4 +8,16 @@
 </ion-header>
 
 <ion-content>
+  <Accordion [accordion]="true" [defaultActiveKey]="'0'" [activeKey]="activeKey" (onChange)="onChange($event)">
+    <AccordionPanel *ngFor="let item of accordions; let i = index;" [key]="i" [header]="item.title" [disabled]="item.inactive">
+      <List className="my-list">
+        <ListItem *ngFor="let content of item.child">
+          <div class="row">
+            <div class="col-span-11">{{content}}</div>
+            <div class="col-span-1 arraw ion-text-right">></div>
+          </div>
+        </ListItem>
+      </List>
+    </AccordionPanel>
+  </Accordion>
 </ion-content>

@@ -8,10 +8,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <nzm-tabs [activeTab]="index" [page]="2" [useOnPan]="false" [animated]="false">
+  <div class="ion-margin">
+    <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
       <nzm-tab-pane [title]="'基本信息'">
-        <div class="infoclass">
+        <!-- <div class="infoclass">
           <b>用户信息</b>
           <div class="row rowlistcss ion-text-center">
             <div class="col-span-6">用户头像</div>
@@ -42,6 +42,35 @@
           <div class="row rowlistcss ion-text-center">
             <div class="col-span-6">归属机构</div>
             <div class="col-span-6">陕西省高新区中信支行</div>
+          </div>
+        </div> -->
+        <div class="customerwrap ion-margin">
+          <div class="row bordercss ion-padding-bottom">
+            <div class="col-span-4 picimg ion-text-center">
+              <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
+            </div>
+            <div class="col-span-8 ion-text-left">
+              <p>周翠花</p>
+              <p><span>所属</span>商旅客户</p>
+            </div>
+          </div>
+          <div class="userinfowrap">
+            <div class="row ion-padding-top ion-padding-bottom">
+              <div class="col-span-4 graycolor">用户性别</div>
+              <div class="col-span-8">女</div>
+            </div>
+            <div class="row ion-padding-bottom">
+              <div class="col-span-4 graycolor">用户年龄</div>
+              <div class="col-span-8">45</div>
+            </div>
+            <div class="row ion-padding-bottom">
+              <div class="col-span-4 graycolor">用户积分</div>
+              <div class="col-span-8">3400</div>
+            </div>
+            <div class="row ion-padding-bottom">
+              <div class="col-span-4 graycolor">用户所属机构</div>
+              <div class="col-span-8">西安高薪支行</div>
+            </div>
           </div>
         </div>
       </nzm-tab-pane>
@@ -75,5 +104,5 @@
         </div>
       </nzm-tab-pane>
     </nzm-tabs>
-  </ion-card>
+  </div>
 </ion-content>
