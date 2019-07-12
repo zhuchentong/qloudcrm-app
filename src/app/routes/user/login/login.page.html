@@ -7,21 +7,21 @@
 
 <ion-content>
 
-  <div class="row middle-span center-span" style="padding-top: 50%">
+  <div class="row middle-span center-span formPadding" >
     <div >
       <form [formGroup]="loginForm">
       <ion-item>
-        <ion-label color="primary" position="floating">账号:</ion-label>
+        <ion-label color="primary" position="floating" class="labelFont">账号:</ion-label>
         <ion-input type="text" placeholder="请输入账号" formControlName="userId" ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label  icon="password" color="primary" position="floating">密码:</ion-label>
+        <ion-label  icon="password" color="primary" position="floating" class="labelFont">密码:</ion-label>
         <ion-input type="password" placeholder="请输入密码" formControlName="loginPwd"></ion-input>
       </ion-item>
-      <div   style="text-align: center; padding-top: 10px"  >
-        <ion-label fixed style="color: #f25454">{{loginInfo}}</ion-label>
+      <div class="center-span ion-padding-top">
+        <ion-label fixed class="login-warning-color">{{loginInfo}}</ion-label>
       </div>
-      <div style="text-align: center; margin-left: 30px; margin-right: 30px;">
+      <div class="center-span ion-margin-horizontal">
         <ion-button  class="submit" expand="block"  color="danger" expand="full" (click)="logIn()">
           登录
         </ion-button>
