@@ -5,7 +5,7 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "dev": "ng serve --open --host 0.0.0.0",
-    "dev:android":"ionic cordova run android -lc --debug",
+    "dev:android": "ionic cordova run android -lc --debug",
     "start": "ng serve",
     "build": "ng build",
     "build:android": "ionic cordova build android --prod",
@@ -142,7 +142,6 @@
       ],
       "*.scss": [
         "prettier --write",
-        "npm run lint:style",
         "git add"
       ]
     },

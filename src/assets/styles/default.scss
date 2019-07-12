@@ -23,7 +23,6 @@ ion-icon {
     width: 100px;
     height: 100px;
   }
-
   .bigger {
     width: 150px;
     height: 150px;
@@ -33,4 +32,9 @@ ion-icon {
 .item.sc-ion-label-md-h,
 .item .sc-ion-label-md-h {
   font-size: 12px;
+}
+
+.am-tabs-default-bar-left .am-tabs-default-bar-content,
+.am-tabs-default-bar-right .am-tabs-default-bar-content {
+  height: 140px !important;
 }

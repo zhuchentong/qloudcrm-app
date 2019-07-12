@@ -1,11 +1,7 @@
 <ion-content>
   <div class="menu-container">
     <div class="menu-items row">
-      <div
-        class="col-span-3"
-        ion-grid-column-padding
-        *ngFor="let item of menuList"
-      >
+      <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
         <div class="menu-item" [routerLink]="item.url">
           <div class="icon row middle-psan center-span">
             <img src="{{ item.imgurl }}" alt="" />
@@ -15,18 +11,16 @@
       </div>
     </div>
   </div>
-  <ion-card-header>
-    <ion-card-title class="news-title">
-      <div class="row between-span news-title">
-        <div class="title row middle-span">
-          <ion-icon color="secondary" name="person"></ion-icon>
-          <span
-            >我的客户: <a>{{ this.customerlength }}</a></span
-          >
-        </div>
-      </div>
-    </ion-card-title>
-  </ion-card-header>
+  <div class="row contenttitle ion-padding-bottom">
+    <div class="col-span-11">
+      <span class="leftlogo ion-margin-right"></span>
+      <span class="titlecss">我的客户</span>
+    </div>
+    <div class="col-span-1">
+      <span>{{customerList.length}}</span>
+    </div>
+  </div>
+
   <ion-card-content>
     <ion-list *ngFor="let item of customerList">
       <app-customer-item [data]="item"></app-customer-item>

@@ -1,17 +1,21 @@
 .customerWrap {
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 4px 2px 8px gainsboro;
+  // padding: 10px;
+  // border-radius: 10px;
+  // box-shadow: 4px 2px 8px gainsboro;
+  border-bottom: 1px solid #efeff1;
   div {
     line-height: 30px;
   }
   p {
     line-height: 30px;
+    img {
+      width: 15px;
+    }
   }
   .picfont {
     text-align: center;
     img {
-      width: 70px;
+      width: 60px;
       margin-top: 13px;
       border-radius: 50px;
     }
@@ -20,14 +24,23 @@
     font-weight: 700;
   }
   .customercss {
-    padding: 0 0 0 13px;
-    .levecss {
-      color: blue;
-      font-weight: 700;
-      font-size: 14px;
+    padding: 0 0 0 8px;
+    .colorgray {
+      color: #9a9a9a;
     }
-    .lowcolor {
-      color: palevioletred;
+    .namecss {
+      margin-right: 5px;
+    }
+    .levercss {
+      display: inline-block;
+      width: 19px;
+      height: 14px;
+      line-height: 14px;
+      text-align: center;
+      font-size: 10px;
+      background-image: linear-gradient(135deg, #7dbcff 0%, #2069fd 100%);
+      border-radius: 1px;
+      color: white;
     }
   }
 }

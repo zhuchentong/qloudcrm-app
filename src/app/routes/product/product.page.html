@@ -12,20 +12,19 @@
     </div>
   </div>
   <!-- <ion-card> -->
-  <ion-card-header>
-    <ion-card-title class="news-title">
-      <div class="row between-span news-title">
-        <div class="title row middle-span">
-          <ion-icon color="secondary" name="rocket"></ion-icon>
-          <span>热销产品</span>
-        </div>
-      </div>
-    </ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-list>
-      <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
-    </ion-list>
-  </ion-card-content>
+  <div class="row contenttitle ion-padding-top ion-padding-bottom">
+    <div class="col-span-11">
+      <span class="leftlogo ion-margin-right"></span>
+      <span class="titlecss">热销产品</span>
+    </div>
+    <div class="col-span-1">
+      <!-- <span>2</span> -->
+    </div>
+  </div>
+  <!-- <ion-card-content> -->
+  <ion-list>
+    <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
+  </ion-list>
+  <!-- </ion-card-content> -->
   <!-- </ion-card> -->
 </ion-content>
