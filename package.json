@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lint:ts": "tslint -p src/tsconfig.app.json -c tslint.json 'src/**/*.ts'",
-    "lint:style": "stylelint 'src/**/*.scss' --syntax scss",
+    "lint:style": "stylelint 'src/**/*.scss' --syntax scss  --fix",
     "lint-staged": "lint-staged",
     "tslint-check": "tslint-config-prettier-check ./tslint.json",
     "hmr": "ng serve -c=hmr",
@@ -105,6 +105,7 @@
     "stylelint-formatter-pretty": "^1.0.3",
     "stylelint-order": "^3.0.0",
     "stylelint-prettier": "^1.1.1",
+    "stylelint-scss": "^3.9.1",
     "ts-node": "~8.3.0",
     "tslint": "~5.17.0",
     "tslint-config-prettier": "^1.18.0",
@@ -141,7 +142,6 @@
       ],
       "*.scss": [
         "prettier --write",
-        "prettier-stylelint --write",
         "npm run lint:style",
         "git add"
       ]
