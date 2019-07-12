@@ -1,64 +1,76 @@
 <ion-header>
   <ion-toolbar>
-    <div class="row">
-      <div class="col-span-10">
-        <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title>高级搜索</ion-title>
-      </div>
-      <div class="col-span-2">
-        确定
-      </div>
-    </div>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>高级搜索</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-card>
-    <div class="depcss">
-      <b>基本属性</b>
-      <div class="row attribcss">
-        <div class="col-span-4">客户姓名</div>
-        <div class="col-span-8">
-          <ion-input></ion-input>
-        </div>
-      </div>
-      <div class="row attribcss">
-        <div class="col-span-4">客户性别</div>
-        <div class="col-span-8">
-          <ion-input></ion-input>
-        </div>
-      </div>
-      <div class="row attribcss">
-        <div class="col-span-4">客户年龄</div>
-        <div class="col-span-8">
-          <ion-input></ion-input>
-        </div>
-      </div>
-      <div class="row attribcss">
-        <div class="col-span-4">标签属性</div>
-        <div class="col-span-8">
-          <ion-input></ion-input>
-        </div>
-      </div>
-      <div class="row attribcss">
-        <div class="col-span-4">产品属性</div>
-        <div class="col-span-8">
-          <ion-input></ion-input>
-        </div>
-      </div>
-      <div class="row attribcss">
-        <div class="col-span-4">签约属性</div>
-        <div class="col-span-8">
-          <ion-input></ion-input>
-        </div>
-      </div>
-      <div class="row attribcss">
-        <div class="col-span-4">渠道偏好属性</div>
-        <div class="col-span-8">
-          <ion-input></ion-input>
-        </div>
-      </div>
-    </div>
-  </ion-card>
+  <!-- <nzm-accordion [accordion]="true" [defaultActiveKey]="'0'" [activeKey]="activeKey" (onChange)="onChange($event)">
+    <nzm-accordion-panel *ngFor="let item of accordions; let i = index;" [key]="i" [header]="item.title" [disabled]="item.inactive">
+      <nzm-list className="my-list">
+        <nzm-listItem *ngFor="let content of item.child">
+          {{content}}
+        </nzm-listItem>
+      </nzm-list>
+    </nzm-accordion-panel>
+  </nzm-accordion> -->
+
+  <Accordion [accordion]="true" [defaultActiveKey]="'0'" [activeKey]="activeKey" (onChange)="onChange($event)">
+    <AccordionPanel [key]="0" header="基本属性" [disabled]="false">
+      <List className="my-list">
+        <ListItem>
+          <div class="row basic">
+            <div class="col-span-6 primary">客户姓名</div>
+            <div class="col-span-6">
+              <input type="text">
+            </div>
+          </div>
+          <div class="row basic">
+            <div class="col-span-6 primary">客户性别</div>
+            <div class="col-span-6">
+              <ion-list>
+                <ion-radio-group>
+                  <div class="row">
+                    <div class="col-span-6">
+                      <ion-label>男</ion-label>
+                      <ion-radio slot="start" value="男" checked></ion-radio>
+                    </div>
+                    <div class="col-span-6">
+                      <ion-label>女</ion-label>
+                      <ion-radio slot="start" value="女"></ion-radio>
+                    </div>
+                  </div>
+                </ion-radio-group>
+              </ion-list>
+            </div>
+          </div>
+          <div class="row basic">
+            <div class="col-span-6 primary">客户年龄</div>
+            <div class="col-span-6">
+              <input type="text">
+            </div>
+          </div>
+        </ListItem>
+      </List>
+    </AccordionPanel>
+  </Accordion>
+  <Accordion [accordion]="true" [defaultActiveKey]="'0'" [activeKey]="activeKey" (onChange)="onChange($event)">
+    <AccordionPanel *ngFor="let item of accordions; let i = index;" [key]="i" [header]="item.title" [disabled]="item.inactive">
+      <List className="my-list">
+        <ListItem *ngFor="let content of item.child">
+          <div class="row basic">
+            <div class="col-span-6 primary">{{content}}</div>
+            <div class="col-span-6">
+              <input type="text">
+            </div>
+          </div>
+        </ListItem>
+      </List>
+    </AccordionPanel>
+  </Accordion>
+  <div class="searchbtn">
+    <ion-button expand="full">立即搜索</ion-button>
+  </div>
 </ion-content>

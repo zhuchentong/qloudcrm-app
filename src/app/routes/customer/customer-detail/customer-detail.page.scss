@@ -22,3 +22,22 @@
   height: 50px;
   line-height: 50px;
 }
+
+.customerwrap {
+  .bordercss {
+    border-bottom: 1px solid gainsboro;
+    .picimg {
+      img {
+        width: 60px;
+        margin: 0 auto;
+        border-radius: 50px;
+      }
+    }
+    p {
+      line-height: 30px;
+    }
+  }
+  .graycolor {
+    color: rgb(221, 221, 221);
+  }
+}

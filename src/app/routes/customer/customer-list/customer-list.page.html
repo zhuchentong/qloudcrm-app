@@ -4,7 +4,7 @@
       <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
         <div class="menu-item" [routerLink]="item.url">
           <div class="icon row middle-psan center-span">
-            <ion-icon [name]="item.icon"></ion-icon>
+            <img src={{item.imgurl}} alt="">
           </div>
           <div class="text">{{ item.label }}</div>
         </div>

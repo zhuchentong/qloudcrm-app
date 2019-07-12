@@ -2,34 +2,81 @@ ion-card {
   color: #000 !important;
 }
 
-.productInfo {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 10px;
-  p {
-    margin: 15px 0 15px 0;
-    font-size: 14px;
-    line-height: 30px;
+.wrapDetail {
+  position: relative;
+  margin-bottom: 50px;
+  overflow: auto;
+  .titleimg {
+    height: 14.5rem;
+    .bgimg {
+      width: 100%;
+      height: 100%;
+    }
+    .logo {
+      position: absolute;
+      top: 0%;
+      right: 0%;
+    }
   }
-  .leftclass {
-    text-align: left;
+  .contentdetail {
+    width: 94%;
+    margin: 0 auto;
+    .titleborder {
+      border-bottom: 1px solid gainsboro;
+      b {
+        font-size: 1.3rem;
+      }
+    }
+    .primary {
+      color: #4c6afc;
+    }
+    .danger {
+      color: #e75a24;
+    }
+    .success {
+      color: #7ed321;
+    }
+    .fontcolor {
+      color: #9a9a9a;
+      // padding-bottom: 10px;
+    }
+    .rulewrap {
+      padding: 6px;
+      .rulecss {
+        // line-height: 60px;
+        .spanbtn {
+          display: inline-block;
+          width: 6px;
+          height: 21px;
+          margin-right: 3%;
+          vertical-align: middle;
+          background: #4c6afc;
+          border-radius: 2px;
+        }
+        .spanfont {
+          margin-right: 15px;
+          color: #333;
+          font-size: 16px;
+          text-decoration: none;
+          vertical-align: middle;
+        }
+        img {
+          vertical-align: middle;
+        }
+      }
+      p {
+        color: #9a9a9a;
+        line-height: 25px;
+      }
+    }
   }
-  .rightclass {
-    text-align: right;
-  }
-  .content {
-    text-indent: 20px;
-  }
-  .lineheight {
-    line-height: 38px;
-  }
-  .sycolor {
-    color: palevioletred;
-  }
-  .fxcolor {
-    color: blue;
-  }
-  .zqcolor {
-    color: palevioletred;
+  .searchbtn {
+    position: fixed;
+    bottom: 3px;
+    left: 5%;
+    width: 90%;
+    .btnbg {
+      background: #e75a24 !important;
+    }
   }
 }
