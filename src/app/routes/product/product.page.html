@@ -1,30 +1,30 @@
 <ion-content>
-  <div class="menu-container">
-    <div class="menu-items row">
-      <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
-        <div class="menu-item" [routerLink]="item.url">
-          <div class="icon row middle-psan center-span">
-            <ion-icon [name]="item.icon"></ion-icon>
-          </div>
-          <div class="text">{{ item.label }}</div>
+    <div class="menu-container">
+        <div class="menu-items row">
+            <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
+                <div class="menu-item" [routerLink]="item.url">
+                    <div class="icon row middle-psan center-span" color="red">
+                        <ion-icon [name]="item.icon"></ion-icon>
+                    </div>
+                    <div class="text">{{ item.label }}</div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- <ion-card> -->
-  <div class="row contenttitle ion-padding-top ion-padding-bottom">
-    <div class="col-span-11">
-      <span class="leftlogo ion-margin-right"></span>
-      <span class="titlecss">热销产品</span>
+    <!-- <ion-card> -->
+    <div class="row contenttitle ion-padding-top ion-padding-bottom">
+        <div class="col-span-11">
+            <span class="leftlogo ion-margin-right"></span>
+            <span class="titlecss">热销产品</span>
+        </div>
+        <div class="col-span-1">
+            <!-- <span>2</span> -->
+        </div>
     </div>
-    <div class="col-span-1">
-      <!-- <span>2</span> -->
-    </div>
-  </div>
-  <!-- <ion-card-content> -->
-  <ion-list>
-    <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
-  </ion-list>
-  <!-- </ion-card-content> -->
-  <!-- </ion-card> -->
+    <!-- <ion-card-content> -->
+    <ion-list>
+        <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
+    </ion-list>
+    <!-- </ion-card-content> -->
+    <!-- </ion-card> -->
 </ion-content>

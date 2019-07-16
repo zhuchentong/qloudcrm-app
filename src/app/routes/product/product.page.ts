@@ -15,14 +15,13 @@ export class ProductPage implements OnInit {
 
   public menuList = [
     {
-      icon: 'menu',
-      label: '产品目录',
-      url: '/product/product-directory'
-    },
-    {
       icon: 'search',
       label: '产品查询',
       url: '/product/product-query'
+    },{
+      icon: 'camera',
+      label: '产品视图',
+      url: '/product/product-view'
     },
     {
       icon: 'pricetags',

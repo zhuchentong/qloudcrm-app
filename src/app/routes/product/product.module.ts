@@ -13,6 +13,7 @@ import { SharedModule } from 'app/shared/shared.module'
 import { ProductComparePage } from './product-compare/product-compare.page'
 import { ProductSelectPage } from './product-select/product-select.page'
 import { ProductCompareDetailPage } from './product-compare-detail/product-compare-detail.page'
+import { ProductPageComponent } from './product-view/product-view.page'
 
 const routes: Routes = [
   {
@@ -42,6 +43,9 @@ const routes: Routes = [
   {
     path: 'product-compare-detail',
     component: ProductCompareDetailPage
+  },{
+    path:'product-view',
+    component:ProductPageComponent
   }
 ]
 
@@ -56,6 +60,7 @@ const routes: Routes = [
     ProductRankPage,
     ProductComparePage,
     ProductItemComponent,
+    ProductPageComponent,
     ProductCompareDetailPage
   ],
   entryComponents: [ProductItemComponent, ProductSelectPage]
