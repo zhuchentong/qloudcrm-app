@@ -1,0 +1,36 @@
+[{
+        "productTyepe": "额度类贷款",
+        "customerNum": "1522",
+        "dkye": "60003",
+        "rjz": "6.9%",
+        "yjz": "3.7%"
+    },
+    {
+        "productTyepe": "CFC类贷款",
+        "customerNum": "234",
+        "dkye": "145673",
+        "rjz": "4%",
+        "yjz": "3%"
+    },
+    {
+        "productTyepe": "消费类贷款",
+        "customerNum": "999",
+        "dkye": "90673",
+        "rjz": "34%",
+        "yjz": "2%"
+    },
+    {
+        "productTyepe": "住房类贷款",
+        "customerNum": "999",
+        "dkye": "783900",
+        "rjz": "1.4%",
+        "yjz": "3.9%"
+    },
+    {
+        "productTyepe": "医用类贷款",
+        "customerNum": "1099",
+        "dkye": "20000",
+        "rjz": "4.1%",
+        "yjz": "3.9%"
+    }
+]

@@ -1,49 +1,30 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core'
 import { Columns } from 'ngx-easy-table'
 import { TableConfig } from 'app/config/table.config'
+import { Router } from '@angular/router'
+import { HttpClient } from '@angular/common/http'
+import { NetService } from 'app/core/http'
+import { CustomerstatisService } from 'app/services/customer/customerstatis.service'
+import { LoggerService } from '@ngx-toolkit/logger'
 
 @Component({
   selector: 'app-customer-statis',
   templateUrl: './customer-statis.page.html',
-  styleUrls: ['./customer-statis.page.scss']
+  styleUrls: ['./customer-statis.page.scss'],
+  providers:[CustomerstatisService]
 })
 export class CustomerStatisPage implements OnInit {
   @ViewChild('nameRowTpl') public nameRowTpl: TemplateRef<any>
 
-  public rows = [
-    {
-      productTyepe: '额度类贷款',
-      customerNum: '1522',
-      dkye: '60003',
-      rjz: '6.9%',
-      yjz: '3.7%'
-    },
-    {
-      productTyepe: 'CFC类贷款',
-      customerNum: '234',
-      dkye: '145673',
-      rjz: '4%',
-      yjz: '3%'
-    },
-    {
-      productTyepe: '消费类贷款',
-      customerNum: '999',
-      dkye: '90673',
-      rjz: '34%',
-      yjz: '2%'
-    },
-    {
-      productTyepe: '住房类贷款',
-      customerNum: '999',
-      dkye: '783900',
-      rjz: '1.4%',
-      yjz: '3.9%'
-    }
-  ]
+  public rows = []
 
   public columns: Columns[]
 
-  constructor(public tableConfig: TableConfig) {
+  constructor(
+    public tableConfig: TableConfig,
+    public router: Router,
+    public customerstatisservice: CustomerstatisService,
+    private logger: LoggerService) {
     this.tableConfig.update({
       detailsTemplate: true,
       showDetailsArrow: true
@@ -55,5 +36,9 @@ export class CustomerStatisPage implements OnInit {
       { key: 'productTyepe', title: '产品类型' },
       { key: 'customerNum', title: '客户数目' }
     ]
+
+    this.customerstatisservice.getCustomerStatis({}).subscribe(data => {
+      this.rows = data
+    })
   }
 }

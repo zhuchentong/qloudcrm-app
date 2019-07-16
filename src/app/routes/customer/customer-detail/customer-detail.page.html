@@ -1,108 +1,78 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>客户详情</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>客户详情</ion-title>
+    </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <div class="ion-margin">
-    <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
-      <nzm-tab-pane [title]="'基本信息'">
-        <!-- <div class="infoclass">
-          <b>用户信息</b>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户头像</div>
-            <div class="col-span-6 picimg">
-              <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
-            </div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户姓名</div>
-            <div class="col-span-6">王翠平</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户性别</div>
-            <div class="col-span-6">女</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户年龄</div>
-            <div class="col-span-6">56</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户等级</div>
-            <div class="col-span-6">4</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户积分</div>
-            <div class="col-span-6">2499</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">归属机构</div>
-            <div class="col-span-6">陕西省高新区中信支行</div>
-          </div>
-        </div> -->
-        <div class="customerwrap ion-margin">
-          <div class="row bordercss ion-padding-bottom">
-            <div class="col-span-4 picimg ion-text-center">
-              <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
-            </div>
-            <div class="col-span-8 ion-text-left">
-              <p>周翠花</p>
-              <p><span>所属</span>商旅客户</p>
-            </div>
-          </div>
-          <div class="userinfowrap">
-            <div class="row ion-padding-top ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户性别</div>
-              <div class="col-span-8">女</div>
-            </div>
-            <div class="row ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户年龄</div>
-              <div class="col-span-8">45</div>
-            </div>
-            <div class="row ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户积分</div>
-              <div class="col-span-8">3400</div>
-            </div>
-            <div class="row ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户所属机构</div>
-              <div class="col-span-8">西安高薪支行</div>
-            </div>
-          </div>
-        </div>
-      </nzm-tab-pane>
-      <nzm-tab-pane [title]="'资产信息'">
-        <div class="infoclass">
-          <b>资产信息</b>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产认证</div>
-            <div class="col-span-6">WACC认证</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产收益</div>
-            <div class="col-span-6">2.3%</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产期望增长值</div>
-            <div class="col-span-6">5%</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产办理机构</div>
-            <div class="col-span-6">高新区中心支行</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产交易风险</div>
-            <div class="col-span-6">低</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产警告</div>
-            <div class="col-span-6">投资风险过大</div>
-          </div>
-        </div>
-      </nzm-tab-pane>
-    </nzm-tabs>
-  </div>
+    <div>
+        <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
+            <nzm-tab-pane [title]="'基本信息'">
+                <div class="customerwrap ion-margin">
+                    <div class="row bordercss ion-padding-bottom">
+                        <div class="col-span-4 picimg ion-text-center">
+                            <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
+                        </div>
+                        <div class="col-span-8 ion-text-left">
+                            <p>{{customerdetail.customerInfo.name}}</p>
+                            <p><span>所属</span>{{customerdetail.customerInfo.type}}</p>
+                        </div>
+                    </div>
+                    <div class="userinfowrap">
+                        <div class="row ion-padding-top ion-padding-bottom">
+                            <div class="col-span-4 graycolor">用户性别</div>
+                            <div class="col-span-8">{{customerdetail.customerInfo.sex}}</div>
+                        </div>
+                        <div class="row ion-padding-bottom">
+                            <div class="col-span-4 graycolor">用户年龄</div>
+                            <div class="col-span-8">{{customerdetail.customerInfo.age}}</div>
+                        </div>
+                        <div class="row ion-padding-bottom">
+                            <div class="col-span-4 graycolor">用户积分</div>
+                            <div class="col-span-8">{{customerdetail.customerInfo.integral}}</div>
+                        </div>
+                        <div class="row ion-padding-bottom">
+                            <div class="col-span-4 graycolor">用户所属机构</div>
+                            <div class="col-span-8">{{customerdetail.customerInfo.institutions}}</div>
+                        </div>
+                    </div>
+                </div>
+            </nzm-tab-pane>
+            <nzm-tab-pane [title]="'资产信息'">
+                <ion-col size="12" class="yeji">
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title style="font-size:14px;">本月业绩</ion-card-title>
+                        </ion-card-header>
+                        <ion-item>
+                            <ion-label slot="start">资产认证</ion-label>
+                            <ion-label>{{customerdetail.assetsInfo.zcrz}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label slot="start">资产收益</ion-label>
+                            <ion-label>{{customerdetail.assetsInfo.zcsy}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label slot="start">资产期望增长值</ion-label>
+                            <ion-label>{{customerdetail.assetsInfo.zcqw}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label slot="start">资产办理网点</ion-label>
+                            <ion-label>{{customerdetail.assetsInfo.zcbl}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label slot="start">资产交易风险</ion-label>
+                            <ion-label>{{customerdetail.assetsInfo.zcfx}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label slot="start">资产警告</ion-label>
+                            <ion-label>{{customerdetail.assetsInfo.zcjy}}</ion-label>
+                        </ion-item>
+                    </ion-card>
+                </ion-col>
+            </nzm-tab-pane>
+        </nzm-tabs>
+    </div>
 </ion-content>

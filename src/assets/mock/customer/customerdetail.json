@@ -1,0 +1,18 @@
+{
+    "customerInfo": {
+        "name": "陈美丽",
+        "type": "商旅客户",
+        "sex": "女",
+        "age": "45",
+        "integral": "12000",
+        "institutions": "西安市高新区招商支行"
+    },
+    "assetsInfo": {
+        "zcrz": "WACCX认证",
+        "zcsy": "3.8%",
+        "zcqw": "5%",
+        "zcbl": "陕西省西安市高新区腾飞中心B座",
+        "zcfx": "高",
+        "zcjy": "建议增加保本理财投资"
+    }
+}
