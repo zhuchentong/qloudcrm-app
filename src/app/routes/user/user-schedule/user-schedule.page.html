@@ -21,7 +21,24 @@
     <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
       <nzm-tab-pane [title]="mySchedule">
         <div class="customerwrap ion-margin">
-         <ion-searchbar placeholder="请输入你想查询的关键字" (ionInput) = "onInputInfo($event)"></ion-searchbar>
+          <ion-searchbar placeholder="请输入你想查询的关键字" (ionInput) = "onInputInfo($event)"></ion-searchbar>
+          <calendar [eventSource]="testdata"
+                    [calendarMode]="calendar.calendarModel"
+                    [currentDate]="calendar.currentDate "
+                    [monthviewEventDetailTemplate]="template"
+                    (onCurrentDateChanged)="onCurrentDateChanged($event)"
+                    (onRangeChanged)="reloadSource(startTime, endTime)"
+                    (onEventSelected)="onEventSelected($event)"
+                    (onTitleChanged)="onViewTitleChanged($event)"
+                    (onTimeSelected)="onTimeSelected($event)"
+                    [startHour]="'00:00'"
+                    [endHour]="'23:59:59'"
+                    [startingDayWeek]="1"
+                    step="60">
+          </calendar>
+
+
+          <ng-template #template let-view="view" let-row="row" let-col="col">
           <div class="" *ngFor="let item of myScheduleList">
             <div class="new-item row no-wrap">
               <div class="left-item"></div>
@@ -43,6 +60,7 @@
               </div>
             </div>
           </div>
+          </ng-template>
         </div>
       </nzm-tab-pane>
       <nzm-tab-pane [title]="createSchedule">

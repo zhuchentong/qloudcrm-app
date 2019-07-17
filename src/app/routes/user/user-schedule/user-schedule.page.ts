@@ -7,6 +7,10 @@ import { UserSchedule } from 'app/model/user-schedule.model'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { LoginAction } from 'app/store/action/user.action'
 import { AlertController } from '@ionic/angular'
+import { MonthViewComponent } from 'ionic2-calendar/monthview'
+import { WeekViewComponent } from 'ionic2-calendar/weekview'
+import { DayViewComponent } from 'ionic2-calendar/dayview'
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-user-schedule',
@@ -19,16 +23,26 @@ export class UserSchedulePage implements OnInit {
   public createButtonValue = '新增'
   public myScheduleList: UserSchedule[]
   public scheduleForm: FormGroup
+  public format = 'yyyy-MM-dd'
+  public testdata = []
+  public calendar = {
+    currentDate: new Date(),
+    calendarModel: 'month'
+  }
+
   constructor(
     private store: Store,
     private router: Router,
     private userService: UserService,
     private logger: LoggerService,
     public formBuilder: FormBuilder,
-    public alertController: AlertController
+    public alertController: AlertController,
+    public datepipe: DatePipe
   ) {}
+
   public ngOnInit() {
     this.queryUserSceduleList({ infoKeyWords: '' })
+
     this.scheduleForm = this.formBuilder.group({
       topic: ['', Validators.required],
       contactDate: ['', Validators.required],
@@ -47,6 +61,7 @@ export class UserSchedulePage implements OnInit {
     this.userService.searchUserSchedule(params).subscribe(data => {
       //   this.logger.info(data)
       this.myScheduleList = data
+      // this.myScheduleList[0].startTime.getTime()
     })
   }
 
@@ -58,6 +73,7 @@ export class UserSchedulePage implements OnInit {
     })
     await alert.present()
   }
+
   public addSchedule() {
     // if (!this.scheduleForm.valid) {
     //   return
@@ -69,5 +85,38 @@ export class UserSchedulePage implements OnInit {
         this.scheduleForm.reset()
         this.presentAlert(data)
       })
+  }
+
+  public onCurrentDateChanged(event) {
+    this.logger.info(this.datepipe.transform(event, this.format))
+    this.userService
+      .searchUserSchedule({
+        infoKeyWords: this.datepipe.transform(event, this.format)
+      })
+      .subscribe(data => {
+        //   this.logger.info(data)
+        this.myScheduleList = data
+      })
+  }
+
+  public onTimeSelected(event) {
+    this.logger.info(this.datepipe.transform(event.selectedTime, this.format))
+    this.userService
+      .searchUserSchedule({
+        infoKeyWords: this.datepipe.transform(event.selectedTime, this.format)
+      })
+      .subscribe(data => {
+        //   this.logger.info(data)
+        this.myScheduleList = data
+      })
+  }
+  public reloadSource(startTime, endTime) {
+    this.logger.info('@@@@@@@@@@@@@@@@' + startTime + '@@@' + endTime)
+  }
+  public onViewTitleChanged(event) {
+    this.logger.info('onViewTitleChanged :' + event)
+  }
+  public onEventSelected(event) {
+    this.logger.info('onEventSelected :' + event)
   }
 }

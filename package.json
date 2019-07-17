@@ -49,6 +49,7 @@
     "cordova-ios": "5.0.1",
     "core-js": "^2.5.4",
     "echarts": "^4.2.1",
+    "ionic2-calendar": "^0.5.2",
     "ng-zorro-antd-mobile": "^0.12.5",
     "ngx-easy-table": "10.1.0",
     "ngx-echarts": "^4.2.1",

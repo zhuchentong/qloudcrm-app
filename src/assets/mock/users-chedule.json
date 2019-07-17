@@ -6,8 +6,10 @@
     "targetLeve": "NORMAL",
     "contactWay": "EMAIL",
     "recommendProduct": "投资计划002",
-    "contactDate": "2019-07-12 15:00:00",
-    "infoKeyWords": "客户联系 active  简链银行 VIP EMAIL 投资计划002 2019-07-1215:00:00"
+    "contactDate": "2019-07-17 15:00:00",
+    "infoKeyWords": "客户联系 active  简链银行 VIP EMAIL 投资计划002 2019-07-1715:00:00",
+    "startTime" : "2019-07-17 15:00:00",
+    "endTime" : "2019-07-12 17:30:00"
   },
   {
     "topic": "客户联系计划",
@@ -16,8 +18,10 @@
     "targetLeve": "VIP",
     "contactWay": "EMAIL",
     "recommendProduct": "投资计划001",
-    "contactDate": "2019-07-12 15:00:00",
-    "infoKeyWords": "客户联系 done  招商银行 VIP EMAIL 投资计划001 2019-07-1215:00:00"
+    "contactDate": "2019-07-17 15:00:00",
+    "infoKeyWords": "客户联系 done  招商银行 VIP EMAIL 投资计划001 2019-07-1715:00:00",
+    "startTime" : "2019-07-17 15:00:00",
+    "endTime" : "2019-07-12 17:30:00"
   },
   {
     "topic": "客户联系计划",
@@ -26,8 +30,10 @@
     "targetLeve": "VIP",
     "contactWay": "PHONE",
     "recommendProduct": "投资计划001",
-    "contactDate": "2019-07-12 15:00:00",
-    "infoKeyWords": "客户联系 active  简融银行2 VIP PHONE 投资计划001 2019-07-1215:00:00"
+    "contactDate": "2019-07-17 15:00:00",
+    "infoKeyWords": "客户联系 active  简融银行2 VIP PHONE 投资计划001 2019-07-1715:00:00",
+    "startTime" : "2019-07-17 15:00:00",
+    "endTime" : "2019-07-12 17:30:00"
   },
   {
     "topic": "客户联系计划",
@@ -36,8 +42,10 @@
     "targetLeve": "VIP",
     "contactWay": "PHONE",
     "recommendProduct": "投资计划001",
-    "contactDate": "2019-07-12 15:00:00",
-    "infoKeyWords": "客户联系 active  简融银行3 VIP PHONE 投资计划001 2019-07-1215:00:00"
+    "contactDate": "2019-07-17 15:00:00",
+    "infoKeyWords": "客户联系 active  简融银行3 VIP PHONE 投资计划001 2019-07-1715:00:00",
+    "startTime" : "2019-07-17 15:00:00",
+    "endTime" : "2019-07-12 17:30:00"
   },
   {
     "topic": "客户联系计划",
@@ -46,8 +54,10 @@
     "targetLeve": "VIP",
     "contactWay": "PHONE",
     "recommendProduct": "投资计划001",
-    "contactDate": "2019-07-12 15:00:00",
-    "infoKeyWords": "客户联系 active  简融银行4 VIP PHONE 投资计划001 2019-07-1215:00:00"
+    "contactDate": "2019-07-17 15:00:00",
+    "infoKeyWords": "客户联系 active  简融银行4 VIP PHONE 投资计划001 2019-07-1715:00:00",
+    "startTime" : "2019-07-17 15:00:00",
+    "endTime" : "2019-07-12 17:30:00"
   },
   {
     "topic": "客户联系计划",
@@ -56,8 +66,10 @@
     "targetLeve": "VIP",
     "contactWay": "PHONE",
     "recommendProduct": "投资计划001",
-    "contactDate": "2019-07-12 15:00:00",
-    "infoKeyWords": "客户联系 active  简融银行5 VIP PHONE 投资计划001 2019-07-1215:00:00"
+    "contactDate": "2019-07-17 15:00:00",
+    "infoKeyWords": "客户联系 active  简融银行5 VIP PHONE 投资计划001 2019-07-1715:00:00",
+    "startTime" : "2019-07-17 15:00:00",
+    "endTime" : "2019-07-12 17:30:00"
   },
   {
     "topic": "客户联系计划",
@@ -66,7 +78,9 @@
     "targetLeve": "VIP",
     "contactWay": "PHONE",
     "recommendProduct": "投资计划001",
-    "contactDate": "2019-07-12 15:00:00",
-    "infoKeyWords": "客户联系 active  简融银行6 VIP PHONE 投资计划001 2019-07-1215:00:00"
+    "contactDate": "2019-07-17 15:00:00",
+    "infoKeyWords": "客户联系 active  简融银行6 VIP PHONE 投资计划001 2019-07-1715:00:00",
+    "startTime" : "2019-07-17 15:00:00",
+    "endTime" : "2019-07-12 17:30:00"
   }
 ]
