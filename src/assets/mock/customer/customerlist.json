@@ -1,45 +1,104 @@
 [{
-    "name": "陈美丽",
-    "customertype": "精选客户",
-    "levername": "钻石客户",
-    "lever": "1",
-    "integral": "8922",
-    "belings": "商旅客户",
-    "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
-  },
-  {
-    "name": "李峰",
-    "customertype": "精选客户",
-    "levername": "钻石客户",
-    "lever": "1",
-    "integral": "10022",
-    "belings": "商旅客户",
-    "url": "http://img0.imgtn.bdimg.com/it/u=1580694995,1575966553&fm=26&gp=0.jpg"
-  },
-  {
-    "name": "张三丰",
-    "customertype": "重要客户",
-    "levername": "金卡客户",
-    "lever": "2",
-    "integral": "4022",
-    "belings": "商旅客户",
-    "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg"
-  },
-  {
-    "name": "王翠平",
-    "customertype": "重要客户",
-    "levername": "金卡客户",
-    "lever": "2",
-    "integral": "3022",
-    "belings": "商旅客户",
-    "url": "http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg"
-  }, {
-    "name": "王麻子",
-    "customertype": "普通客户",
-    "levername": "银卡客户",
-    "lever": "3",
-    "integral": "900",
-    "belings": "商旅客户",
-    "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
-  }
+        "name": "李四",
+        "customertype": "重要客户",
+        "levername": "金卡客户",
+        "lever": "2",
+        "integral": "3022",
+        "belings": "待发薪客户",
+        "url": "http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg"
+    }, {
+        "name": "韩红",
+        "customertype": "普通客户",
+        "levername": "银卡客户",
+        "lever": "3",
+        "integral": "900",
+        "belings": "待发薪客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
+    }, {
+        "name": "陈美丽",
+        "customertype": "精选客户",
+        "levername": "钻石客户",
+        "lever": "1",
+        "integral": "8922",
+        "belings": "商旅客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
+    },
+    {
+        "name": "李峰",
+        "customertype": "精选客户",
+        "levername": "钻石客户",
+        "lever": "1",
+        "integral": "10022",
+        "belings": "商旅客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=1580694995,1575966553&fm=26&gp=0.jpg"
+    },
+    {
+        "name": "张三丰",
+        "customertype": "重要客户",
+        "levername": "金卡客户",
+        "lever": "2",
+        "integral": "4022",
+        "belings": "商旅客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg"
+    },
+    {
+        "name": "王翠平",
+        "customertype": "重要客户",
+        "levername": "金卡客户",
+        "lever": "2",
+        "integral": "3022",
+        "belings": "商旅客户",
+        "url": "http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg"
+    }, {
+        "name": "王麻子",
+        "customertype": "普通客户",
+        "levername": "银卡客户",
+        "lever": "3",
+        "integral": "900",
+        "belings": "商旅客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
+    },
+    {
+        "name": "张三丰",
+        "customertype": "重要客户",
+        "levername": "金卡客户",
+        "lever": "2",
+        "integral": "4022",
+        "belings": "商旅客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg"
+    }, {
+        "name": "赵旭东",
+        "customertype": "精选客户",
+        "levername": "钻石客户",
+        "lever": "1",
+        "integral": "8922",
+        "belings": "理财达人",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
+    }, {
+        "name": "钱贯中",
+        "customertype": "精选客户",
+        "levername": "钻石客户",
+        "lever": "1",
+        "integral": "8922",
+        "belings": "睡眠客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
+    },
+    {
+        "name": "马大姐",
+        "customertype": "精选客户",
+        "levername": "钻石客户",
+        "lever": "1",
+        "integral": "10022",
+        "belings": "睡眠客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=1580694995,1575966553&fm=26&gp=0.jpg"
+    },
+    {
+        "name": "张三丰",
+        "customertype": "重要客户",
+        "levername": "银卡客户",
+        "lever": "3",
+        "integral": "4022",
+        "belings": "睡眠客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg"
+    }
 ]

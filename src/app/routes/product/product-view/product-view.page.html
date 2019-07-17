@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>产品视图</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="paddcss">
+        <div echarts [options]="option1" class="demo-chart" style="height:400px;"></div>
+    </div>
+    <div class="paddcss">
+        <p class="titlep">产品收益率</p>
+        <div echarts [options]="option2" class="demo-chart" style="height:400px;"></div>
+    </div>
+    <div class="paddcss">
+        <p class="titlep">总资产收益率</p>
+        <div echarts [options]="option3" class="demo-chart" style="height:400px;"></div>
+    </div>
+</ion-content>
