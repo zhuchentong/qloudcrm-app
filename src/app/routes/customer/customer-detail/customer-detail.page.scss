@@ -41,3 +41,33 @@
     color: rgb(221, 221, 221);
   }
 }
+
+ion-card {
+  -webkit-margin-start: 0px;
+  margin-inline-start:0px;
+  -webkit-margin-end:0px;
+  margin-inline-end:0px;
+}
+
+.item-group {
+  font-size: 14px;
+  font-weight: bold;
+}
+.item-group-child {
+  font-size: 12px;
+  margin-left:20px;
+}
+:host ::ng-deep .am-tabs-default-bar-tab {
+  font-size: 14px!important;
+}
+
+:host ::ng-deep ion-button {
+  font-size: 10px;
+}
+
+.am-tag-active-red {
+  background-color: #fff;
+  color: #f04141;
+  border: 1px solid #f04141;
+  border-radius: 3px;
+}

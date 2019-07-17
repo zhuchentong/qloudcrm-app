@@ -18,7 +18,7 @@ export class MessageListPage implements OnInit {
   public messageTypeNumber: any[] = []
   public fixedTabs = false
   public type
-  private messageDataSet: MessageModel[] = []
+  public messageDataSet: MessageModel[] = []
   constructor(
     private store: Store,
     private route: ActivatedRoute,

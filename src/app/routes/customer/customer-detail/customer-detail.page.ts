@@ -26,4 +26,19 @@ export class CustomerDetailPage implements OnInit {
         this.logger.log(this.customerdetail)
       })
   }
+
+  renderHeader1() {
+    return '互动记录';
+  }
+
+  renderHeader2() {
+    return '推荐购买产品';
+  }
+
+  renderHeader3() {
+    return '已购买产品';
+  }
+  renderHeader4() {
+    return '已参加活动';
+  }
 }

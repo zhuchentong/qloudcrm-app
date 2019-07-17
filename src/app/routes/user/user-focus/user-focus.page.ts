@@ -46,7 +46,7 @@ export class UserFocusPage implements OnInit {
     )
   }
 
-  private getFocusList(event?) {
+  public getFocusList(event?) {
     this.userService.getUserFocus().subscribe(data => {
       this.userFocusDataSet = data
       this.getFocusNumber()
