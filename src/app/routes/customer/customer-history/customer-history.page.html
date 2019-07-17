@@ -1,25 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>访问历史</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>访问历史</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="row contenttitle ion-padding-top ion-padding-bottom">
-    <div class="col-span-11">
-      <span class="leftlogo ion-margin-right"></span>
-      <span class="titlecss">今日访问</span>
+    <div class="row contenttitle ion-padding-top ion-padding-bottom">
+        <div class="col-span-11">
+            <span class="leftlogo ion-margin-right"></span>
+            <span class="titlecss">今日访问</span>
+        </div>
+        <div class="col-span-1">
+            <span>{{customerList.length}}</span>
+        </div>
     </div>
-    <div class="col-span-1">
-      <span>2</span>
-    </div>
-  </div>
-  <ion-card-content>
-    <ion-list *ngFor="let item of customerList.slice(2,4)">
-      <app-customer-item [data]="item"></app-customer-item>
-    </ion-list>
-  </ion-card-content>
+    <ion-card-content>
+        <ion-list *ngFor="let item of customerList">
+            <app-customer-item [data]="item"></app-customer-item>
+        </ion-list>
+    </ion-card-content>
 </ion-content>

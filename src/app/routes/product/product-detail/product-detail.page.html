@@ -14,13 +14,13 @@
         </div>
         <div class="contentdetail">
             <div class="titleborder ion-text-left ion-margin-top">
-                <b>高净值系列</b>
-                <p class="fontcolor ion-padding-top ion-padding-bottom">高净值系列理财产品</p>
+                <b>{{detaildata.title}}</b>
+                <p class="fontcolor ion-padding-top ion-padding-bottom">{{detaildata.subtitle}}</p>
             </div>
             <div class="row ion-padding">
-                <div class="col-span-3 primary">收益高</div>
-                <div class="col-span-3 danger">风险高</div>
-                <div class="col-span-6 success">产品周期适中</div>
+                <div class="col-span-3 primary">{{detaildata.risk[0]}}</div>
+                <div class="col-span-3 danger">{{detaildata.risk[1]}}</div>
+                <div class="col-span-6 success">{{detaildata.risk[2]}}</div>
             </div>
             <div class="rulewrap">
                 <div class="col-span-12 rulecss">
@@ -28,7 +28,7 @@
                     <span class="spanfont">业务办理及规定</span>
                     <img src="assets/images/error.png" alt="">
                 </div>
-                <p>年龄需22到55岁之间，月收入4000，现在单位工作满三个月</p>
+                <p>{{detaildata.rules}}</p>
             </div>
             <div class="rulewrap">
                 <div class="col-span-12 rulecss">
@@ -36,152 +36,12 @@
                     <span class="spanfont">目标客户</span>
                     <!-- <img src="assets/images/error.png" alt=""> -->
                 </div>
-                <p>有稳定收入工薪族</p>
-                <p>有稳定收入自雇人士</p>
+                <p>{{detaildata.content}}</p>
             </div>
         </div>
+        <div class="ion-padding ion-text-right"><a href="assets/product.doc" download="product.doc">产品文档下载</a></div>
         <div class="searchbtn">
             <ion-button expand="full" color="#E75A24" class="btnbg">立即购买</ion-button>
         </div>
     </div>
 </ion-content>
-
-<!-- <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="news-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon size="md" color="secondary" name="logo-buffer"></ion-icon>
-            <span>产品信息</span>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <div class="productInfo">
-          <div class="row">
-            <div class="col-span-6 leftclass">产品名称</div>
-            <div class="col-span-6 rightclass">高净值系列</div>
-          </div>
-          <p>产品简介</p>
-          <div class="content">高净值系列理财产品</div>
-        </div>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="news-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="jet"></ion-icon>
-            <span>产品特点</span>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <div class="productInfo">
-          <div class="row lineheight">
-            <div class="col-span-6 leftclass">收益率</div>
-            <div class="col-span-6 rightclass sycolor">高</div>
-          </div>
-          <div class="row lineheight">
-            <div class="col-span-6 leftclass">风险性</div>
-            <div class="col-span-6 rightclass fxcolor">高</div>
-          </div>
-          <div class="row lineheight">
-            <div class="col-span-6 leftclass">产品周期</div>
-            <div class="col-span-6 rightclass zqcolor">适中</div>
-          </div>
-        </div>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="news-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="attach"></ion-icon>
-            <span>业务办理季规定</span>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <div class="productInfo">
-          <div class="row lineheight">
-            <div class="col-span-6 leftclass">年龄</div>
-            <div class="col-span-6 rightclass">22-55岁</div>
-          </div>
-          <div class="row lineheight">
-            <div class="col-span-6 leftclass">收入</div>
-            <div class="col-span-6 rightclass">月收入4000元以上</div>
-          </div>
-          <div class="row lineheight">
-            <div class="col-span-6 leftclass">工作时间</div>
-            <div class="col-span-6 rightclass">现单位工作满三个月</div>
-          </div>
-        </div>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="news-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="compass"></ion-icon>
-            <span>目标客户</span>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <div class="productInfo">
-          <div class="row lineheight">
-            <div class="col-span-3 leftclass">
-              <ion-checkbox></ion-checkbox>
-            </div>
-            <div class="col-span-9 rightclass">有稳定收入的工薪族</div>
-          </div>
-          <div class="row lineheight">
-            <div class="col-span-3 leftclass">
-              <ion-checkbox></ion-checkbox>
-            </div>
-            <div class="col-span-9 rightclass">有稳定收入的自雇人士</div>
-          </div>
-        </div>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="news-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="paw"></ion-icon>
-            <span>促销活动</span>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <div class="productInfo">
-          <p>疯狂夏日理财季</p>
-          <p>现在购入高净值理财产品，一次性购买10万以上利率上浮0.2</p>
-          <div class="row">
-            <div>活动时间:2019-07-02<span> 至 </span>2019-07-12</div>
-          </div>
-        </div>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-</ion-content> -->

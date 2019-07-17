@@ -49,14 +49,14 @@
     "cordova-ios": "5.0.1",
     "core-js": "^2.5.4",
     "echarts": "^4.2.1",
-    "ionic2-calendar": "^0.5.2",
     "ng-zorro-antd-mobile": "^0.12.5",
     "ngx-easy-table": "10.1.0",
     "ngx-echarts": "^4.2.1",
     "rxjs": "^6.5.2",
     "tslib": "^1.9.0",
     "typeface-montserrat": "^0.0.54",
-    "zone.js": "~0.8.29"
+    "zone.js": "~0.8.29",
+    "ionic2-calendar": "^0.5.2"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.13.8",
@@ -130,6 +130,10 @@
       "ios"
     ]
   },
+  "platforms": [
+    "android",
+    "ios"
+  ],
   "lint-staged": {
     "linters": {
       "*.{cmd,html,json,md,sh,txt,xml,yml}": [
@@ -143,18 +147,15 @@
       ],
       "*.scss": [
         "prettier --write",
+        "npm run lint:style",
         "git add"
       ]
     },
-    "ignore": [
-      "src/assets/*",
-      "**/*.spec.ts"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm run lint-staged",
+        "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
     }
   }
 }

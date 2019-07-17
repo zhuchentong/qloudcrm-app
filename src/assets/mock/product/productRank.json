@@ -1,54 +1,42 @@
 [{
-    "type": "E时代商户贷款",
-    "level": "低",
-    "content": "针对中小企业的商户贷款，快速放款",
-    "amount": "1-15万",
-    "num": "150",
-    "url": "/product/product-detail",
-    "rank": "1"
-  }, {
-    "type": "试营业商户贷款",
-    "level": "高",
-    "content": "针对中小企业的商户贷款，快速放款",
-    "amount": "15-30万",
-    "num": "300",
-    "url": "/product/product-detail",
-    "rank": "1"
-  },
-  {
-    "type": "小型企业贷款",
-    "level": "高",
-    "content": "针对中小企业的商户贷款，快速放款",
-    "amount": "15-20万",
-    "num": "900",
-    "url": "/product/product-detail",
-    "rank": "2"
-  },
-  {
-    "type": "国家扶持企业贷款",
-    "level": "高",
-    "content": "针对中小企业的商户贷款，快速放款",
-    "amount": "15-30万",
-    "num": "300",
-    "url": "/product/product-detail",
-    "rank": "2"
-  },
-  {
-    "type": "重点小型农科企业贷款",
-    "level": "高",
-    "content": "针对中小企业的商户贷款，快速放款",
-    "amount": "40-100万",
-    "num": "10",
-    "url": "/product/product-detail",
-    "rank": "3"
-  },
-  {
-    "type": "资深企业用户贷款",
-    "level": "高",
-    "content": "针对中小企业的商户贷款，快速放款",
-    "amount": "55-100万",
-    "num": "30",
-    "url": "/product/product-detail",
-    "rank": "3"
-  }
+        "productName": "E时代商户贷款",
+        "productPro": "低",
+        "productType": "热销产品",
+        "sales": "150",
+        "productRank": "1"
+    }, {
+        "productName": "试营业商户贷款",
+        "productPro": "高",
+        "productType": "热销产品",
+        "sales": "300",
+        "productRank": "1"
+    },
+    {
+        "productName": "小型企业贷款",
+        "productPro": "高",
+        "productType": "好评产品",
+        "sales": "900",
+        "productRank": "2"
+    },
+    {
+        "productName": "国家扶持企业贷款",
+        "productPro": "高",
+        "productType": "好评产品",
+        "sales": "300",
+        "productRank": "2"
+    },
+    {
+        "productName": "重点小型农科企业贷款",
+        "productPro": "高",
+        "productType": "推荐产品",
+        "sales": "10",
+        "productRank": "3"
+    },
+    {
+        "productName": "资深企业用户贷款",
+        "productPro": "高",
+        "productType": "推荐产品",
+        "sales": "30",
+        "productRank": "3"
+    }
 ]

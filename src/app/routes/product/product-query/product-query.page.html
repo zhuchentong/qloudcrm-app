@@ -1,14 +1,21 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索产品" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
-  </ion-toolbar>
+    <ion-toolbar>
+        <div class="row">
+            <div class="col-span-11 displaycss">
+                <ion-buttons slot="start">
+                    <ion-back-button></ion-back-button>
+                </ion-buttons>
+                <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
+            </div>
+            <div class="col-span-1 row middle-span depsearchcss">
+                <ion-icon name="list" size="large" routerLink="/product/product-directory"></ion-icon>
+            </div>
+        </div>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list class="listcss">
-    <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
-  </ion-list>
+    <ion-list class="listcss">
+        <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
+    </ion-list>
 </ion-content>

@@ -1,108 +1,465 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>客户详情</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>客户详情</ion-title>
+    </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <div class="ion-margin">
-    <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
-      <nzm-tab-pane [title]="'基本信息'">
-        <!-- <div class="infoclass">
-          <b>用户信息</b>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户头像</div>
-            <div class="col-span-6 picimg">
-              <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
+    <div>
+        <nzm-tabs [page]="6" [useOnPan]="false" [animated]="false">
+            <nzm-tab-pane [title]="'资料'">
+                <div class="customerwrap ion-margin">
+                    <div class="row bordercss ion-padding-bottom">
+                        <div class="col-span-4 picimg ion-text-center">
+                            <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
+                        </div>
+                        <div class="col-span-8 ion-text-left">
+                            <p>{{customerdetail.customerInfo.name}}</p>
+                          <ion-button color="danger" size="small">信易贷</ion-button>
+                          <ion-button color="danger" size="small">大额存单</ion-button>
+                          <ion-button color="danger" size="small">诚易贷</ion-button>
+                          <ion-button color="success" size="small">春季营销</ion-button>
+                          <ion-button color="primary" size="small">高尔夫</ion-button>
+                          <ion-button color="primary" size="small">户外徒步</ion-button>
+                          <ion-button color="primary" size="small">摄影</ion-button>
+                        </div>
+                    </div>
+
+                  <nzm-tabs [page]="2" [useOnPan]="false" [animated]="true">
+                    <nzm-tab-pane [title]="'基础信息'">
+                      <ion-card>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">统一号</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.bankUserNo}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">客户号</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.userNo}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">用户性别</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.sex}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">用户年龄</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.age}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">证件类型</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.certType}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">证件号</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.idNo}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">出生日期</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.birthday}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">职业</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.career}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">手机号码</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.phone1}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">固定电话</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.tel1}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">邮寄地址</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.postAddress}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">电子邮箱</ion-label>
+                          <ion-label>{{customerdetail.customerInfo.email}}</ion-label>
+                        </ion-item>
+                      </ion-card>
+                    </nzm-tab-pane>
+                    <nzm-tab-pane [title]="'补充信息'">
+                      <ion-card>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">籍贯</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.nativePlace}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">国家/地区</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.contray}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">生肖</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.zodica}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">星座</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.xinzuo}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">宗教信仰</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.zjxy}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">语言种类</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.yyzl}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">身高</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.sg}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">体重</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.tz}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">家庭成员</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.jtcy}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">偶像</ion-label>
+                          <ion-label>{{customerdetail.extendInfo.ox}}</ion-label>
+                        </ion-item>
+                      </ion-card>
+                    </nzm-tab-pane>
+                  </nzm-tabs>
+
+                </div>
+            </nzm-tab-pane>
+          <nzm-tab-pane [title]="'账户'">
+            <div class="customerwrap ion-margin">
+              <ion-card>
+                <ion-item>
+                  <ion-label class="col-span-5 ion-text-center" style="font-size: 13px;"  slot="start">月均余额（AUM）</ion-label>
+                  <ion-label>¥ {{customerdetail.customerInfo.aum}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-5 ion-text-center" style="font-size: 13px;"  slot="start">资产余额</ion-label>
+                  <ion-label>¥ {{customerdetail.customerInfo.balance}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-5 ion-text-center" style="font-size: 13px;"  slot="start">上日资产变动</ion-label>
+                  <ion-label>¥ {{customerdetail.customerInfo.lastchangeaum}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-5 ion-text-center" style="font-size: 13px;"  slot="start">年累计资产变动</ion-label>
+                  <ion-label>¥ {{customerdetail.customerInfo.yearsum}}</ion-label>
+                </ion-item>
+              </ion-card>
+              <ion-card>
+                <ion-card-content>
+                  <div
+                    echarts
+                    [options]="customerdetail.linechartOption"
+                    class="demo-chart"
+                    style="height:250px;"
+                  ></div>
+                </ion-card-content>
+              </ion-card>
             </div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户姓名</div>
-            <div class="col-span-6">王翠平</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户性别</div>
-            <div class="col-span-6">女</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户年龄</div>
-            <div class="col-span-6">56</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户等级</div>
-            <div class="col-span-6">4</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">用户积分</div>
-            <div class="col-span-6">2499</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">归属机构</div>
-            <div class="col-span-6">陕西省高新区中信支行</div>
-          </div>
-        </div> -->
-        <div class="customerwrap ion-margin">
-          <div class="row bordercss ion-padding-bottom">
-            <div class="col-span-4 picimg ion-text-center">
-              <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
+          </nzm-tab-pane>
+            <nzm-tab-pane [title]="'风险'">
+                <div class="customerwrap ion-margin">
+                    <ion-card>
+                        <ion-item>
+                            <ion-label class="col-span-3 ion-text-center" style="font-size: 13px;" slot="start">风险等级</ion-label>
+                            <ion-label>{{customerdetail.riskInfo.typeName}}</ion-label>
+                        </ion-item>
+                        <!--<ion-item>-->
+                            <!--<ion-label class="col-span-3 ion-text-center" style="font-size: 13px;" slot="start">评测分数</ion-label>-->
+                            <!--<ion-label>{{customerdetail.riskInfo.point}}</ion-label>-->
+                        <!--</ion-item>-->
+                        <ion-item>
+                            <ion-label class="col-span-3 ion-text-center" style="font-size: 13px;" slot="start">客户忠诚度</ion-label>
+                            <ion-label>{{customerdetail.riskInfo.loyety1}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label class="col-span-3 ion-text-center" style="font-size: 13px;" slot="start">客户满意度</ion-label>
+                            <ion-label>{{customerdetail.riskInfo.loyety2}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label class="col-span-3 ion-text-center" style="font-size: 13px;" slot="start">客户贡献度</ion-label>
+                            <ion-label>{{customerdetail.riskInfo.loyety3}}</ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label class="col-span-3 ion-text-center" style="font-size: 13px;" slot="start">客户星级</ion-label>
+                            <ion-label>{{customerdetail.riskInfo.start}}</ion-label>
+                        </ion-item>
+                      <ion-item>
+                        <ion-label class="col-span-3 ion-text-center" style="font-size: 13px;" slot="start">最后测评时间</ion-label>
+                        <ion-label>{{customerdetail.riskInfo.time}}</ion-label>
+                      </ion-item>
+                    </ion-card>
+
+                  <ion-card>
+                    <ion-card-content>
+                      <div
+                        echarts
+                        [options]="customerdetail.riskOption"
+                        class="demo-chart"
+                        style="height:180px;"
+                      ></div>
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+            </nzm-tab-pane>
+
+          <nzm-tab-pane [title]="'财务'">
+            <div class="customerwrap ion-margin">
+                <ion-card>
+                  <ion-card-header>资产负债率
+                    <ion-button class="ion-text-center" size="small" color="danger" style="margin-top:-8px;">52.48%</ion-button>
+                  </ion-card-header>
+                  <ion-card-content>
+                    <div
+                      echarts
+                      [options]="customerdetail.assetPieOption"
+                      class="demo-chart"
+                      style="height:180px;"
+                    ></div>
+                  </ion-card-content>
+                </ion-card>
+
+              <nzm-tabs [page]="2" [useOnPan]="false" [animated]="true">
+                <nzm-tab-pane [title]="'资产'">
+
+                  <ion-card>
+                    <ion-item-group>
+                      <ion-item-divider>
+                        <ion-label class="item-group">现金及现金等价物</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end item-group">¥ 20000 <ion-icon name="arrow-dropdown"></ion-icon></ion-note>
+                      </ion-item-divider>
+
+                      <ion-item>
+                        <ion-label class="item-group-child">活期</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-start ion-margin-end">¥ 15000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label class="item-group-child">信用卡储蓄</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 2000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label class="item-group-child">定期存款</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 3000</ion-note>
+                      </ion-item>
+                    </ion-item-group>
+
+                    <ion-item-group>
+                      <ion-item-divider>
+                        <ion-label class="item-group">第三方存管</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end item-group">¥ 11210 <ion-icon name="arrow-dropdown"></ion-icon></ion-note>
+                      </ion-item-divider>
+
+                      <ion-item>
+                        <ion-label class="item-group-child">第三方存管</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 11210</ion-note>
+                      </ion-item>
+                    </ion-item-group>
+
+                    <ion-item-group>
+                      <ion-item-divider>
+                        <ion-label class="item-group">投资资产</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end item-group">¥ 15000 <ion-icon name="arrow-dropdown"></ion-icon></ion-note>
+                      </ion-item-divider>
+
+                      <ion-item>
+                        <ion-label class="item-group-child">基金</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 4000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label class="item-group-child">国债</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 3000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label class="item-group-child">人民币理财产品</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 3000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label class="item-group-child">外币理财产品</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 1000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label class="item-group-child">其他投资资产</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 1000</ion-note>
+                      </ion-item>
+                    </ion-item-group>
+                    <ion-item-group>
+                      <ion-item-divider>
+                        <ion-label class="item-group">保险</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end item-group">¥ 7000 <ion-icon name="arrow-dropdown"></ion-icon></ion-note>
+                      </ion-item-divider>
+
+                      <ion-item>
+                        <ion-label class="item-group-child">保险</ion-label>
+                        <ion-note slot="end" color="primary" class="ion-margin-end">¥ 7000</ion-note>
+                      </ion-item>
+                    </ion-item-group>
+
+                  </ion-card>
+
+                </nzm-tab-pane>
+
+                <nzm-tab-pane [title]="'负债'" tabIcon="contacts">
+                  <ion-card>
+                    <ion-item-group>
+                      <ion-item-divider>
+                        <ion-label class="item-group">零售贷款</ion-label>
+                        <ion-note slot="end" color="danger" class="ion-margin-end item-group">¥ 19500 <ion-icon name="arrow-dropdown"></ion-icon></ion-note>
+                      </ion-item-divider>
+
+                      <ion-item>
+                        <ion-label style="margin-left:20px;">房贷</ion-label>
+                        <ion-note slot="end" color="danger" class="ion-margin-start ion-margin-end">¥ 2000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label style="margin-left:20px;">车贷</ion-label>
+                        <ion-note slot="end" color="danger" class="ion-margin-end">¥ 2000</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label style="margin-left:20px;">其他零售贷款</ion-label>
+                        <ion-note slot="end" color="danger" class="ion-margin-end">¥ 15500</ion-note>
+                      </ion-item>
+                    </ion-item-group>
+
+                    <ion-item-group>
+                      <ion-item-divider>
+                        <ion-label class="item-group">流动性负债</ion-label>
+                        <ion-note slot="end" color="danger" class="ion-margin-end item-group">¥ 10000 <ion-icon name="arrow-dropdown"></ion-icon></ion-note>
+                      </ion-item-divider>
+
+                      <ion-item>
+                        <ion-label style="margin-left:20px;">信用卡透支</ion-label>
+                        <ion-note slot="end" color="danger" class="ion-margin-end">¥ 1500</ion-note>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label style="margin-left:20px;">其他流动性负债</ion-label>
+                        <ion-note slot="end" color="danger" class="ion-margin-end">¥ 8500</ion-note>
+                      </ion-item>
+                    </ion-item-group>
+                  </ion-card>
+
+                </nzm-tab-pane>
+              </nzm-tabs>
+
             </div>
-            <div class="col-span-8 ion-text-left">
-              <p>周翠花</p>
-              <p><span>所属</span>商旅客户</p>
+          </nzm-tab-pane>
+
+          <nzm-tab-pane [title]="'互动'">
+            <div class="customerwrap ion-margin">
+              <ion-card>
+                <ion-card-header>互动次数统计</ion-card-header>
+                <ion-card-content>
+                  <div
+                    echarts
+                    [options]="customerdetail.saleOption"
+                    class="demo-chart"
+                    style="height:150px;"
+                  ></div>
+                </ion-card-content>
+              </ion-card>
+
+              <nzm-tabs [page]="3" [useOnPan]="false" [animated]="true">
+                <nzm-tab-pane [title]="'互动记录'">
+                  <ion-card>
+                    <List [className]="'my-list'" [renderHeader]=(renderHeader1)>
+                      <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                        <span style="font-size:smaller">来电咨询</span>
+                        <Brief><span style="font-size:small">咨询购买高收益的理财产品 <br/> 2018-11-02 10:30:00</span></Brief>
+                      </ListItem>
+                      <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                        <span style="font-size:smaller">来柜开户</span>
+                        <Brief><span style="font-size:small">开户申请 <br/> 2018-11-04 14:12:00</span></Brief>
+                      </ListItem>
+                      <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                        <span style="font-size:smaller">来柜办理基金业务</span>
+                        <Brief><span style="font-size:small">财务风险测评 <br/> 2018-11-05 14:12:00</span></Brief>
+                      </ListItem>
+                    </List>
+                  </ion-card>
+                </nzm-tab-pane>
+                <nzm-tab-pane [title]="'营销活动'">
+                  <ion-card>
+                    <List [className]="'my-list'" [renderHeader]=(renderHeader4)>
+                      <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                        <span style="font-size:smaller">管微7月首绑礼：领最高8888元现金礼包</span>
+                        <Brief><span style="font-size:small">本活动仅限于活动期间首次绑定信用卡官方微信的客户参与，取消绑定再绑定的用户不计算在内；校园版信用卡、纯附属卡或纯商务卡客户无法参与此次活动。</span></Brief>
+                      </ListItem>
+                      <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                        <span style="font-size:smaller">7月掌上生活还款，赢华为手机手表套装</span>
+                        <Brief><span style="font-size:small">在掌上生活还款个人信用卡账户一笔任意资金，即可参与本次活动。</span></Brief>
+                      </ListItem>
+                      <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                        <span style="font-size:smaller">预借现金：达标领最高5000积分</span>
+                        <Brief><span style="font-size:small">累计满10000元，可领取1500积分。</span></Brief>
+                      </ListItem>
+                    </List>
+                  </ion-card>
+                </nzm-tab-pane>
+                <nzm-tab-pane [title]="'互动统计'">
+                  <ion-card>
+                    <ion-card-header>互动类型统计</ion-card-header>
+                    <ion-card-content>
+                      <div
+                        echarts
+                        [options]="customerdetail.customeroption"
+                        class="demo-chart"
+                        style="height:150px;"
+                      ></div>
+                    </ion-card-content>
+                  </ion-card>
+                </nzm-tab-pane>
+              </nzm-tabs>
+
             </div>
-          </div>
-          <div class="userinfowrap">
-            <div class="row ion-padding-top ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户性别</div>
-              <div class="col-span-8">女</div>
+          </nzm-tab-pane>
+
+          <nzm-tab-pane [title]="'推荐产品'" style="font-size: 10px!important;">
+            <div class="customerwrap ion-margin">
+              <ion-card>
+                <List [className]="'my-list'" [renderHeader]=(renderHeader2)>
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                    <span style="font-size:smaller">龙湾农商银行丰收·赢利2018年第84期</span>
+                    <Brief><span style="font-size:small">投资币种为人民币，认购起点为5万，预期收益率为5.50%，产品期限为204天，销售起始日为2018-11-06，销售截止日为2018-11-11，收益类型为非保本浮动，发行地区为浙江</span></Brief>
+                  </ListItem>
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                    <span style="font-size:smaller">大庆农商银行“钻得力”-盈利1号</span>
+                    <Brief><span style="font-size:small">投资币种为人民币，认购起点为5万，预期收益率为5.20%，产品期限为230天，销售起始日为2018-09-19，销售截止日为2018-09-25，收益类型为非保本浮动，发行地区为黑龙江。</span></Brief>
+                  </ListItem>
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                    <span style="font-size:smaller">金翼宝系列805号</span>
+                    <Brief><span style="font-size:small">发行银行: 新韩银行委托币种: 人民币 投资类型: --委托币种起始金额: 50000 预期收益率(%): 3.60起始金额递增</span></Brief>
+                  </ListItem>
+                </List>
+              </ion-card>
+
+              <ion-card>
+                <List [className]="'my-list'" [renderHeader]=(renderHeader3)>
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                    <span style="font-size:smaller">汇丰代客境外理财计划–开放式海外基金型</span>
+                    <Brief><span style="font-size:small">产品发行机构：汇丰银行（中国）有限公司，购买份额：10000份，最新净值：	528.405 元，产品类型：开放式净值型</span></Brief>
+                  </ListItem>
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                    <span style="font-size:smaller">利多多现金管理1号</span>
+                    <Brief><span style="font-size:small">产品发行机构：上海浦东发展银行股份有限公司，购买份额：2000份，最新净值：	1.405 元，产品类型：开放式非净值型</span></Brief>
+                  </ListItem>
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                    <span style="font-size:smaller">财富班车进取4号（180天）</span>
+                    <Brief><span style="font-size:small">产品发行机构：上海浦东发展银行股份有限公司，购买份额：2000份，最新净值：	1.405 元，产品类型：开放式非净值型</span></Brief>
+                  </ListItem>
+                </List>
+              </ion-card>
             </div>
-            <div class="row ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户年龄</div>
-              <div class="col-span-8">45</div>
-            </div>
-            <div class="row ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户积分</div>
-              <div class="col-span-8">3400</div>
-            </div>
-            <div class="row ion-padding-bottom">
-              <div class="col-span-4 graycolor">用户所属机构</div>
-              <div class="col-span-8">西安高薪支行</div>
-            </div>
-          </div>
-        </div>
-      </nzm-tab-pane>
-      <nzm-tab-pane [title]="'资产信息'">
-        <div class="infoclass">
-          <b>资产信息</b>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产认证</div>
-            <div class="col-span-6">WACC认证</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产收益</div>
-            <div class="col-span-6">2.3%</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产期望增长值</div>
-            <div class="col-span-6">5%</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产办理机构</div>
-            <div class="col-span-6">高新区中心支行</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产交易风险</div>
-            <div class="col-span-6">低</div>
-          </div>
-          <div class="row rowlistcss ion-text-center">
-            <div class="col-span-6">资产警告</div>
-            <div class="col-span-6">投资风险过大</div>
-          </div>
-        </div>
-      </nzm-tab-pane>
-    </nzm-tabs>
-  </div>
+          </nzm-tab-pane>
+
+
+
+
+
+
+        </nzm-tabs>
+
+
+    </div>
 </ion-content>
