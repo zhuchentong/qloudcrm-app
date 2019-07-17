@@ -1,69 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar mode="ios" placeholder="消息查询"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
   <ion-refresher slot="fixed" (ionRefresh)="getMessageList($event)">
     <ion-refresher-content> </ion-refresher-content>
   </ion-refresher>
-  <div>
-    <!-- <nzm-carousel class="notice-list" [vertical]="true">
-      <CarouselSlide class="notice-slide">
-        <NoticeBar
-          class="notice-item"
-          [option]="{
-            content: '行内咨询:xxxxxxxxxxxxxxxxx',
-            font: '14px'
-          }"
-        >
-        </NoticeBar>
-      </CarouselSlide>
-      <CarouselSlide>
-        <NoticeBar
-          class="notice-item"
-          [option]="{
-            content: '行外咨询:xxxxxxxxxxxxxxxxxxx',
-            font: '14px'
-          }"
-        >
-        </NoticeBar>
-      </CarouselSlide>
-    </nzm-carousel> -->
-  </div>
-  <ion-grid class="message-number">
+
+  <ion-slides pager="true" [options]="slideOpts" class="static-container">
+    <ion-slide>
+      <div class="static-item">
+        <img src="assets/images/dashboard/dashboard-01.png" />
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="static-item">
+        <img src="assets/images/dashboard/dashboard-02.png" />
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid class="catalog-container">
     <ion-row>
-      <ion-col
-        size="6"
-        *ngFor="let item of messageTypeNumber; index as i"
-        (click)="tabIndex = i + 1"
-      >
-        <ion-chip>
-          <ion-label>{{ item.name }}</ion-label>
-          <div class="badge">{{ item.length }}</div>
-        </ion-chip>
+      <ion-col size="6" *ngFor="let item of messageTypeNumber; index as i">
+        <div class="catalog-item row" (click)="onOpenMessageType(item)">
+          <div class="col-span-4 row middle-span center-span">
+            <ion-icon class="catalog-icon" [src]="item.icon"></ion-icon>
+          </div>
+          <div class="col-span-8 col middle-span center-span">
+            <div class="catalog-number">
+              {{ item.length }}
+            </div>
+            <div class="catalog-name">{{ item.name }}</div>
+          </div>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div>
-    <nzm-tabs
-      [ngClass]="{ 'fixed-tabs': fixedTabs }"
-      [activeTab]="tabIndex"
-      [page]="4"
-      style="height: 44px;"
-      [prerenderingSiblingsNumber]="2"
-      [useOnPan]="false"
-      [animated]="false"
-      (onChange)="onTabChange($event)"
-    >
-      <nzm-tab-pane [title]="'全部消息'"> </nzm-tab-pane>
-      <nzm-tab-pane
-        [title]="titleTemplate"
-        *ngFor="let item of messageTypeNumber"
-      >
-        <ng-template #titleTemplate>
-          <nzm-badge [text]="item.length">
-            <div>{{ item.name }}</div>
-          </nzm-badge>
-        </ng-template>
-      </nzm-tab-pane>
-    </nzm-tabs>
-    <div class="message-list">
+
+  <ion-card class="message-container">
+    <ion-card-header>
+      <ion-card-title class="row middle-span between-span">
+        <div class="row middle-span ">
+          <div class="ion-padding-end">最新消息</div>
+          <ion-badge mode="ios">{{ currentMessageList.length }}</ion-badge>
+        </div>
+        <a routerLink="/dashboard/message-list">查看更多</a>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
       <ion-list *ngIf="currentMessageList.length; else empty">
         <app-message-item
           *ngFor="let item of currentMessageList"
@@ -74,62 +61,20 @@
       <ng-template #empty>
         <app-empty> </app-empty>
       </ng-template>
-    </div>
-  </div>
-
-  <!--
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="static-title">
-        <div class="row between-span news-title">
-          <div class="title row middle-span">
-            <ion-icon color="secondary" name="analytics"></ion-icon>
-            <span>数据统计</span>
-          </div>
-          <div>
-            <a routerLink="/tabs/marketing">更多</a>
-          </div>
-        </div>
-      </ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      <div class="row">
-        <div class="col-span-6">
-          <div class="static-item static-item-1 row middle-span">
-            <div>
-              <div class="title">日销售额</div>
-              <div class="data">¥ 103,000</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-6">
-          <div class="static-item static-item-2 row">
-            <div>
-              <div class="title">周销售额</div>
-              <div class="data">¥ 882,000</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-span-6">
-          <div class="static-item static-item-3 row">
-            <div>
-              <div class="title">月度目标</div>
-              <div class="data">83%</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-6">
-          <div class="static-item static-item-4 row">
-            <div>
-              <div class="title">季度目标</div>
-              <div class="data">134%</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </ion-card-content>
-  </ion-card> -->
+  </ion-card>
+
+  <ion-fab
+    vertical="bottom"
+    horizontal="end"
+    slot="fixed"
+    class="untreated-container"
+  >
+    <ion-fab-button>
+      <div class="col">
+        <div class="untreated-number">5</div>
+        <div class="untreated-name">待处理</div>
+      </div>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

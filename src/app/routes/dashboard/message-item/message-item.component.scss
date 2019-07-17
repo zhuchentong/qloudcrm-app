@@ -1,3 +1,54 @@
+:host {
+  $color-customer-1: #43af7d;
+  $color-customer-2: #43af7d;
+  $color-risk-1: #5ea8d6;
+  $color-risk-2: #69baec;
+  $color-marketing-1: #9978d6;
+  $color-marketing-2: #a984ec;
+  $color-work-1: #d5a441;
+  $color-work-2: #dfac45;
+
+  &.customer {
+    .left-item,
+    .middle-item {
+      background: $color-customer-1;
+    }
+    .right-item {
+      background: $color-customer-2;
+    }
+  }
+
+  &.work {
+    .left-item,
+    .middle-item {
+      background: $color-work-1;
+    }
+    .right-item {
+      background: $color-work-2;
+    }
+  }
+
+  &.marketing {
+    .left-item,
+    .middle-item {
+      background: $color-marketing-1;
+    }
+    .right-item {
+      background: $color-marketing-2;
+    }
+  }
+
+  &.risk {
+    .left-item,
+    .middle-item {
+      background: $color-risk-1;
+    }
+    .right-item {
+      background: $color-risk-2;
+    }
+  }
+}
+
 .new-item {
   height: 120px;
   margin: 10px 0;
@@ -5,17 +56,25 @@
   color: #fffff3;
   border-radius: 20px;
   box-shadow: -2px 5px 5px gray;
+  position: relative;
+
+  .new-item-badge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 12px;
+  }
 
   .left-item {
     width: 10px;
-    background: #43af7d;
     border-radius: 20px 0 0 20px;
   }
 
   .middle-item {
     padding: 10px;
     font-size: 10px;
-    background: #43af7d;
     .title {
       font-weight: bold;
       font-size: 12px;
@@ -25,7 +84,6 @@
   .right-item {
     flex: 1;
     padding: 5px;
-    background: #49bd88;
     border-radius: 0 10px 10px 0;
 
     .title {

@@ -3,6 +3,13 @@
   [ngClass]="getItemClass()"
   (click)="onOpenDetail()"
 >
+  <nzm-badge
+    *ngIf="showStatus && data.status"
+    [text]="' '"
+    [corner]="true"
+    class="new-item-badge"
+  >
+  </nzm-badge>
   <div class="left-item"></div>
   <div class="middle-item col between-span">
     <div class="title">{{ data.type | dict }}</div>
