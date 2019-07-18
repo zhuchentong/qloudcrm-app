@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit, Input, HostBinding } from '@angular/core'
 import { Router } from '@angular/router'
 import { DictType, MessageType, MessageTagType } from 'app/config/enum.config'
 
@@ -8,8 +8,12 @@ import { DictType, MessageType, MessageTagType } from 'app/config/enum.config'
   styleUrls: ['./message-item.component.scss']
 })
 export class MessageItemComponent implements OnInit {
+  @HostBinding('class')
+  private hostClass: string[]
   @Input()
   public data
+  @Input()
+  public showStatus = false
   public routeList = {
     [MessageType.RISK]: '/dashboard/risk-detail',
     [MessageType.MARKETING]: '/dashboard/marketing-detail',
@@ -22,7 +26,9 @@ export class MessageItemComponent implements OnInit {
   }
   constructor(public router: Router) {}
 
-  public ngOnInit() {}
+  public ngOnInit() {
+    this.hostClass = [this.data.type.toLowerCase()]
+  }
 
   public onOpenDetail() {
     localStorage.setItem('current-message', JSON.stringify(this.data))

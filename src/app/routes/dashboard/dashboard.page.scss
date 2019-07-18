@@ -15,37 +15,62 @@
       line-height: 36px;
     }
   }
+}
 
-  .message-number {
-    ion-label,
-    .badge {
-      font-size: 10px;
+ion-content {
+  --background: #e5e5e5;
+}
+
+.catalog-container {
+  .catalog-item {
+    background: #fff;
+    border-radius: 5px;
+    height: 50px;
+
+    .catalog-icon {
+      font-size: 24px;
     }
 
-    ion-col {
-      margin: 0;
-      padding: 2px;
+    .catalog-number {
+      font-size: 16px;
+      font-weight: bold;
     }
-    ion-chip {
-      width: 80%;
-      height: 24px;
-      padding: 2px 4px;
-      padding-right: 0;
-      ion-label {
-        width: 100%;
-        padding: 0 3px;
-        text-align: center;
-      }
-      .badge {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 28px;
-        height: 24px;
-        color: white;
-        background: darkcyan;
-        border-radius: 0 20px 20px 0;
-      }
+
+    .catalog-name {
+      font-size: 12px;
     }
+  }
+}
+
+.static-container {
+  margin-top: 10px;
+
+  .static-item {
+    border-radius: 10px;
+    margin: 0 10px;
+    width: 100%;
+    overflow: hidden;
+    height: 100px;
+  }
+}
+
+.message-container {
+  background: #fff;
+
+  a {
+    font-size: 10px;
+  }
+
+  ion-card-content {
+    padding: 0;
+  }
+}
+
+.untreated-container {
+  .untreated-number {
+    font-size: 16px;
+  }
+  .untreated-name {
+    font-size: 10px;
   }
 }

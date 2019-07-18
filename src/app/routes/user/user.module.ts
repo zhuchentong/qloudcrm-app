@@ -11,6 +11,8 @@ import { UserService } from 'app/services/user.service'
 import { LoginPage } from 'app/routes/user/login/login.page'
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { FocusItemPage } from 'app/routes/user/user-focus/focus-item/focus-item.page'
+import { NgCalendarModule } from 'ionic2-calendar'
+import { DatePipe } from '@angular/common'
 
 const routes: Routes = [
   {
@@ -44,7 +46,12 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [SharedModule, ReactiveFormsModule, RouterModule.forChild(routes)],
+  imports: [
+    SharedModule,
+    NgCalendarModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(routes)
+  ],
   declarations: [
     UserPage,
     UserFocusPage,
@@ -55,6 +62,6 @@ const routes: Routes = [
     LoginPage,
     FocusItemPage
   ],
-  providers: [UserService]
+  providers: [UserService, DatePipe]
 })
 export class UserPageModule {}

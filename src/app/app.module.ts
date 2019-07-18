@@ -21,6 +21,7 @@ import { CoreModule } from './core/core.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms'
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile'
+import { NgCalendarModule } from 'ionic2-calendar'
 
 const isDev = !environment.production
 // #region global third module

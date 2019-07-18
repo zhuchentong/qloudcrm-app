@@ -91,6 +91,8 @@ export class UserMockService {
       contactWay: params.contactWay,
       recommendProduct: params.recommendProduct,
       contactDate: params.contactDate,
+      startTime: params.startTime,
+      endTime: params.endTime,
       infoKeyWords:
         params.topic +
         ' ' +

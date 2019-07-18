@@ -8,10 +8,38 @@
 </ion-header>
 
 <ion-content>
-  <ion-list class="message-list">
-    <app-message-item
-      *ngFor="let item of newsList"
-      [data]="item"
-    ></app-message-item>
-  </ion-list>
+  <nzm-tabs
+    [ngClass]="{ 'fixed-tabs': fixedTabs }"
+    [activeTab]="tabIndex"
+    [page]="4"
+    [prerenderingSiblingsNumber]="2"
+    [useOnPan]="false"
+    [animated]="false"
+    (onChange)="onTabChange($event)"
+  >
+    <nzm-tab-pane [title]="'全部消息'">
+      <app-message-item
+        [showStatus]="true"
+        *ngFor="let message of messageDataSet"
+        [data]="message"
+      ></app-message-item>
+    </nzm-tab-pane>
+    <nzm-tab-pane
+      [title]="titleTemplate"
+      *ngFor="let item of messageTypeNumber"
+    >
+      <ng-template #titleTemplate>
+        <nzm-badge [text]="item.length">
+          <div>{{ item.name }}</div>
+        </nzm-badge>
+      </ng-template>
+      <ion-list class="message-list">
+        <app-message-item
+          [showStatus]="true"
+          *ngFor="let message of item.list"
+          [data]="message"
+        ></app-message-item>
+      </ion-list>
+    </nzm-tab-pane>
+  </nzm-tabs>
 </ion-content>
