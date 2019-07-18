@@ -12,7 +12,7 @@ import { LoggerService } from '@ngx-toolkit/logger'
   providers: [CustomerdetailService]
 })
 export class CustomerDetailPage implements OnInit {
-  public customerdetail:any
+  public customerdetail: any
   constructor(
     public router: Router,
     public customerdetailservice: CustomerdetailService,
@@ -20,25 +20,24 @@ export class CustomerDetailPage implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.customerdetailservice.getCustomerdetail({})
-      .subscribe(data => {
-        this.customerdetail = data
-        this.logger.log(this.customerdetail)
-      })
+    this.customerdetailservice.getCustomerdetail({}).subscribe(data => {
+      this.customerdetail = data
+      this.logger.log(this.customerdetail)
+    })
   }
 
-  renderHeader1() {
-    return '互动记录';
+  public renderHeader1() {
+    return '互动记录'
   }
 
-  renderHeader2() {
-    return '推荐购买产品';
+  public renderHeader2() {
+    return '推荐购买产品'
   }
 
-  renderHeader3() {
-    return '已购买产品';
+  public renderHeader3() {
+    return '已购买产品'
   }
-  renderHeader4() {
-    return '已参加活动';
+  public renderHeader4() {
+    return '已参加活动'
   }
 }
