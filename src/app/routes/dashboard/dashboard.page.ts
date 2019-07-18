@@ -24,9 +24,7 @@ export class DashboardPage implements OnInit {
     initialSlide: 1,
     speed: 400,
     loop: true,
-    autoplay: {
-      delay: 5000
-    }
+    autoplay: true
   }
 
   /**

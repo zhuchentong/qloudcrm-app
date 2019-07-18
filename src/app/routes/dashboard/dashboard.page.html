@@ -11,12 +11,20 @@
 
   <ion-slides pager="true" [options]="slideOpts" class="static-container">
     <ion-slide>
-      <div class="static-item">
+      <div
+        class="static-item"
+        [routerLink]="['/dashboard/message-number']"
+        routerLinkActive="router-link-active"
+      >
         <img src="assets/images/dashboard/dashboard-01.png" />
       </div>
     </ion-slide>
     <ion-slide>
-      <div class="static-item">
+      <div
+        class="static-item"
+        [routerLink]="['/dashboard/message-status']"
+        routerLinkActive="router-link-active"
+      >
         <img src="assets/images/dashboard/dashboard-02.png" />
       </div>
     </ion-slide>
