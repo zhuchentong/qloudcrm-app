@@ -71,3 +71,13 @@ ion-card {
   border: 1px solid #f04141;
   border-radius: 3px;
 }
+
+:host ::ng-deep ion-button {
+  font-size: 10px;
+  --border-width: 1px;
+  --padding-top: 0;
+  --padding-start: 0.5em;
+  --padding-end: 0.5em;
+  --padding-bottom: 0;
+  height: 1.8em;
+}

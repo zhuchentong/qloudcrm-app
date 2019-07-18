@@ -2,7 +2,9 @@
     // padding: 10px;
     // border-radius: 10px;
     // box-shadow: 4px 2px 8px gainsboro;
-    border-bottom: 1px solid #efeff1;
+    //border-bottom: 1px solid #efeff1;
+    margin-left: 10px;
+    margin-right: 10px;
     div {
         line-height: 30px;
     }
@@ -21,7 +23,8 @@
         }
     }
     .namecss {
-        font-weight: 700;
+      font-weight: 700;
+      font-size: 14px;
     }
     .customercss {
         padding: 0 0 0 8px;
@@ -31,7 +34,7 @@
         }
         .namecss {
             margin-right: 5px;
-            font-size: 15px;
+            font-size: 14px;
         }
         .levercss {
             display: inline-block;

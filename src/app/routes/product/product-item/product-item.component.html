@@ -1,16 +1,32 @@
 <ion-card>
   <div class="productWrap ion-padding" [routerLink]="data.url">
     <div class="row">
-      <div class="col-span-8 ion-text-left">
+      <div class="col-span-12 ion-text-left">
         <span class="hotscss">热</span>&nbsp;
-        <span class="productnamecss">{{data.type}}</span>
+        <span class="productnamecss">{{data.productName}}</span>
       </div>
-      <div class="col-span-4 ion-text-right"><span class="colorgray">已售出:&nbsp;</span><span class="productnamecss">{{data.num}}</span></div>
+      <!--<div class="col-span-4 ion-text-right"><span class="colorgray">已售出:&nbsp;</span><span class="productnamecss">{{data.num}}</span></div>-->
     </div>
-    <div class="marginNum">{{data.amount}}</div>
-    <div class="row">
-      <div class="col-span-8"><span class="colorgray littlefont">{{data.content}}</span></div>
-      <div class="col-span-4 ion-text-right"><span class="lowcss">低要求</span>&nbsp;&nbsp;<span class="fastcss">放款快</span></div>
+    <div class="row marginNum col-span-12">
+      <div class="col-span-6 ion-text-center marginNum1">
+        <span style="font-size: 24px;font-weight: bold">{{data.maxRatio}}%</span><br><span style="color: #9a9a9a">{{data.remark}}</span>
+      </div>
+      <div class="col-span-6 ion-text-center">
+        <span style="font-size: 24px;font-weight: bold">{{data.activeDays}}</span><br><span style="color: #9a9a9a;font-size: 10px;">投资期限(天)</span>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-span-12"><span class="colorgray littlefont">{{data.content}}</span></div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-span-12">
+        <!--<ion-button color="primary" size="small" shape="round" fill="outline">已售出:{{data.num}}</ion-button>-->
+        <!--<ion-button color="primary" size="small" shape="round" fill="outline">净值:{{data.value}}</ion-button>-->
+        <ion-button color="primary" size="small" shape="round" fill="outline">{{data.saleState}}</ion-button>
+        <ion-button color="primary" size="small" shape="round" fill="outline">{{data.assetTypeName}}</ion-button>
+        <ion-button color="danger" size="small" shape="round" fill="outline">{{data.riskLevel}}</ion-button>
+      </div>
+      <!--<div class="col-span-4 ion-text-right"><span class="lowcss">低要求</span>&nbsp;&nbsp;<span class="fastcss">放款快</span></div>-->
     </div>
   </div>
 </ion-card>

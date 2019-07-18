@@ -40,3 +40,9 @@
     vertical-align: middle;
   }
 }
+:host ::ng-deep ion-card {
+  -webkit-margin-start: 0px;
+  margin-inline-start:0px;
+  -webkit-margin-end:0px;
+  margin-inline-end:0px;
+}

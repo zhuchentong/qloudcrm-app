@@ -8,40 +8,87 @@
 </ion-header>
 <ion-content>
     <div class="wrapDetail">
-        <div class="titleimg">
-            <img class="bgimg" src="assets/images/productdetail.png" alt="">
-            <!-- <img class="logo" src="assets/images/sales.png" alt=""> -->
-        </div>
+        <!--<div class="titleimg">-->
+            <!--<img class="bgimg" src="assets/images/productdetail.png" alt="">-->
+            <!--&lt;!&ndash; <img class="logo" src="assets/images/sales.png" alt=""> &ndash;&gt;-->
+        <!--</div>-->
         <div class="contentdetail">
             <div class="titleborder ion-text-left ion-margin-top">
-                <b>{{detaildata.title}}</b>
-                <p class="fontcolor ion-padding-top ion-padding-bottom">{{detaildata.subtitle}}</p>
+                <b>{{detaildata.productName}}</b>
+                <p class="fontcolor ion-padding-top ion-padding-bottom">{{detaildata.orgName}}</p>
             </div>
-            <div class="row ion-padding">
-                <div class="col-span-3 primary">{{detaildata.risk[0]}}</div>
-                <div class="col-span-3 danger">{{detaildata.risk[1]}}</div>
-                <div class="col-span-6 success">{{detaildata.risk[2]}}</div>
-            </div>
-            <div class="rulewrap">
-                <div class="col-span-12 rulecss">
-                    <span class="spanbtn"></span>
-                    <span class="spanfont">业务办理及规定</span>
-                    <img src="assets/images/error.png" alt="">
-                </div>
-                <p>{{detaildata.rules}}</p>
+            <div class="row" style="font-size:10px; margin-bottom: 10px;">
+                <ion-button color="primary" size="small" shape="round" fill="outline">{{detaildata.riskLevel}}</ion-button>
+                <ion-button color="primary" size="small" shape="round" fill="outline">{{detaildata.limitMoney}}元起购</ion-button>
+                <ion-button color="primary" size="small" shape="round" fill="outline">{{detaildata.num}}人次购买</ion-button>
             </div>
             <div class="rulewrap">
                 <div class="col-span-12 rulecss">
                     <span class="spanbtn"></span>
-                    <span class="spanfont">目标客户</span>
-                    <!-- <img src="assets/images/error.png" alt=""> -->
+                    <span class="spanfont">支持转让，流动性无忧</span>
                 </div>
-                <p>{{detaildata.content}}</p>
+                <p class="ion-margin-start" style="font-size: 12px;">转让成功，资金立刻到账</p>
             </div>
+          <div class="rulewrap">
+            <div class="col-span-12 rulecss">
+              <span class="spanbtn"></span>
+              <span class="spanfont">每日可购买，到期自动还本付息</span>
+            </div>
+            <p class="ion-margin-start" style="font-size: 12px;">存续期间不允许赎回，理财到期自动返还本金和收益</p>
+          </div>
+          <div class="rulewrap">
+            <div class="col-span-12 rulecss">
+              <span class="spanbtn"></span>
+              <span class="spanfont">较低风险，投资策略稳健</span>
+            </div>
+            <p class="ion-margin-start" style="font-size: 12px;">100%主投固收类资产，不参与股市，中高评级信用债为主，根据市场择机参与利率债投资</p>
+          </div>
         </div>
-        <div class="ion-padding ion-text-right"><a href="assets/product.doc" download="product.doc">产品文档下载</a></div>
+      <ion-card>
+        <ion-card-header style="font-size: 14px;font-weight: bolder;">产品期限</ion-card-header>
+        <div style="margin-left: -25px;">
+          <Steps [size]="'small'" [current]="1" [direction]="'horizontal'">
+            <Step *ngFor="let v of steps" [title]="v.title" [description]="v.description"></Step>
+          </Steps>
+        </div>
+      </ion-card>
+      <ion-card>
+        <ion-card-header style="font-size: 14px;font-weight: bolder;">交易规则</ion-card-header>
+        <ion-item>
+          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">购买时间</ion-label>
+          <ion-label>申购首日9:30 - 末日20:30</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">购买费率</ion-label>
+          <ion-label>购买费率为0</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">赎回时间</ion-label>
+          <ion-label>到期后自动还本付息</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">赎回费率</ion-label>
+          <ion-label>无</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">到账时间</ion-label>
+          <ion-label>T+3内到账，最快T+0，T指工作日</ion-label>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-card-header style="font-size: 14px;font-weight: bolder;">产品介绍</ion-card-header>
+        <div style="font-size: 10px;color: #9a9a9a;margin-bottom:15px;margin-left: 15px;margin-right: 15px;">
+          {{detaildata.content}}
+        </div>
+      </ion-card>
+      <ion-card>
+        <ion-card-header style="font-size: 14px;font-weight: bolder;">
+          <a href="assets/product.doc" download="product.doc">产品说明书</a>
+        </ion-card-header>
+      </ion-card>
+
         <div class="searchbtn">
-            <ion-button expand="full" color="#E75A24" class="btnbg">立即购买</ion-button>
+            <ion-button expand="full" color="#E75A24" class="btnbg">推荐产品给客户</ion-button>
         </div>
     </div>
 </ion-content>

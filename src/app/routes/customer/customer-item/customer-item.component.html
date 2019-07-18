@@ -1,23 +1,25 @@
 <div class="customerWrap">
-  <div class="row">
-    <div class="col-span-2 picfont">
-      <div><img src={{data.url}} alt=""></div>
-    </div>
-    <div class="col-span-10 customercss">
-      <div class="row">
-        <div class="col-span-5">
-          <span class="namecss">{{data.name}}</span>
-          <span class="levercss">lv{{data.lever}}</span>
-        </div>
-        <div class="col-span-7">
-          <span class="colorgray">所属&nbsp;</span>
-          <span class="namecss">{{data.belings}}</span>
-        </div>
+  <ion-card>
+    <div class="row">
+      <div class="col-span-2 picfont">
+        <div><img src={{data.url}} alt=""></div>
       </div>
-      <p>
-        <span class="colorgray">{{data.customertype}}&nbsp;</span>
-        <span class="colorgray">{{data.levername}}</span></p>
-      <p><img src="assets/images/logozs.png">积分：<span class="colorgray">{{data.integral}}</span></p>
+      <div class="col-span-10 customercss">
+        <div class="row">
+          <div class="col-span-5">
+            <span class="namecss">{{data.name}}</span>
+            <span class="levercss">lv{{data.lever}}</span>
+          </div>
+          <div class="col-span-7">
+            <span class="colorgray">所属&nbsp;</span>
+            <span class="namecss">{{data.belings}}</span>
+          </div>
+        </div>
+        <p>
+          <span class="colorgray">{{data.customertype}}&nbsp;</span>
+          <span class="colorgray">{{data.levername}}</span></p>
+        <p><img src="assets/images/logozs.png">积分：<span class="colorgray">{{data.integral}}</span></p>
+      </div>
     </div>
-  </div>
+  </ion-card>
 </div>

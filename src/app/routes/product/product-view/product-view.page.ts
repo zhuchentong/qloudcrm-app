@@ -9,29 +9,21 @@ export class ProductPageComponent implements OnInit {
   public option1 = {
     title: {
       text: '理财产品分布图',
-      subtext: '',
-      x: 'right'
+      "textStyle": {
+        "fontSize": 14,
+        "color": "#3498db"
+      }
     },
     tooltip: {
       trigger: 'item',
       formatter: '{a} <br/>{b} ({d}%)'
     },
-    legend: {
-      orient: 'vertical',
-      left: 'left',
-      data: [
-        '其他资产',
-        '现金银行存款',
-        '非标准债券投资',
-        '权益类资产',
-        '债卷货币市场'
-      ]
-    },
+    "color": ["#893448", "#d95850", "#eb8146", "#ffb248", "#f2d643", "#ebdba4"],
     series: [
       {
         name: '资产占比',
         type: 'pie',
-        radius: '40%',
+        radius: '60%',
         center: ['50%', '60%'],
         data: [
           { value: 335, name: '其他资产' },
@@ -52,30 +44,30 @@ export class ProductPageComponent implements OnInit {
   }
   public option2 = {
     title: {
-      text: ''
+      text: '产品收益率',
+      "textStyle": {
+        "fontSize": 14,
+        "color": "#3498db"
+      }
     },
     tooltip: {
       trigger: 'axis'
     },
-    legend: {
-      data: [
-        '其他资产',
-        '现金银行存款',
-        '非标准债券投资',
-        '权益类资产',
-        '债卷货币市场'
-      ]
-    },
+    "color": ["#f95372", "#40daf1", "#00abff", "#8bd22f"],
+    // legend: {
+    //   data: [
+    //     '其他资产',
+    //     '现金银行存款',
+    //     '非标准债券投资',
+    //     '权益类资产',
+    //     '债卷货币市场'
+    //   ]
+    // },
     grid: {
-      left: '3%',
-      right: '4%',
+      left: '1',
+      right: '3%',
       bottom: '3%',
-      containLabel: true
-    },
-    toolbox: {
-      feature: {
-        saveAsImage: {}
-      }
+      containLabel: false
     },
     xAxis: {
       type: 'category',
@@ -83,9 +75,9 @@ export class ProductPageComponent implements OnInit {
       data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月']
     },
     yAxis: {
-      type: 'category',
+      type: 'value',
       boundaryGap: false,
-      data: ['0%','1%', '2%', '3%', '4%', '5%', '6%', '7%','8%','9%','10%']
+      "show": false
     },
     series: [
       {
@@ -122,20 +114,42 @@ export class ProductPageComponent implements OnInit {
   }
 
   public option3 = {
+    title: {
+      text: '总资产收益率',
+      "textStyle": {
+        "fontSize": 14,
+        "color": "#3498db"
+      }
+    },
     xAxis: {
         type: 'category',
-        boundaryGap: false,
+      "left": "4%",
+      "boundaryGap": true,
+      "interval": 1,
         data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月']
     },
     yAxis: {
-      type: 'category',
-      boundaryGap: false,
-      data: ['0%', '1%', '2%', '3%', '4%', '5%', '6%','7%','8%','9%','10']
+      type: 'value',
+      show: true
     },
     series: [{
         data: [1.4, 5.8, 5.1, 4.56, 5.43, 6.2, 4.9],
-        type: 'line',
-        areaStyle: {}
+      "name": "",
+      "type": "line",
+      "itemStyle": {
+        "normal": {
+          "color": "#186ba0"
+        }
+      },
+      "smooth": true,
+      "symbol": "circle",
+      "symbolSize": 5,
+      "sampling": "average",
+      "areaStyle": {
+        "normal": {
+          "color": "#186ba0"
+        }
+      }
     }]
 }
 
