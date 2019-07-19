@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core'
 import { DashboardService } from 'app/services/dashboard.service'
 import { DatePipe } from '@angular/common'
 import { MessageModel } from 'app/model/message.model'
-import { List } from 'linqts'
 import { DictPipe } from 'app/shared/pipes/dict.pipe'
 import { DictType, MessageType } from 'app/config/enum.config'
 import { DictState } from 'app/store/state/dict.state'
 import { Store } from '@ngxs/store'
+import { List } from 'linqts'
 @Component({
   selector: 'app-message-number',
   templateUrl: './message-number.page.html',
@@ -21,6 +21,7 @@ export class MessageNumberPage implements OnInit {
 
   public messageList: MessageModel[] = []
   private chart: any
+
   constructor(
     private dashboardService: DashboardService,
     private store: Store,
@@ -30,6 +31,10 @@ export class MessageNumberPage implements OnInit {
 
   public ngOnInit() {}
 
+  /**
+   * 获取消息列表
+   * @param length
+   */
   public getMessageList(length) {
     const endTime = Date.now()
     const startTime = endTime - 1000 * 60 * 60 * 24 * length
@@ -46,61 +51,75 @@ export class MessageNumberPage implements OnInit {
       })
   }
 
+  /**
+   * 时间范围变化
+   */
   public onStatusChanged(event) {
     const value = event.detail.value
     this.getMessageList(parseInt(value, 10))
   }
 
+  // 图标初始化
   public ready(chart) {
     this.chart = chart
-    this.chart.source([])
-    this.chart.legend({
-      align: 'center'
-    })
 
-    this.chart
-      .interval()
-      .position('type*count')
-      .color('status')
-      .adjust({
-        type: 'dodge',
-        marginRatio: 0.05 // 设置分组间柱子的间距
-      })
-
-    this.chart.render()
-    this.getMessageList(7)
-  }
-
-  private updateChart(data) {
-    const dataSet: any = []
-    const statusList = [
-      { status: '已处理', filter: x => x.status === 0 },
-      { status: '未处理', filter: x => x.status !== 0 }
-    ]
-
-    this.store
-      .selectSnapshot(DictState.getDict(DictType.MessageType))
-      .forEach(x => {
-        statusList.forEach(item => {
-          dataSet.push({
-            type: x.name,
-            typeCode: x.code,
-            status: item.status,
-            filter: item.filter,
-            count: 0
-          })
-        })
-      })
-
-    data.forEach(x => {
-      const target = dataSet.find(
-        item => x.type === item.typeCode && item.filter(x)
-      )
-
-      if (target) {
-        target.count += 1
+    chart.source([], {
+      percent: {
+        formatter: function formatter(val) {
+          return val * 100 + '%'
+        }
       }
     })
+    chart.legend({
+      position: 'bottom',
+      align: 'center',
+      itemWidth: 70
+    })
+    chart.coord('polar', {
+      transposed: true,
+      radius: 0.55
+    })
+
+    chart.pieLabel({
+      label1: function label1(data, color) {
+        return {
+          text: data.type,
+          fill: color
+        }
+      },
+      label2: function label2(data, color) {
+        return {
+          text: data.count,
+          fill: color
+        }
+      }
+    })
+
+    chart.axis(false)
+    chart
+      .interval()
+      .position('value*percent')
+      .color('type')
+      .adjust('stack')
+
+    chart.render()
+  }
+
+  /**
+   * 更新图标
+   */
+  private updateChart(data) {
+    const dataSet = this.store
+      .selectSnapshot(DictState.getDict(DictType.MessageType))
+      .map(x => {
+        const list = data.filter(item => item.type === x.code)
+        return {
+          type: x.name,
+          percent: parseFloat((list.length / data.length).toFixed(2)),
+          value: '1',
+          count: list.length
+        }
+      })
 
     this.chart.changeData(dataSet)
   }
