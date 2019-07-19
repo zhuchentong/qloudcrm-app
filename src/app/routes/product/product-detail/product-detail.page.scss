@@ -96,16 +96,11 @@ ion-card {
 :host ::ng-deep .am-steps-small .am-steps-item-description {
   font-size: 10px;
 }
-//:host ::ng-deep .am-steps-item-icon {
-//  width: 15px;
-//  height: 15px;
-//  line-height: 15px;
-//  border-radius: 15px;
-//  font-size: 10px;
-//  margin-right: 8px;
-//  transition: background-color .3s,border-color .3s;
-//}
-//:host ::ng-deep .am-icon-md {
-//  width: 15px;
-//  height: 15px;
-//}
+.untreated-container {
+  .untreated-number {
+    font-size: 16px;
+  }
+  .untreated-name {
+    font-size: 10px;
+  }
+}
