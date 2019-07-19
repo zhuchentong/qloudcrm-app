@@ -10,10 +10,10 @@ export class ProductMockService {
     service: productController.getProductList
   })
   public static getProductList(params) {
-    if (params.type === undefined) {
+    if (params.productName === undefined) {
       return productJson
     } else {
-      return productJson.filter(x => x.type.includes(params.type))
+      return productJson.filter(x => x.productName.includes(params.productName))
     }
   }
 }

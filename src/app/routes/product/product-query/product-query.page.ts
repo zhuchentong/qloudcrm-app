@@ -22,7 +22,7 @@ export class ProductQueryPage implements OnInit {
 
   public ngOnInit() {}
   public onSearchChange(event) {
-    this.productService.getProductList({ type: event }).subscribe(data => {
+    this.productService.getProductList({ productName: event }).subscribe(data => {
       this.a = data
       this.logger.log(data)
       this.productList = data
