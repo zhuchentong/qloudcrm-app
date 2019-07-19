@@ -3,3 +3,68 @@
     font-size: 12px;
   }
 }
+
+
+.dashboard-stat {
+  display: block;
+  padding: 30px 15px;
+  text-align: right;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 110px;
+}
+.dashboard-stat .number1 {
+  font-size: 30px;
+  display: block;
+}
+.dashboard-stat .name1 {
+  position: relative;
+  font-weight: bold;
+  top: 8px;
+}
+.bg-primary1 {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: #fff !important;
+}
+.bg-danger1 {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #fff !important;
+}
+.bg-warning1 {
+  background-color: #f39c12;
+  border-color: #f39c12;
+  color: #fff !important;
+}
+.bg-success1 {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  color: #fff !important;
+}
+
+a {
+  outline: none !important;
+  text-decoration: none !important;
+  color: #494949;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.fc-event .fc-content {
+  color: #FFFFFF;
+}
+
+.demo-circle-chart {
+  top: 5px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  user-select: none;
+  position: absolute;
+}
+.demo-chart {
+  width: 100%;
+  height: 400px;
+}
