@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>产品视图</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <!--<ion-card-header>理财产品分布图</ion-card-header>-->
+    <ion-card-content>
+      <div echarts [options]="option1" class="demo-chart" style="height:250px;"></div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <!--<ion-card-header>理财产品分布图</ion-card-header>-->
+    <ion-card-content>
+      <div echarts [options]="option2" class="demo-chart" style="height:250px;"></div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <!--<ion-card-header>理财产品分布图</ion-card-header>-->
+    <ion-card-content>
+      <div echarts [options]="option3" class="demo-chart" style="height:250px;"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

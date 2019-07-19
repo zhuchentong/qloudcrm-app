@@ -17,9 +17,35 @@ export class ProductDetailPage implements OnInit {
     public productDetailservice: ProductDetailService
   ) {}
 
+  steps = [];
+
+
   public ngOnInit() {
     this.productDetailservice.getProductDetailList().subscribe(data => {
       this.detaildata = data
     })
+
+    this.steps = [
+      {
+        title: '起售',
+        description: '07.17'
+      },
+      {
+        title: '截止',
+        description: '07.22'
+      },
+      {
+        title: '起息日',
+        description: '07.23'
+      },
+      {
+        title: '可转让',
+        description: '07.30'
+      },
+      {
+        title: '到期',
+        description: '20.01.20'
+      }
+    ];
   }
 }

@@ -1,0 +1,63 @@
+.acticitycss {
+    background: -webkit-linear-gradient(left top, white, rgb(255, 255, 187));
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom right, white, rgb(255, 255, 187));
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right, white, rgb(255, 255, 187));
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right, white, rgb(255, 255, 187));
+    .title {
+        color: rgb(117, 70, 60);
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+    }
+    .hightcss {
+        line-height: 30px;
+        background: white;
+        color: rgb(124, 99, 57);
+        p {
+            font-size: 12px;
+        }
+        b {
+            font-size: 17px;
+        }
+        .lvcss {
+            font-size: 22px;
+            color: rgb(246, 41, 5);
+            font-weight: 700;
+        }
+        .specialcss {
+            font-size: 12px;
+            span {
+                font-size: 17px;
+            }
+        }
+        .searchbtn {
+            width: 90%;
+            margin: 0 auto;
+            .btnbg {
+                border-radius: 10px !important;
+                background: rgb(253, 198, 72) !important;
+                font-size: 18px !important;
+            }
+        }
+    }
+    .cpldcss {
+        line-height: 30px;
+        background: white;
+        .ldtitle {
+            font-size: 21px;
+            color: rgb(124, 99, 57);
+            text-align: center;
+        }
+        p {
+            color: #f62905;
+            font-size: 18px;
+        }
+        div {
+            text-indent: 20px;
+            color: rgb(124, 99, 57);
+        }
+    }
+}

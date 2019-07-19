@@ -3,7 +3,7 @@ import { Router } from '@angular/router'
 import { DashboardService } from 'app/services/dashboard.service'
 import { MessageModel } from 'app/model/message.model'
 import { Store } from '@ngxs/store'
-import { DictType } from 'app/config/enum.config'
+import { DictType, MessageType } from 'app/config/enum.config'
 import { DictState } from 'app/store/state/dict.state'
 import { LoggerService } from '@ngx-toolkit/logger'
 
@@ -19,6 +19,15 @@ export class DashboardPage implements OnInit {
   public currentMessageType: any = ''
   public messageTypeNumber: any[] = []
   public fixedTabs = false
+  private iconList = {}
+  public slideOpts = {
+    initialSlide: 1,
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000
+    }
+  }
 
   /**
    * 获取当前消息列表
@@ -69,7 +78,8 @@ export class DashboardPage implements OnInit {
 
         return {
           ...x,
-          length: messageList.length
+          length: messageList.length,
+          icon: 'assets/icon/dashboard/' + x.code.toLowerCase() + '.svg'
         }
       })
   }
@@ -88,5 +98,9 @@ export class DashboardPage implements OnInit {
    */
   public onScroll(event) {
     this.fixedTabs = event.detail.currentY > 80
+  }
+
+  public onOpenMessageType(message) {
+    this.router.navigate(['/dashboard/message-list', { type: message.code }])
   }
 }
