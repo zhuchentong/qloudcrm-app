@@ -1,24 +1,27 @@
 <div class="customerWrap">
   <ion-card>
-    <div class="row">
+    <div class="row" style="margin-top: 10px;margin-bottom: 10px;">
       <div class="col-span-2 picfont">
-        <div><img src={{data.url}} alt=""></div>
+        <div style="margin-left: 10px;"><img src={{data.url}} alt=""></div>
       </div>
       <div class="col-span-10 customercss">
         <div class="row">
           <div class="col-span-5">
-            <span class="namecss">{{data.name}}</span>
+            <span class="namecss" style="font-size: 18px;">{{data.name}}</span>
             <span class="levercss">lv{{data.lever}}</span>
           </div>
-          <div class="col-span-7">
-            <span class="colorgray">所属&nbsp;</span>
-            <span class="namecss">{{data.belings}}</span>
+          <div class="col-span-6 ion-text-right ion-margin-end">
+            <ion-button color="dark" size="small" style="margin-top: -10px;">{{data.belings}}</ion-button>
           </div>
         </div>
         <p>
-          <span class="colorgray">{{data.customertype}}&nbsp;</span>
-          <span class="colorgray">{{data.levername}}</span></p>
-        <p><img src="assets/images/logozs.png">积分：<span class="colorgray">{{data.integral}}</span></p>
+          <ion-button color="dark" size="small" shape="round" fill="outline">{{data.customertype}}</ion-button>
+          <ion-button color="dark" size="small" shape="round" fill="outline">{{data.levername}}</ion-button>
+          <ion-button color="danger" size="small" shape="round" fill="outline" *ngIf="data.riskLevel">{{data.riskLevel}}</ion-button>
+          <ion-button color="success" size="small" shape="round" fill="outline" *ngIf="data.option1">{{data.option1}}</ion-button>
+          <ion-button color="primary" size="small" shape="round" fill="outline" *ngIf="data.option2">{{data.option2}}</ion-button>
+        </p>
+        <p style="font-size: 10px;">最后互动时间：<span class="colorgray">{{data.contactDate}}</span></p>
       </div>
     </div>
   </ion-card>

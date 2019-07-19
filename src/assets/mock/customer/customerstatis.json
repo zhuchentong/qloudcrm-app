@@ -1,36 +1,56 @@
 [{
         "productTyepe": "额度类贷款",
-        "customerNum": "1522",
-        "dkye": "60003",
-        "rjz": "6.9%",
-        "yjz": "3.7%"
+        "customerNum": 1522,    //客户数
+        "dkye": 60003,          //贷款余额
+        "rjz": 6900,            //日进增
+        "yjz": 323400,             //当年净增
+        "dayNewAmount": 20000,     //日新发放额
+        "dayReturnAmount": 1000,  //日还款额（本金）
+        "yearNewAmount": 2450921, //当年新发放额
+        "yearReturnAmount": 1920312
     },
     {
         "productTyepe": "CFC类贷款",
-        "customerNum": "234",
-        "dkye": "145673",
-        "rjz": "4%",
-        "yjz": "3%"
+        "customerNum": 234,
+        "dkye": 145673,
+        "rjz": 4000,            //日进增
+        "yjz": 173400,             //当年净增
+        "dayNewAmount": 5000,     //日新发放额
+        "dayReturnAmount": 5000,  //日还款额（本金）
+        "yearNewAmount": 17921, //当年新发放额
+        "yearReturnAmount": 980312
     },
     {
         "productTyepe": "消费类贷款",
-        "customerNum": "999",
-        "dkye": "90673",
-        "rjz": "34%",
-        "yjz": "2%"
+        "customerNum": 999,
+        "dkye": 90673,
+        "rjz": 34000,            //日进增
+        "yjz": 2173400,             //当年净增
+        "dayNewAmount": 6000,     //日新发放额
+        "dayReturnAmount": 2000,  //日还款额（本金）
+        "yearNewAmount": 317921, //当年新发放额
+        "yearReturnAmount": 280312
     },
     {
         "productTyepe": "住房类贷款",
-        "customerNum": "999",
-        "dkye": "783900",
-        "rjz": "1.4%",
-        "yjz": "3.9%"
+        "customerNum": 999,
+        "dkye": 783900,
+        "rjz": 14000,
+        "yjz": 39000,
+        "dayNewAmount": 9000,     //日新发放额
+        "dayReturnAmount": 4000,  //日还款额（本金）
+        "yearNewAmount": 377921, //当年新发放额
+        "yearReturnAmount": 780312
     },
     {
         "productTyepe": "医用类贷款",
-        "customerNum": "1099",
-        "dkye": "20000",
-        "rjz": "4.1%",
-        "yjz": "3.9%"
+        "customerNum": 1099,
+        "dkye": 20000,
+        "rjz": 4100,
+        "yjz": 39000,
+        "dayNewAmount": 9000,     //日新发放额
+        "dayReturnAmount": 4000,  //日还款额（本金）
+        "yearNewAmount": 377921, //当年新发放额
+        "yearReturnAmount": 780312
     }
 ]
