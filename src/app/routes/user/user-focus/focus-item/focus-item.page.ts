@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import {Component, OnInit, Input, HostBinding} from '@angular/core'
 import { Router } from '@angular/router'
 import { FormsModule } from '@angular/forms'
 
@@ -8,6 +8,10 @@ import { FormsModule } from '@angular/forms'
   styleUrls: ['./focus-item.page.scss']
 })
 export class FocusItemPage implements OnInit {
+
+  @HostBinding('class')
+  private hostClass: string[]
+
   @Input()
   public data
 
@@ -23,7 +27,9 @@ export class FocusItemPage implements OnInit {
   // }
   constructor(public router: Router) {}
 
-  public ngOnInit() {}
+  public ngOnInit() {
+    this.hostClass = [this.data.type.toLowerCase()]
+  }
 
   public onOpenDetail() {
     // localStorage.setItem('current-message', JSON.stringify(this.data))
@@ -33,6 +39,8 @@ export class FocusItemPage implements OnInit {
   }
 
   public getItemClass() {
+    console.log(this.data.type.toLowerCase())
+
     return {
       [`${this.data.type.toLowerCase()}-item`]: true
     }

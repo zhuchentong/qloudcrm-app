@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>执行计划</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <!--<nzm-tabs [page]="1" [useOnPan]="false" [animated]="false">-->
+      <!--<nzm-tab-pane>-->
+        <!--<div class="customerwrap ion-margin">-->
+          <nzm-tabs [page]="1" [useOnPan]="false" [animated]="true">
+            <nzm-tab-pane [title]="scheduleInfo.title">
+              <ion-card>
+                <ion-item>
+                  <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">客户姓名</ion-label>
+                  <ion-label>{{scheduleInfo.targetName}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">客户等级</ion-label>
+                  <ion-label>{{scheduleInfo.targetLeve}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">开始时间</ion-label>
+                  <ion-label>{{scheduleInfo.startTime | date : 'yyyy-MM-dd HH:mm'}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">结束时间</ion-label>
+                  <ion-label>{{scheduleInfo.endTime | date : 'yyyy-MM-dd HH:mm'}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">状态</ion-label>
+                  <ion-label>{{scheduleInfo.statu}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">联系方式</ion-label>
+                  <ion-label>{{scheduleInfo.contactWay}}</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-label class="col-span-2 ion-text-center" style="font-size: 13px;"  slot="start">推荐产品</ion-label>
+                  <ion-label>{{scheduleInfo.recommendProduct}}</ion-label>
+                </ion-item>
+              </ion-card>
+            </nzm-tab-pane>
+          </nzm-tabs>
+    <div class="center-span ion-margin-horizontal">
+    <ion-button class="submit" expand="block" color="success" expand="full">
+      <ion-icon name="call"></ion-icon>
+      {{createButtonValue}}
+    </ion-button>
+    </div>
+        <!--</div>-->
+      <!--</nzm-tab-pane>-->
+    <!--</nzm-tabs>-->
+  </div>
+</ion-content>

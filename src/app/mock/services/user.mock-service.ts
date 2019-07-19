@@ -59,7 +59,7 @@ export class UserMockService {
   })
   public static getUserSchedule(params: UserSchedule) {
     let result = null
-    // console.log('@@@@@@@' + params.infoKeyWords)
+     console.log('@@@@@@@' + params.infoKeyWords)
     if (params.infoKeyWords === undefined) {
       //   console.log('go all')
       result = userSchedulesJSON
@@ -78,14 +78,16 @@ export class UserMockService {
       }
     }
   }
+
   @MockService({
     service: userController.createUserSchedule
   })
-
   public static createUserSchedule(params) {
     userSchedulesJSON.push({
       title: params.title,
       allDay: false,
+      scheduleID: params.scheduleID,
+      customerID: params.customerID,
       statu: params.statu,
       targetName: params.targetName,
       targetLeve: params.targetLeve,
@@ -110,5 +112,18 @@ export class UserMockService {
         params.contactDate
     })
     return { message: '任务添加成功' }
+  }
+
+
+
+  @MockService({
+    service: userController.scheduleByID
+  })
+  public static scheduleByID(params) {
+    // console.log('getUserScheduleByID')
+    let result = null
+    result= userSchedulesJSON.find( x => x.scheduleID === params.scheduleID)
+    // console.log('ssssss： '+result)
+    return result
   }
 }

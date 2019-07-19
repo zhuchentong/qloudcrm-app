@@ -48,7 +48,7 @@
 
           <ng-template #detialtemplate let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
             <div class="" *ngFor="let item of selectedDate.events" >
-            <div class="new-item row no-wrap">
+            <div class="new-item row no-wrap" (click)="onOpenDetail(item.scheduleID)">
             <div class="left-item"></div>
             <div class="middle-item col between-span">
             <div class="title">{{item.title}}</div>
