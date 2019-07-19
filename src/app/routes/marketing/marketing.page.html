@@ -1,44 +1,33 @@
 <ion-content>
+  <div style="margin-top: 20px;"></div>
+  <ion-card>
+    <div class="row">
+      <div class="col-span-12">
+        <a class="dashboard-stat bg-danger1" href="#">
+          <span class="number1">200,000元</span>
+          <span class="name1">本月完成理财销售业绩</span>
+          <div echarts [options]="circlechartOption1" class="demo-circle-chart"></div>
+        </a>
+      </div>
+    </div>
+  </ion-card>
+
+  <ion-card>
+    <div class="row">
+      <div class="col-span-12">
+        <a class="dashboard-stat bg-primary1" href="#">
+          <span class="number1">1,200,000元</span>
+          <span class="name1">本月完成贷款额度</span>
+          <div echarts [options]="circlechartOption" class="demo-circle-chart"></div>
+        </a>
+        <!-- /.dashboard-stat -->
+      </div>
+    </div>
+  </ion-card>
+
+
   <ion-grid>
     <ion-row style="font-size:12px;">
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title style="font-size:14px;"
-              >本月业绩目标</ion-card-title
-            >
-          </ion-card-header>
-          <ion-card-content>
-            <div class="row between-span">
-              <div>贷款目标</div>
-              <div>200万</div>
-            </div>
-            <div class="row between-span">
-              <div>理财目标</div>
-              <div>150万</div>
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title style="font-size:14px;"
-              >本月业绩额度</ion-card-title
-            >
-          </ion-card-header>
-          <ion-card-content>
-            <div class="row between-span">
-              <div>贷款额度</div>
-              <div>120万</div>
-            </div>
-            <div class="row between-span">
-              <div>理财额度</div>
-              <div>83万</div>
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
       <ion-col size="12">
         <ion-card>
           <ion-card-header>
@@ -46,7 +35,7 @@
           </ion-card-header>
           <ion-card-content>
             <div class="row middle-span">
-              <div>月度进度</div>
+              <div style="font-size: 12px;font-weight: bolder;">本月完成进度</div>
               <div class="progress-container col-span ion-padding">
                 <nzm-progress
                   [percent]="42"
@@ -56,7 +45,7 @@
               <div>42%</div>
             </div>
             <div class="row middle-span">
-              <div>季度进度</div>
+              <div style="font-size: 12px;font-weight: bolder;">本季完成进度</div>
               <div class="progress-container col-span ion-padding">
                 <nzm-progress
                   [percent]="21"
@@ -68,52 +57,20 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col size="12" class="yeji">
+
+
+      <ion-col size="12">
         <ion-card>
           <ion-card-header>
-            <ion-card-title style="font-size:14px;">本月业绩</ion-card-title>
+            <ion-card-title style="font-size:14px;">客户签约转化率（30天）</ion-card-title>
           </ion-card-header>
-          <ion-card-content style="font-size:12px;">
-            <ion-item>
-              <ion-label slot="start">员工姓名</ion-label>
-              <ion-label>张三</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">月度业绩</ion-label>
-              <ion-label>2019-07</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">所属机构</ion-label>
-              <ion-label>成都高新支行</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">存款余额-末期时点</ion-label>
-              <ion-label>￥23,245,854元</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">存款余额-增量</ion-label>
-              <ion-label>￥25,854元</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">存款月日均余额</ion-label>
-              <ion-label>￥125,854元</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">活期存款余额-期末时点</ion-label>
-              <ion-label>￥725,854元</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">活期存款余额-增量</ion-label>
-              <ion-label>￥65,854元</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">活期存款月日均余额-增量</ion-label>
-              <ion-label>￥93,864元</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label slot="start">活期存款月日均余额</ion-label>
-              <ion-label>￥645,334元</ion-label>
-            </ion-item>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="funnelOption"
+              class="demo-chart"
+              style="height:340px;"
+            ></div>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -121,14 +78,14 @@
       <ion-col size="12">
         <ion-card>
           <ion-card-header>
-            <ion-card-title style="font-size:14px;">绩效评分</ion-card-title>
+            <ion-card-title style="font-size:14px;">综合绩效评分（30天）</ion-card-title>
           </ion-card-header>
           <ion-card-content>
             <div
               echarts
-              [options]="option2"
+              [options]="option"
               class="demo-chart"
-              style="height:400px;"
+              style="height:340px;"
             ></div>
           </ion-card-content>
         </ion-card>
@@ -142,7 +99,7 @@
             <div>
               <div class="ion-padding row between-span">
                 <div>2019-06</div>
-                <a
+                <a style="font-size: 12px;"
                   [routerLink]="[
                     '/marketing/performance-detail',
                     { date: '2019-06' }
@@ -152,7 +109,7 @@
               </div>
               <div class="ion-padding row between-span">
                 <div>2019-05</div>
-                <a
+                <a style="font-size: 12px;"
                   [routerLink]="[
                     '/marketing/performance-detail',
                     { date: '2019-05' }
@@ -162,7 +119,7 @@
               </div>
               <div class="ion-padding row between-span">
                 <div>2019-04</div>
-                <a
+                <a style="font-size: 12px;"
                   [routerLink]="[
                     '/marketing/performance-detail',
                     { date: '2019-04' }

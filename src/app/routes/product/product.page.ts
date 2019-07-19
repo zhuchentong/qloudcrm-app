@@ -38,7 +38,7 @@ export class ProductPage implements OnInit {
   constructor(public router: Router, public productService: ProductService) {}
 
   public ngOnInit() {
-    this.productService.getProductList({ type: '' }).subscribe(data => {
+    this.productService.getProductList({ productName: '' }).subscribe(data => {
       this.productList = data
     })
   }
