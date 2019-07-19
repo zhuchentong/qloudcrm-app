@@ -52,6 +52,9 @@ export class UserService {
     })
   }
 
+
+
+
   /**
    * 新增计划
    *  @param params
@@ -74,6 +77,16 @@ export class UserService {
       { lable: '关于', url: '' }
     ]
   }
+
+
+
+  public getUserScheduleByID(params): Observable<any> {
+    // console.log(params)
+    return this.net.send({
+      service: userController.scheduleByID,
+      params
+    })
+  }
 }
 
 // export class UserInfo {
@@ -87,4 +100,5 @@ export class UserService {
 
 export class UserManagerMenu {
   constructor(public lable: string, public url: string) {}
+
 }

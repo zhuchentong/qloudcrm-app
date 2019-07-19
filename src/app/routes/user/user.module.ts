@@ -13,6 +13,7 @@ import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { FocusItemPage } from 'app/routes/user/user-focus/focus-item/focus-item.page'
 import { NgCalendarModule } from 'ionic2-calendar'
 import { DatePipe } from '@angular/common'
+import {UserScheduleItemPage} from 'app/routes/user/user-schedule-item/user-schedule-item.page'
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'user-login',
     component: LoginPage
+  },
+  {
+    path: 'user-schedule-item/:scheduleID',
+    component:UserScheduleItemPage
   }
 ]
 
@@ -60,7 +65,8 @@ const routes: Routes = [
     UserSettingPage,
     UserToolsPage,
     LoginPage,
-    FocusItemPage
+    FocusItemPage,
+    UserScheduleItemPage
   ],
   providers: [UserService, DatePipe]
 })

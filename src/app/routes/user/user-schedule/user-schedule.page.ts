@@ -7,7 +7,6 @@ import {UserSchedule} from 'app/model/user-schedule.model'
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
 import {AlertController} from '@ionic/angular'
 import {DatePipe} from '@angular/common'
-import {CalendarComponent} from 'ionic2-calendar/calendar'
 
 @Component({
   selector: 'app-user-schedule',
@@ -63,21 +62,21 @@ export class UserSchedulePage implements OnInit {
   public queryUserSceduleList(params) {
     this.userService.searchUserSchedule(params).subscribe(data => {
       this.logger.info(data)
-     this.myScheduleList = data
-     // data.forEach( item =>{
-     //   this.myScheduleList.push({
-     //     title: item.title,
-     //     allDay: item.allDay,
-     //     statu: item.statu,
-     //     targetName: item.targetName,
-     //     targetLeve: item.targetLeve,
-     //     contactWay: item.contactWay,
-     //     recommendProduct: item.recommendProduct,
-     //     startTime:new Date(item.startTime),
-     //     endTime: new Date(item.endTime),
-     //     infoKeyWords: item.infoKeyWords
-     //   })
-     // })
+      this.myScheduleList = data
+      // data.forEach( item =>{
+      //   this.myScheduleList.push({
+      //     title: item.title,
+      //     allDay: item.allDay,
+      //     statu: item.statu,
+      //     targetName: item.targetName,
+      //     targetLeve: item.targetLeve,
+      //     contactWay: item.contactWay,
+      //     recommendProduct: item.recommendProduct,
+      //     startTime:new Date(item.startTime),
+      //     endTime: new Date(item.endTime),
+      //     infoKeyWords: item.infoKeyWords
+      //   })
+      // })
       // this.myScheduleList[0].startTime.getTime()
     })
   }
@@ -142,12 +141,12 @@ export class UserSchedulePage implements OnInit {
   }
 
   public loadEvent() {
-   // this.logger.info('loadEvent')
+    // this.logger.info('loadEvent')
 
-   // this.myScheduleList= this.createRandomEvents()
+    // this.myScheduleList= this.createRandomEvents()
 
-  //  this.logger.info(this.myScheduleList)
-   this.queryUserSceduleList({infoKeyWords: ''})
+    //  this.logger.info(this.myScheduleList)
+    this.queryUserSceduleList({infoKeyWords: ''})
     // this.myScheduleList.forEach((item) =>{
     //     this.eventSource.push({
     //       title:item.title,
@@ -156,6 +155,15 @@ export class UserSchedulePage implements OnInit {
     //       endTime: item.endTime,
     //     })
     // })
+  }
+
+
+  public onOpenDetail(scheduleID) {
+    this.logger.info('click a item')
+    this.router.navigate(['/user/user-schedule-item',scheduleID])
+    // localStorage.setItem('current-message', JSON.stringify(this.data))
+    // const url = this.routeList[this.data.tag] || this.routeList[this.data.type]
+    // url && this.router.navigateByUrl(url)
   }
 
 }

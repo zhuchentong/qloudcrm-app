@@ -1,30 +1,66 @@
-// $color1: {
-//   icon: '#d5a441';
-//   text: '#ffffff';
-//   background1: '#d5a441';
-//   background2: '#dfac45';
-// };
+:host {
+  $color-active-1: #43af7d;
+  $color-active-2: #43af7d;
+  $color-channel-1: #5ea8d6;
+  $color-channel-2: #69baec;
+  $color-product-1: #9978d6;
+  $color-product-2: #a984ec;
+  $color-customer-1: #d5a441;
+  $color-customer-2: #dfac45;
+  $color-incident-1: #F57251;
+  $color-incident-2: #F57255;
 
-// $color2: {
-//   icon: '#5ea8d6',
-//   text: '#ffffff',
-//   background1: '#5ea8d6',
-//   background2: '#69baec'
-// };
+  &.focus-active {
+    .left-item,
+    .middle-item {
+      background: $color-active-1;
+    }
+    .right-item {
+      background: $color-active-2;
+    }
+  }
 
-// $color3: {
-//   icon: '#9978d6',
-//   text: '#ffffff',
-//   background1: '#9978d6',
-//   background2: '#a984ec'
-// };
+  &.focus-customer {
+    .left-item,
+    .middle-item {
+      background: $color-customer-1;
+    }
+    .right-item {
+      background: $color-customer-2;
+    }
+  }
 
-// $color4: {
-//   icon: '#43af7d',
-//   text: '#FFFFF3',
-//   background1: '#43af7d',
-//   background2: '#49bd88'
-// };
+  &.focus-product {
+    .left-item,
+    .middle-item {
+      background: $color-product-1;
+    }
+    .right-item {
+      background: $color-product-2;
+    }
+  }
+
+  &.focus-channel {
+    .left-item,
+    .middle-item {
+      background: $color-channel-1;
+    }
+    .right-item {
+      background: $color-channel-2;
+    }
+  }
+
+  &.focus-incident {
+    .left-item,
+    .middle-item {
+      background: $color-incident-1;
+    }
+    .right-item {
+      background: $color-incident-2;
+    }
+  }
+
+}
 
 .new-item {
   height: 120px;
@@ -33,17 +69,25 @@
   color: #fffff3;
   border-radius: 20px;
   box-shadow: -2px 5px 5px gray;
+  position: relative;
+
+  .new-item-badge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 12px;
+  }
 
   .left-item {
     width: 10px;
-    background: #ebc011;
     border-radius: 20px 0 0 20px;
   }
 
   .middle-item {
     padding: 10px;
     font-size: 10px;
-    background: #e2a603;
     .title {
       font-weight: bold;
       font-size: 12px;
@@ -53,7 +97,6 @@
   .right-item {
     flex: 1;
     padding: 5px;
-    background: #ebc011;
     border-radius: 0 10px 10px 0;
 
     .title {
@@ -71,10 +114,12 @@
     font-size: 14px;
     line-height: 35px;
   }
+
   .sub-title {
     font-weight: 300;
     font-size: 10px;
   }
+
   .title,
   .sub-title {
     overflow: hidden;
