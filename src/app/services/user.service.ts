@@ -48,15 +48,23 @@ export class UserService {
     return this.net.send({
       service: userController.getUserSchedule,
       params,
-      model: UserFocusModel
+      model: UserSchedule
     })
   }
+
+
+
+
+  /**
+   * 新增计划
+   *  @param params
+   *  @returns {Observable<any>}
+   */
 
   public createUserSchedule(params): Observable<any> {
     return this.net.send({
       service: userController.createUserSchedule,
-      params,
-      model: UserSchedule
+      params
     })
   }
 
@@ -68,6 +76,16 @@ export class UserService {
       { lable: '反馈', url: '' },
       { lable: '关于', url: '' }
     ]
+  }
+
+
+
+  public getUserScheduleByID(params): Observable<any> {
+    // console.log(params)
+    return this.net.send({
+      service: userController.scheduleByID,
+      params
+    })
   }
 }
 
@@ -82,4 +100,5 @@ export class UserService {
 
 export class UserManagerMenu {
   constructor(public lable: string, public url: string) {}
+
 }

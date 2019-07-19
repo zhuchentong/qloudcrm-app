@@ -6,6 +6,7 @@ import { userController } from 'app/config/service/user.controller'
 import { LoggerService } from '@ngx-toolkit/logger'
 import { UserInfoModel } from 'app/model/user-info.model'
 import { UserSchedule } from 'app/model/user-schedule.model'
+import {Type} from 'class-transformer'
 
 export class UserMockService {
   //  private static logger: LoggerService =new LoggerService()
@@ -58,7 +59,7 @@ export class UserMockService {
   })
   public static getUserSchedule(params: UserSchedule) {
     let result = null
-    // console.log('@@@@@@@' + params.infoKeyWords)
+     console.log('@@@@@@@' + params.infoKeyWords)
     if (params.infoKeyWords === undefined) {
       //   console.log('go all')
       result = userSchedulesJSON
@@ -67,9 +68,7 @@ export class UserMockService {
       // console.log('go search')
       result = userSchedulesJSON.filter(x => {
         // console.log(x.infoKeyWords.indexOf(params.infoKeyWords))
-        return x.infoKeyWords.indexOf(params.infoKeyWords) >= 0
-          ? x.infoKeyWords.indexOf(params.infoKeyWords)
-          : null
+        return x.infoKeyWords.indexOf(params.infoKeyWords) >= 0?x.infoKeyWords.indexOf(params.infoKeyWords):null
       })
 
       if (result) {
@@ -79,12 +78,16 @@ export class UserMockService {
       }
     }
   }
+
   @MockService({
     service: userController.createUserSchedule
   })
   public static createUserSchedule(params) {
     userSchedulesJSON.push({
-      topic: params.topic,
+      title: params.title,
+      allDay: false,
+      scheduleID: params.scheduleID,
+      customerID: params.customerID,
       statu: params.statu,
       targetName: params.targetName,
       targetLeve: params.targetLeve,
@@ -94,7 +97,7 @@ export class UserMockService {
       startTime: params.startTime,
       endTime: params.endTime,
       infoKeyWords:
-        params.topic +
+        params.title +
         ' ' +
         params.statu +
         ' ' +
@@ -109,5 +112,18 @@ export class UserMockService {
         params.contactDate
     })
     return { message: '任务添加成功' }
+  }
+
+
+
+  @MockService({
+    service: userController.scheduleByID
+  })
+  public static scheduleByID(params) {
+    // console.log('getUserScheduleByID')
+    let result = null
+    result= userSchedulesJSON.find( x => x.scheduleID === params.scheduleID)
+    // console.log('ssssss： '+result)
+    return result
   }
 }

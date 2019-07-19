@@ -15,16 +15,20 @@
                         <div class="col-span-4 picimg ion-text-center">
                             <img src="http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg" alt="">
                         </div>
-                        <div class="col-span-8 ion-text-left">
+                        <div class="col-span-5 ion-text-left">
                             <p>{{customerdetail.customerInfo.name}}</p>
-                          <ion-button color="danger" size="small">信易贷</ion-button>
-                          <ion-button color="danger" size="small">大额存单</ion-button>
-                          <ion-button color="danger" size="small">诚易贷</ion-button>
-                          <ion-button color="success" size="small">春季营销</ion-button>
-                          <ion-button color="primary" size="small">高尔夫</ion-button>
-                          <ion-button color="primary" size="small">户外徒步</ion-button>
-                          <ion-button color="primary" size="small">摄影</ion-button>
+                          <p style="font-size:10px;color:#9a9a9a;">白金卡客户</p>
                         </div>
+
+                      <div class="col-span-12">
+                        <ion-button color="danger" size="small" shape="round" fill="outline">信易贷</ion-button>
+                        <ion-button color="danger" size="small" shape="round" fill="outline">大额存单</ion-button>
+                        <ion-button color="danger" size="small" shape="round" fill="outline">诚易贷</ion-button>
+                        <ion-button color="success" size="small" shape="round" fill="outline">春季营销</ion-button>
+                        <ion-button color="primary" size="small" shape="round" fill="outline">高尔夫</ion-button>
+                        <ion-button color="primary" size="small" shape="round" fill="outline">户外徒步</ion-button>
+                        <ion-button color="primary" size="small" shape="round" fill="outline">摄影</ion-button>
+                      </div>
                     </div>
 
                   <nzm-tabs [page]="2" [useOnPan]="false" [animated]="true">
@@ -362,7 +366,7 @@
 
               <nzm-tabs [page]="3" [useOnPan]="false" [animated]="true">
                 <nzm-tab-pane [title]="'互动记录'">
-                  <ion-card>
+                  <ion-card routerLink="/customer/customer-detail-interactive">
                     <List [className]="'my-list'" [renderHeader]=(renderHeader1)>
                       <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
                         <span style="font-size:smaller">来电咨询</span>
@@ -380,7 +384,7 @@
                   </ion-card>
                 </nzm-tab-pane>
                 <nzm-tab-pane [title]="'营销活动'">
-                  <ion-card>
+                  <ion-card routerLink="/customer/customer-detail-activity">
                     <List [className]="'my-list'" [renderHeader]=(renderHeader4)>
                       <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
                         <span style="font-size:smaller">管微7月首绑礼：领最高8888元现金礼包</span>
@@ -419,15 +423,15 @@
             <div class="customerwrap ion-margin">
               <ion-card>
                 <List [className]="'my-list'" [renderHeader]=(renderHeader2)>
-                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'"  routerLink="/product/product-detail">
                     <span style="font-size:smaller">龙湾农商银行丰收·赢利2018年第84期</span>
                     <Brief><span style="font-size:small">投资币种为人民币，认购起点为5万，预期收益率为5.50%，产品期限为204天，销售起始日为2018-11-06，销售截止日为2018-11-11，收益类型为非保本浮动，发行地区为浙江</span></Brief>
                   </ListItem>
-                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'" routerLink="/product/product-detail">
                     <span style="font-size:smaller">大庆农商银行“钻得力”-盈利1号</span>
                     <Brief><span style="font-size:small">投资币种为人民币，认购起点为5万，预期收益率为5.20%，产品期限为230天，销售起始日为2018-09-19，销售截止日为2018-09-25，收益类型为非保本浮动，发行地区为黑龙江。</span></Brief>
                   </ListItem>
-                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'" routerLink="/product/product-detail">
                     <span style="font-size:smaller">金翼宝系列805号</span>
                     <Brief><span style="font-size:small">发行银行: 新韩银行委托币种: 人民币 投资类型: --委托币种起始金额: 50000 预期收益率(%): 3.60起始金额递增</span></Brief>
                   </ListItem>
@@ -436,15 +440,15 @@
 
               <ion-card>
                 <List [className]="'my-list'" [renderHeader]=(renderHeader3)>
-                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'" routerLink="/customer/customer-detail-buyed">
                     <span style="font-size:smaller">汇丰代客境外理财计划–开放式海外基金型</span>
                     <Brief><span style="font-size:small">产品发行机构：汇丰银行（中国）有限公司，购买份额：10000份，最新净值：	528.405 元，产品类型：开放式净值型</span></Brief>
                   </ListItem>
-                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'" routerLink="/customer/customer-detail-buyed">
                     <span style="font-size:smaller">利多多现金管理1号</span>
                     <Brief><span style="font-size:small">产品发行机构：上海浦东发展银行股份有限公司，购买份额：2000份，最新净值：	1.405 元，产品类型：开放式非净值型</span></Brief>
                   </ListItem>
-                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'">
+                  <ListItem multipleLine [arrow]="'horizontal'" [platform]="'android'" routerLink="/customer/customer-detail-buyed">
                     <span style="font-size:smaller">财富班车进取4号（180天）</span>
                     <Brief><span style="font-size:small">产品发行机构：上海浦东发展银行股份有限公司，购买份额：2000份，最新净值：	1.405 元，产品类型：开放式非净值型</span></Brief>
                   </ListItem>
@@ -453,13 +457,12 @@
             </div>
           </nzm-tab-pane>
 
-
-
-
-
-
         </nzm-tabs>
-
-
     </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="call"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

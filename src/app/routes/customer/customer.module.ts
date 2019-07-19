@@ -9,6 +9,9 @@ import { CustomerGroupPage } from './customer-group/customer-group.page'
 import { CustomerHistoryPage } from './customer-history/customer-history.page'
 import { CustomerStatisPage } from './customer-statis/customer-statis.page'
 import { CustomerDepqueryPage } from './customer-depquery/customer-depquery.page'
+import { CustomerDetailInteractivePage } from './customer-detail-interactive/customer-detail-interactive.page'
+import { CustomerDetailActivityPage } from './customer-detail-activity/customer-detail-activity.page'
+import { CustomerDetailBuyedPage } from './customer-detail-buyed/customer-detail-buyed.page'
 
 const routes: Routes = [
   {
@@ -38,6 +41,16 @@ const routes: Routes = [
   {
     path: 'customer-depquery',
     component: CustomerDepqueryPage
+  },
+  {
+    path: 'customer-detail-interactive',
+    component: CustomerDetailInteractivePage
+  },{
+    path: 'customer-detail-activity',
+    component:CustomerDetailActivityPage
+  },{
+    path:'customer-detail-buyed',
+    component:CustomerDetailBuyedPage
   }
 ]
 
@@ -51,7 +64,10 @@ const PAGES = [CustomerListPage, CustomerDetailPage]
     CustomerStatisPage,
     CustomerDetailPage,
     CustomerDepqueryPage,
-    CustomerHistoryPage
+    CustomerHistoryPage,
+    CustomerDetailInteractivePage,
+    CustomerDetailActivityPage,
+    CustomerDetailBuyedPage
   ],
   entryComponents: [CustomerItemComponent],
   imports: [SharedModule, RouterModule.forChild(routes)]

@@ -12,18 +12,17 @@
     </div>
   </div>
   <div class="row contenttitle ion-padding-bottom">
-    <div class="col-span-11">
+    <div class="col-span-12 row">
       <span class="leftlogo ion-margin-right"></span>
       <span class="titlecss">我的客户</span>
+      <div  style="margin-top: 3px;margin-left: 15px;">
+        <ion-badge color="primary" slot="end">{{customerList.length}}</ion-badge>
+      </div>
     </div>
-    <div class="col-span-1" style="margin-top: 3px;">
-      <ion-badge color="primary" slot="end">{{customerList.length}}</ion-badge>
-    </div>
+
   </div>
 
-  <ion-card-content>
-    <ion-list *ngFor="let item of customerList">
+    <div *ngFor="let item of customerList">
       <app-customer-item [data]="item"></app-customer-item>
-    </ion-list>
-  </ion-card-content>
+    </div>
 </ion-content>

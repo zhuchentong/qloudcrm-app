@@ -12,9 +12,9 @@
     <AccordionPanel *ngFor="let item of accordions; let i = index;" [key]="i" [header]="item.title" [disabled]="item.inactive">
       <List className="my-list">
         <ListItem *ngFor="let content of item.child">
-          <div class="row">
-            <div class="col-span-11">{{content}}</div>
-            <div class="col-span-1 arraw ion-text-right">></div>
+          <div class="row" style="font-size:12px;">
+            <div class="col-span-9 ion-margin-start">{{content}}</div>
+            <div class="col-span-2 arraw ion-text-right">></div>
           </div>
         </ListItem>
       </List>

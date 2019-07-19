@@ -1,45 +1,178 @@
 [{
-    "name": "陈美丽",
-    "customertype": "精选客户",
-    "levername": "钻石客户",
-    "lever": "1",
-    "integral": "8922",
-    "belings": "商旅客户",
-    "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
-  },
-  {
-    "name": "李峰",
-    "customertype": "精选客户",
-    "levername": "钻石客户",
-    "lever": "1",
-    "integral": "10022",
-    "belings": "商旅客户",
-    "url": "http://img0.imgtn.bdimg.com/it/u=1580694995,1575966553&fm=26&gp=0.jpg"
-  },
-  {
-    "name": "张三丰",
-    "customertype": "重要客户",
-    "levername": "金卡客户",
-    "lever": "2",
-    "integral": "4022",
-    "belings": "商旅客户",
-    "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg"
-  },
-  {
-    "name": "王翠平",
-    "customertype": "重要客户",
-    "levername": "金卡客户",
-    "lever": "2",
-    "integral": "3022",
-    "belings": "商旅客户",
-    "url": "http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg"
-  }, {
-    "name": "王麻子",
-    "customertype": "普通客户",
-    "levername": "银卡客户",
-    "lever": "3",
-    "integral": "900",
-    "belings": "商旅客户",
-    "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg"
-  }
+        "name": "陈美丽",
+        "customertype": "重要",
+        "levername": "金卡",
+        "lever": "2",
+        "integral": "3022",
+        "belings": "待发薪客户",
+        "url": "http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg",
+        "type": "商旅客户",
+        "sex": "女",
+        "age": "45",
+        "institutions": "西安市高新区招商支行",
+        "userNo": "48631WM01513001196604180455", //  客户号
+        "bankUserNo": "19407440", //统一客户号
+        "certType": "居民身份证", //证件类型
+        "idNo": "513001196604180455", //证件号
+        "birthday": "1966-04-18", //出生日期
+        "career": "计算机", //职业
+        "phone1": "13212345678", //开户电话一
+        "phone2": "", //开户电话二
+        "tel1": "010-12345678", //开户手机一
+        "tel2": "", //开户手机二
+        "address1": "", //开户地址一
+        "address2": "", //开户地址二
+        "postAddress": "陕西省西安市高新六路", //账单邮寄地址
+        "tel3": "029-86675818", //固定电话
+        "phone3": "13012345678", //手机号码
+        "email": "a@126.com",
+        "aum": 120000,
+        "lastchangeaum": 20000,
+        "balance": 230000,
+        "yearsum": 400210,
+        "riskLevel": "保守型",
+        "option1": "大额存单",
+        "option2": "摄影",
+        "option3": "信易贷",
+        "contactDate": "2019-07-01"
+    }, {
+        "name": "韩红",
+        "customertype": "普通",
+        "levername": "银卡",
+        "lever": "3",
+        "integral": "900",
+        "belings": "待发薪客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "激进型",
+        "option2": "高尔夫",
+        "contactDate": "无"
+    }, {
+        "name": "李四",
+        "customertype": "精选",
+        "levername": "钻石",
+        "lever": "1",
+        "integral": "8922",
+        "belings": "商旅客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "稳健型",
+        "contactDate": "2018-12-30"
+    },
+    {
+        "name": "李峰",
+        "customertype": "精选",
+        "levername": "钻石",
+        "lever": "1",
+        "integral": "10022",
+        "belings": "商旅客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=1580694995,1575966553&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "谨慎型",
+        "contactDate": "2019-03-30"
+    },
+    {
+        "name": "张翠山",
+        "customertype": "重要",
+        "levername": "金卡",
+        "lever": "2",
+        "integral": "4022",
+        "belings": "商旅客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "保守型",
+        "contactDate": "2019-03-30"
+    },
+    {
+        "name": "王翠平",
+        "customertype": "重要",
+        "levername": "金卡",
+        "lever": "2",
+        "integral": "3022",
+        "belings": "商旅客户",
+        "url": "http://img4.imgtn.bdimg.com/it/u=3652681052,1319580612&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "稳健型",
+        "contactDate": "2019-03-30"
+    }, {
+        "name": "王麻子",
+        "customertype": "普通",
+        "levername": "银卡",
+        "lever": "3",
+        "integral": "900",
+        "belings": "商旅客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "保守型",
+        "contactDate": "2019-03-30"
+    },
+    {
+        "name": "张三丰",
+        "customertype": "重要",
+        "levername": "金卡",
+        "lever": "2",
+        "integral": "4022",
+        "belings": "商旅客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "激进型",
+        "contactDate": "2019-03-30"
+    }, {
+        "name": "赵旭东",
+        "customertype": "精选",
+        "levername": "钻石",
+        "lever": "1",
+        "integral": "8922",
+        "belings": "理财达人",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "激进型",
+        "contactDate": "2019-03-30"
+    }, {
+        "name": "钱贯中",
+        "customertype": "精选",
+        "levername": "钻石",
+        "lever": "1",
+        "integral": "8922",
+        "belings": "睡眠客户",
+        "url": "http://img2.imgtn.bdimg.com/it/u=1854576668,2634141346&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "稳健型",
+        "contactDate": "2019-03-30"
+    },
+    {
+        "name": "马大姐",
+        "customertype": "精选",
+        "levername": "钻石",
+        "lever": "1",
+        "integral": "10022",
+        "belings": "睡眠客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=1580694995,1575966553&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "稳健型",
+        "contactDate": "2019-03-30"
+    },
+    {
+        "name": "张无忌",
+        "customertype": "重要",
+        "levername": "银卡",
+        "lever": "3",
+        "integral": "4022",
+        "belings": "睡眠客户",
+        "url": "http://img0.imgtn.bdimg.com/it/u=4063918060,1182398856&fm=26&gp=0.jpg",
+        "sex": "女",
+        "age": "45",
+        "riskLevel": "保守型",
+        "contactDate": "2019-03-30"
+    }
 ]

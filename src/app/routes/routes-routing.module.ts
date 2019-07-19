@@ -62,6 +62,7 @@ const routes: Routes = [
     redirectTo: '/tabs/dashboard',
     pathMatch: 'full'
   }
+
 ]
 
 @NgModule({

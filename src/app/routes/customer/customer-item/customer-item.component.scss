@@ -1,46 +1,60 @@
 .customerWrap {
-  // padding: 10px;
-  // border-radius: 10px;
-  // box-shadow: 4px 2px 8px gainsboro;
-  border-bottom: 1px solid #efeff1;
-  div {
-    line-height: 30px;
-  }
-  p {
-    line-height: 30px;
-    img {
-      width: 15px;
+    // padding: 10px;
+    // border-radius: 10px;
+    // box-shadow: 4px 2px 8px gainsboro;
+    //border-bottom: 1px solid #efeff1;
+    margin-left: 1px;
+    margin-right: 1px;
+    div {
+        line-height: 30px;
     }
-  }
-  .picfont {
-    text-align: center;
-    img {
-      width: 60px;
-      margin-top: 13px;
-      border-radius: 50px;
+    p {
+        line-height: 30px;
+        img {
+            width: 15px;
+        }
     }
-  }
-  .namecss {
-    font-weight: 700;
-  }
-  .customercss {
-    padding: 0 0 0 8px;
-    .colorgray {
-      color: #9a9a9a;
+    .picfont {
+        text-align: center;
+        img {
+            width: 60px;
+            margin-top: 13px;
+            border-radius: 50px;
+        }
     }
     .namecss {
-      margin-right: 5px;
+      font-weight: 700;
+      font-size: 14px;
     }
-    .levercss {
-      display: inline-block;
-      width: 19px;
-      height: 14px;
-      color: white;
-      font-size: 10px;
-      line-height: 14px;
-      text-align: center;
-      background-image: linear-gradient(135deg, #7dbcff 0%, #2069fd 100%);
-      border-radius: 1px;
+    .customercss {
+        padding: 0 0 0 8px;
+        .colorgray {
+            color: #9a9a9a;
+        }
+        .namecss {
+            margin-right: 5px;
+            font-size: 14px;
+        }
+        .levercss {
+            display: inline-block;
+            width: 19px;
+            height: 14px;
+            color: white;
+            font-size: 10px;
+            line-height: 14px;
+            text-align: center;
+            background-image: linear-gradient(135deg, #7dbcff 0%, #2069fd 100%);
+            border-radius: 1px;
+        }
     }
-  }
+}
+
+:host ::ng-deep ion-button {
+  font-size: 10px;
+  --border-width: 1px;
+  --padding-top: 0;
+  --padding-start: 0.5em;
+  --padding-end: 0.5em;
+  --padding-bottom: 0;
+  height: 1.8em;
 }

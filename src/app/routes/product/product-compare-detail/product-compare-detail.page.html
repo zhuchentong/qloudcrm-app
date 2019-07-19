@@ -8,66 +8,78 @@
 </ion-header>
 
 <ion-content>
-  <div class="container ion-padding" style="font-size:12px;">
-    <div class="header row middle-span center-span" style="color:darkcyan;">
-      <div class="col-span-4"></div>
-      <div class="col-span-4">{{ firstProduct.type }}</div>
-      <div class="col-span-4">{{ secondProduct.type }}</div>
-    </div>
-    <div class="row middle-span center-span compare-item">
-      <div class="col-span-4">
-        期限类型
-      </div>
-      <div class="col-span-4">
-        1-3个月(含)
-      </div>
-      <div class="col-span-4">
-        7天-1个月(含)
-      </div>
-    </div>
-    <div class="row middle-span center-span compare-item">
-      <div class="col-span-4">
-        产品风险等级
-      </div>
-      <div class="col-span-4">
-        R2(中低)
-      </div>
-      <div class="col-span-4">
-        R3(中)
-      </div>
-    </div>
-    <div class="row middle-span center-span compare-item">
-      <div class="col-span-4">
-        投资者类型
-      </div>
-      <div class="col-span-4">
-        私人银行客户专属
-      </div>
-      <div class="col-span-4">
-        机构客户专属
-      </div>
-    </div>
-    <div class="row middle-span center-span compare-item">
-      <div class="col-span-4">
-        投资资产类型
-      </div>
-      <div class="col-span-4">
-        银行存款类
-      </div>
-      <div class="col-span-4">
-        股权类
-      </div>
-    </div>
-    <div class="row middle-span center-span compare-item">
-      <div class="col-span-4">
-        产品收益类型
-      </div>
-      <div class="col-span-4">
-        保证收益
-      </div>
-      <div class="col-span-4">
-        保本浮动收益
-      </div>
-    </div>
+  <div class="container ion-padding" style="font-size:13px;">
+
+    <ion-card>
+      <ion-card-header>
+        <div class="header row middle-span center-span" style="color:darkcyan;">
+          <div class="col-span-4"></div>
+          <div class="col-span-4" style="font-size: 10px;">{{ firstProduct.productName }}</div>
+          <div class="col-span-4" style="font-size: 10px;">{{ secondProduct.productName }}</div>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">期限类型</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.termType }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.termType }}</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">投资期限</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.activeDays }} 天</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.activeDays }} 天</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">募集起日</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.startDate }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.startDate }}</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">募集止日</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.endDate }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.endDate }}</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">产品风险等级</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.riskLevel }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.riskLevel }}</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">投资者类型</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.productType }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.productType }}</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">投资资产类型</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.assetTypeName }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.assetTypeName }}</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">产品收益类型</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.profitType }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.profitType }}</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">预期最高收益率</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.maxRatio }}%</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.maxRatio }}%</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">预期最低收益率</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.minRatio }}%</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.minRatio }}%</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">起投金额</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.limitMoney }} 元</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.limitMoney }} 元</div>
+        </div>
+        <div class="row middle-span center-span compare-item">
+          <div class="col-span-4 ion-text-left" style="font-size: 13px;font-weight: bolder">运作模式</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ firstProduct.operateModel }}</div>
+          <div class="col-span-4 ion-text-center compare-item1">{{ secondProduct.operateModel }}</div>
+        </div>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

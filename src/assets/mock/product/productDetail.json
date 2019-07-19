@@ -3,5 +3,43 @@
     "subtitle": "高净值系列产品",
     "risk": ["收益高", "风险高", "周期适中"],
     "rules": "年龄需在22岁到55岁,月收入4000,现在单位工作满三个月",
-    "content": "有稳定收入工薪族,有稳定收入自雇人士"
+    "content": "有稳定收入工薪族,有稳定收入自雇人士",
+    "maxRatio": 6,     // 预期最低收益
+    "minRatio": 5.5,    // 预期最高收益
+    "cnyName": "人民币(CNY)",  // 募集币种
+    "activeDays": 204,  // 实际天数
+    "assetTypeName": "债券类",  // 投资资产类型
+    "startDate": "2018-11-6",   // 募集起日
+    "endDate": "2018-11-12",  // 募集止日
+    "value": 1.3207,     // 产品净值
+    "termType": "6-12个月(含)",  // 期限类型
+    "productType": "一般个人客户",  // 产品类别
+    "saleState": "预售",  // 销售状态
+    "continueStartDate": "2018-11-11",   // 存续起日（产品起始日期）
+    "continueEndDate": "2019-06-04",   // 存续止日（产品结束日期）
+    "businessStartDate": "",           //业务起始日期
+    "businessEndDate": "",           //业务结束日期
+    "productName": "龙湾农商银行丰收·赢利2018年第84期",  // 产品名称
+    "orgName": "浙江温州龙湾农村商业银行股份有限公司",    // 产品发行机构
+    "orgType": "商业银行",    // 机构类别
+    "productNo": "KH8790987",  // 行内产品编号
+    "riskLevel": "R2(中低)",    // 产品风险等级
+    "productType1": "封闭式非净值型",    // 产品类型
+    "initValue": 1.0,   // 初始净值
+    "operateModel": "封闭式非净值型",  //运作模式
+    "zdno": "C1123618000187",   //中登产品登记编号
+    "limitMoney": 50000,    // 起投金额
+    "profitType": "非保本浮动收益",   // 收益类型
+    "count": 1000,
+    "buyDate": "2018-11-09 14:09:43",
+    "fileType": "分析文档",
+    "file": "../../assets/excel/FinancialStatement001.xlsx",
+    "basset1": "",    // 底层资产一级
+    "basset2": "",    // 底层资产二级
+    "relationCompany": "", // 资产关联企业
+    "salesArea": "",   // 销售区域
+    "totalValue": "",  // 累计净值
+    "lastRatio": 0,
+    "num": 141908,
+    "content": "投资币种为人民币，认购起点为5万，预期收益率为5.20%，产品期限为230天，销售起始日为2018-09-19，销售截止日为2018-09-25，收益类型为非保本浮动，发行地区为黑龙江。",
 }
