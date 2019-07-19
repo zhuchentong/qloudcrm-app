@@ -25,5 +25,10 @@ export const userController = {
     controller,
     action: 'createUserSchedule',
     method: 'POST'
+  },
+  scheduleByID: {
+    controller,
+    action: 'ScheduleByID',
+    method: 'GET'
   }
 }

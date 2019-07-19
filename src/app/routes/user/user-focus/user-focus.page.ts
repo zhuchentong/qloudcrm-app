@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import {Component, Input, OnInit} from '@angular/core'
 
 import { LoggerService } from '@ngx-toolkit/logger'
 import { Router } from '@angular/router'
@@ -29,6 +29,10 @@ export class UserFocusPage implements OnInit {
   public focusTypeNumber: any[] = []
   public tabIndex = 0
   public fixedTabs = false
+
+  @Input()
+  public data
+
   constructor(
     public router: Router,
     private userService: UserService,
@@ -79,5 +83,11 @@ export class UserFocusPage implements OnInit {
 
   public onScroll(event) {
     this.fixedTabs = event.detail.currentY > 80
+  }
+
+  public getItemClass() {
+    return {
+      [`${this.data.type.toLowerCase()}-item`]: true
+    }
   }
 }
