@@ -61,7 +61,7 @@ export class UserSchedulePage implements OnInit {
 
   public queryUserSceduleList(params) {
     this.userService.searchUserSchedule(params).subscribe(data => {
-      this.logger.info(data)
+   //   this.logger.info(data)
       this.myScheduleList = data
       // data.forEach( item =>{
       //   this.myScheduleList.push({
@@ -97,14 +97,14 @@ export class UserSchedulePage implements OnInit {
     this.userService
       .createUserSchedule(this.scheduleForm.value)
       .subscribe(data => {
-        this.logger.info(data)
+   //     this.logger.info(data)
         this.scheduleForm.reset()
         this.presentAlert(data)
       })
   }
 
   public onCurrentDateChanged(event) {
-    this.logger.info(this.datepipe.transform(event, this.format))
+//    this.logger.info(this.datepipe.transform(event, this.format))
     this.userService
       .searchUserSchedule({
         infoKeyWords: this.datepipe.transform(event, this.format)
@@ -159,7 +159,7 @@ export class UserSchedulePage implements OnInit {
 
 
   public onOpenDetail(scheduleID) {
-    this.logger.info('click a item')
+//    this.logger.info('click a item')
     this.router.navigate(['/user/user-schedule-item',scheduleID])
     // localStorage.setItem('current-message', JSON.stringify(this.data))
     // const url = this.routeList[this.data.tag] || this.routeList[this.data.type]
