@@ -48,15 +48,20 @@ export class UserService {
     return this.net.send({
       service: userController.getUserSchedule,
       params,
-      model: UserFocusModel
+      model: UserSchedule
     })
   }
+
+  /**
+   * 新增计划
+   *  @param params
+   *  @returns {Observable<any>}
+   */
 
   public createUserSchedule(params): Observable<any> {
     return this.net.send({
       service: userController.createUserSchedule,
-      params,
-      model: UserSchedule
+      params
     })
   }
 
