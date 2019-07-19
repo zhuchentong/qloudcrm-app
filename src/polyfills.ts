@@ -66,3 +66,4 @@ import 'core-js/es6/array'
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import 'array-flat-polyfill'

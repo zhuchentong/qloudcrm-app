@@ -45,6 +45,7 @@
     "@ngx-toolkit/logger": "^8.0.0",
     "@ngxs/storage-plugin": "^3.4.3",
     "@ngxs/store": "^3.4.3",
+    "array-flat-polyfill": "^1.0.1",
     "class-transformer": "^0.2.3",
     "cordova-android": "8.0.0",
     "cordova-ios": "5.0.1",

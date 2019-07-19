@@ -11,10 +11,12 @@ import { DictType, MessageType, MessageTagType } from 'app/config/enum.config'
 import { Template } from '@angular/compiler/src/render3/r3_ast'
 import OriDomi from 'oridomi'
 import { trigger, state, style, animate, transition } from '@angular/animations'
+import { DictPipe } from 'app/shared/pipes/dict.pipe'
 @Component({
   selector: 'app-message-item',
   templateUrl: './message-item.component.html',
   styleUrls: ['./message-item.component.scss'],
+  providers: [DictPipe],
   animations: [
     trigger('fold', [
       state(
@@ -59,6 +61,7 @@ export class MessageItemComponent implements OnInit {
   private detail: any
   private folded
   public isFolded = true
+  public test = 'test'
   @Input()
   public data
   @Input()
@@ -76,7 +79,7 @@ export class MessageItemComponent implements OnInit {
     [MessageTagType.LOADAPPROVAL]: '/dashboard/review-detail',
     [MessageTagType.LOANOVERDUE]: '/dashboard/overdue-detail'
   }
-  constructor(public router: Router) {}
+  constructor(public router: Router, private dictPipe: DictPipe) {}
 
   public ngOnInit() {
     this.hostClass = [this.data.type.toLowerCase()]
@@ -88,6 +91,18 @@ export class MessageItemComponent implements OnInit {
       })
       folded.accordion(180, 'top').setSpeed(0)
       this.folded = folded
+
+      folded.modifyContent({
+        '.msg-type': {
+          content: this.dictPipe.transform(this.data.type)
+        },
+        '.msg-title': {
+          content: this.data.title
+        },
+        '.msg-content': {
+          content: this.data.content
+        }
+      })
     }
   }
 

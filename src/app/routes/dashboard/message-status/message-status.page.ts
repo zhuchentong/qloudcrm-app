@@ -16,6 +16,7 @@ import { DictType } from 'app/config/enum.config'
 export class MessageStatusPage implements OnInit {
   public options = {
     height: 400,
+    pixelRatio: window.window.devicePixelRatio,
     forceFit: true
   }
 

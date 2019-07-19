@@ -16,6 +16,7 @@ import { List } from 'linqts'
 export class MessageNumberPage implements OnInit {
   public options = {
     height: 400,
+    pixelRatio: window.window.devicePixelRatio,
     forceFit: true
   }
 
@@ -62,7 +63,6 @@ export class MessageNumberPage implements OnInit {
   // 图标初始化
   public ready(chart) {
     this.chart = chart
-
     chart.source([], {
       percent: {
         formatter: function formatter(val) {
