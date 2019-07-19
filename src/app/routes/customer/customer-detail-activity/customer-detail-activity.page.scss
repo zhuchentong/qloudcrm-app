@@ -1,11 +1,11 @@
 .acticitycss {
-    background: -webkit-linear-gradient(left top, white, rgb(255, 255, 187));
+    background: -webkit-linear-gradient(left top, white, rgb(77, 171, 238));
     /* Safari 5.1 - 6.0 */
-    background: -o-linear-gradient(bottom right, white, rgb(255, 255, 187));
+    background: -o-linear-gradient(bottom right, white, rgb(77, 171, 238));
     /* Opera 11.1 - 12.0 */
-    background: -moz-linear-gradient(bottom right, white, rgb(255, 255, 187));
+    background: -moz-linear-gradient(bottom right, white, rgb(77, 171, 238));
     /* Firefox 3.6 - 15 */
-    background: linear-gradient(to bottom right, white, rgb(255, 255, 187));
+    background: linear-gradient(to bottom right, white, rgb(77, 171, 238));
     .title {
         color: rgb(117, 70, 60);
         font-size: 24px;
@@ -38,7 +38,7 @@
             margin: 0 auto;
             .btnbg {
                 border-radius: 10px !important;
-                background: rgb(253, 198, 72) !important;
+                background: rgb(77, 171, 238) !important;
                 font-size: 18px !important;
             }
         }
