@@ -6,6 +6,7 @@ import { userController } from 'app/config/service/user.controller'
 import { LoggerService } from '@ngx-toolkit/logger'
 import { UserInfoModel } from 'app/model/user-info.model'
 import { UserSchedule } from 'app/model/user-schedule.model'
+import {Type} from 'class-transformer'
 
 export class UserMockService {
   //  private static logger: LoggerService =new LoggerService()
@@ -67,9 +68,7 @@ export class UserMockService {
       // console.log('go search')
       result = userSchedulesJSON.filter(x => {
         // console.log(x.infoKeyWords.indexOf(params.infoKeyWords))
-        return x.infoKeyWords.indexOf(params.infoKeyWords) >= 0
-          ? x.infoKeyWords.indexOf(params.infoKeyWords)
-          : null
+        return x.infoKeyWords.indexOf(params.infoKeyWords) >= 0?x.infoKeyWords.indexOf(params.infoKeyWords):null
       })
 
       if (result) {
@@ -82,9 +81,11 @@ export class UserMockService {
   @MockService({
     service: userController.createUserSchedule
   })
+
   public static createUserSchedule(params) {
     userSchedulesJSON.push({
-      topic: params.topic,
+      title: params.title,
+      allDay: false,
       statu: params.statu,
       targetName: params.targetName,
       targetLeve: params.targetLeve,
@@ -94,7 +95,7 @@ export class UserMockService {
       startTime: params.startTime,
       endTime: params.endTime,
       infoKeyWords:
-        params.topic +
+        params.title +
         ' ' +
         params.statu +
         ' ' +
