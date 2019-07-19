@@ -1,3 +1,18 @@
+.buycsswrap {
+    border: 2px solid peru;
+    .titlecss {
+        color: peru;
+        font-size: 17px;
+    }
+}
+
+.rulewrap {
+    .rulecss {
+        color: peru;
+        font-size: 17px;
+    }
+}
+
 .buycss {
     padding: 10px;
     font-size: 16px;
@@ -6,6 +21,11 @@
         color: darkgray;
     }
     p {
-        color: goldenrod;
+        color: brown;
     }
+}
+
+.fxjscss {
+    font-size: 18px;
+    color: brown;
 }
