@@ -7,31 +7,222 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ngx-table [configuration]="tableConfig.config" [data]="rows" [columns]="columns" [detailsTemplate]="detailTpltest">
-  </ngx-table>
+  <nzm-tabs [page]="4" [useOnPan]="false" [animated]="false" (onChange)="selectCard($event)">
+    <nzm-tab-pane [title]="'客户产品'">
+      <div class="ion-margin">
+        <ion-card>
+          <ion-card-header>{{oneIndex.name}}
+            <!--<ion-button class="ion-text-center" size="small" color="danger" style="margin-top:-8px;">52.48%</ion-button>-->
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainOne"
+              [merge]="mergeOne"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>{{oneIndex.name}}历史数据
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainOne1"
+              [merge]="mergeOne1"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </nzm-tab-pane>
+    <nzm-tab-pane [title]="'客户等级'">
+      <div class="ion-margin">
+        <ion-card>
+          <ion-card-header>{{twoIndex.name}}
+            <!--<ion-button class="ion-text-center" size="small" color="danger" style="margin-top:-8px;">52.48%</ion-button>-->
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainTwo"
+              [merge]="mergeTwo"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>{{twoIndex.name}}历史数据
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainTwo1"
+              [merge]="mergeTwo1"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </nzm-tab-pane>
+    <nzm-tab-pane [title]="'正在申请'">
+      <div class="ion-margin">
+        <ion-card>
+          <ion-card-header>{{threeIndex.name}}
+            <!--<ion-button class="ion-text-center" size="small" color="danger" style="margin-top:-8px;">52.48%</ion-button>-->
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainThree"
+              [merge]="mergeThree"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>{{threeIndex.name}}历史数据
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainThree1"
+              [merge]="mergeThree1"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </nzm-tab-pane>
+    <nzm-tab-pane [title]="'逾期客户'">
+      <div class="ion-margin">
+        <ion-card>
+          <ion-card-header>{{fourIndex.name}}
+            <!--<ion-button class="ion-text-center" size="small" color="danger" style="margin-top:-8px;">52.48%</ion-button>-->
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainFour"
+              [merge]="mergeFour"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-header>{{fourIndex.name}}历史数据
+          </ion-card-header>
+          <ion-card-content>
+            <div
+              echarts
+              [options]="mainFour1"
+              [merge]="mergeFour1"
+              class="demo-chart"
+              style="height:250px;"
+            ></div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </nzm-tab-pane>
+  </nzm-tabs>
+
+  <ion-fab *ngIf="tabIndex==0" horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="dark">
+      <ion-icon name="arrow-dropup"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light" (click)="click1(0)">
+        <span style="font-size:0.1em;">客户数</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click1(1)">
+        <span style="font-size:0.1em;">贷款余额</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click1(2)">
+        <span style="font-size:0.1em;">日净增</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click1(3)">
+        <span style="font-size:0.1em;">年净增</span>
+      </ion-fab-button>
+      <!--<ion-fab-button color="light">-->
+      <!--<span style="font-size:0.1em;">日新发放</span>-->
+      <!--</ion-fab-button>-->
+      <ion-fab-button color="light" (click)="click1(4)">
+        <span style="font-size:0.1em;">日还款额</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click1(5)">
+        <span style="font-size:0.1em;">年还款额</span>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+
+
+  <ion-fab *ngIf="tabIndex==1" horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="danger">
+      <ion-icon name="arrow-dropup"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light" (click)="click2(0)">
+        <span style="font-size:0.1em;">客户数</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click2(1)">
+        <span style="font-size:0.1em;">贷款余额</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click2(2)">
+        <span style="font-size:0.1em;">上日变动</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click2(3)">
+        <span style="font-size:0.1em;">年初变动</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click2(4)">
+        <span style="font-size:0.1em;">AUM</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click2(5)">
+        <span style="font-size:0.1em;">资产余额</span>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-fab *ngIf="tabIndex==2" horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="primary">
+      <ion-icon name="arrow-dropup"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light" (click)="click3(0)">
+        <span style="font-size:0.1em;">客户数</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click3(1)">
+        <span style="font-size:0.1em;">贷款金额</span>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-fab *ngIf="tabIndex==3" horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="success">
+      <ion-icon name="arrow-dropup"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="light" (click)="click4(0)">
+        <span style="font-size:0.1em;">客户数</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click4(1)">
+        <span style="font-size:0.1em;">贷款余额</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click4(2)">
+        <span style="font-size:0.1em;">逾期本金</span>
+      </ion-fab-button>
+      <ion-fab-button color="light" (click)="click4(3)">
+        <span style="font-size:0.1em;">逾期利息</span>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
-<ng-template #detailTpltest let-row>
-  <ion-item>
-    <ion-label color="primary">产品类型</ion-label>
-    <ion-label slot="end">{{ row.productTyepe }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary">客户数</ion-label>
-    <ion-label slot="end">{{ row.customerNum }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary">贷款余额</ion-label>
-    <ion-label slot="end">{{ row.dkye }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary">日净增</ion-label>
-    <ion-label slot="end">{{ row.rjz }}</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary">月净增</ion-label>
-    <ion-label slot="end">{{ row.yjz }}</ion-label>
-  </ion-item>
-  <div class="ion-text-center ion-padding">
-    <a>查看更多</a>
-  </div>
-</ng-template>
+
