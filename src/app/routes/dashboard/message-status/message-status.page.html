@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>处理统计</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment
+    mode="ios"
+    class="segment-container"
+    (ionChange)="onStatusChanged($event)"
+  >
+    <ion-segment-button checked mode="ios" [value]="7">
+      <ion-label>一周内</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="ios" [value]="30">
+      <ion-label>一个月内</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="ios" [value]="90">
+      <ion-label>三个月内</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <f2-chart [options]="options" (ready)="ready($event)"></f2-chart>
+</ion-content>

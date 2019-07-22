@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -25,7 +24,6 @@
           <calendar [eventSource]="myScheduleList"
                     [calendarMode]="calendar.calendarModel"
                     [currentDate]="calendar.currentDate "
-
                     [monthviewDisplayEventTemplate]="template"
                     [monthviewEventDetailTemplate]="detialtemplate"
                     (onCurrentDateChanged)="onCurrentDateChanged($event)"
@@ -39,37 +37,50 @@
           </calendar>
 
           <ng-template #template let-view="view" let-row="row" let-col="col">
-            <nzm-badge [text]="view.dates[row*7+col].events.length">
+            <nzm-badge [text]="view.dates[row * 7 + col].events.length">
             </nzm-badge>
-            <div>{{view.dates[row*7+col].label}}</div>
-
+            <div>{{ view.dates[row * 7 + col].label }}</div>
           </ng-template>
 
-          <ng-template #detialtemplate let-showEventDetail="showEventDetail" let-selectedDate="selectedDate" let-noEventsLabel="noEventsLabel">
-            <div class="" *ngFor="let item of selectedDate.events" >
-            <div class="new-item row no-wrap" (click)="onOpenDetail(item.scheduleID)">
-            <div class="left-item"></div>
-            <div class="middle-item col between-span">
-            <div class="title">{{item.title}}</div>
-            <div class="time">
-            <div>{{ item.contactDate }}</div>
-            </div>
-            </div>
-            <div class="right-item">
-            <div class="title">{{ item.title }}</div>
-            <div class="content">
-            <div class="row middle-span">目标客户:{{ item.targetName }}</div>
-            <div class="row middle-span">客户等级:{{ item.targetLeve }}</div>
-            <div class="row middle-span">状态:{{ item.statu }}</div>
-            <div class="row middle-span">联系方式:{{ item.contactWay }}</div>
-            <div class="row middle-span">推荐产品:{{ item.recommendProduct }}</div>
-            </div>
-            </div>
-            </div>
+          <ng-template
+            #detialtemplate
+            let-showEventDetail="showEventDetail"
+            let-selectedDate="selectedDate"
+            let-noEventsLabel="noEventsLabel"
+          >
+            <div class="" *ngFor="let item of selectedDate.events">
+              <div
+                class="new-item row no-wrap"
+                (click)="onOpenDetail(item.scheduleID)"
+              >
+                <div class="left-item"></div>
+                <div class="middle-item col between-span">
+                  <div class="title">{{ item.title }}</div>
+                  <div class="time">
+                    <div>{{ item.contactDate }}</div>
+                  </div>
+                </div>
+                <div class="right-item">
+                  <div class="title">{{ item.title }}</div>
+                  <div class="content">
+                    <div class="row middle-span">
+                      目标客户:{{ item.targetName }}
+                    </div>
+                    <div class="row middle-span">
+                      客户等级:{{ item.targetLeve }}
+                    </div>
+                    <div class="row middle-span">状态:{{ item.statu }}</div>
+                    <div class="row middle-span">
+                      联系方式:{{ item.contactWay }}
+                    </div>
+                    <div class="row middle-span">
+                      推荐产品:{{ item.recommendProduct }}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </ng-template>
-
-
         </div>
       </nzm-tab-pane>
       <nzm-tab-pane [title]="createSchedule">
@@ -78,43 +89,97 @@
             <div>
               <form [formGroup]="scheduleForm">
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">计划主题:</ion-label>
-                  <ion-input type="text" placeholder="请输入计划主题" formControlName="topic"></ion-input>
+                  <ion-label color="primary" class="labelFont"
+                    >计划主题:</ion-label
+                  >
+                  <ion-input
+                    type="text"
+                    placeholder="请输入计划主题"
+                    formControlName="topic"
+                  ></ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">计划日期:</ion-label>
-                  <ion-datetime displayFormat="YYYY-MM-DD" min="2019" max="2099"
-                                formControlName="contactDate"></ion-datetime>
+                  <ion-label color="primary" class="labelFont"
+                    >计划日期:</ion-label
+                  >
+                  <ion-datetime
+                    displayFormat="YYYY-MM-DD"
+                    min="2019"
+                    max="2099"
+                    formControlName="contactDate"
+                  ></ion-datetime>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">计划开始时间:</ion-label>
-                  <ion-datetime displayFormat="YYYY-MM-DD HH:mm" min="2019" max="2099"
-                                formControlName="startTime"></ion-datetime>
+                  <ion-label color="primary" class="labelFont"
+                    >计划开始时间:</ion-label
+                  >
+                  <ion-datetime
+                    displayFormat="YYYY-MM-DD HH:mm"
+                    min="2019"
+                    max="2099"
+                    formControlName="startTime"
+                  ></ion-datetime>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">计划结束时间:</ion-label>
-                  <ion-datetime displayFormat="YYYY-MM-DD HH:mm" min="2019" max="2099"
-                                formControlName="endTime"></ion-datetime>
+                  <ion-label color="primary" class="labelFont"
+                    >计划结束时间:</ion-label
+                  >
+                  <ion-datetime
+                    displayFormat="YYYY-MM-DD HH:mm"
+                    min="2019"
+                    max="2099"
+                    formControlName="endTime"
+                  ></ion-datetime>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">联系客户:</ion-label>
-                  <ion-input type="text" placeholder="请输入联系客户名称" formControlName="targetName"></ion-input>
+                  <ion-label color="primary" class="labelFont"
+                    >联系客户:</ion-label
+                  >
+                  <ion-input
+                    type="text"
+                    placeholder="请输入联系客户名称"
+                    formControlName="targetName"
+                  ></ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">客户等级:</ion-label>
-                  <ion-input type="text" placeholder="请输入客户等级" formControlName="targetLeve"></ion-input>
+                  <ion-label color="primary" class="labelFont"
+                    >客户等级:</ion-label
+                  >
+                  <ion-input
+                    type="text"
+                    placeholder="请输入客户等级"
+                    formControlName="targetLeve"
+                  ></ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">客户联系方式:</ion-label>
-                  <ion-input type="text" placeholder="请输入客户联系方式" formControlName="contactWay"></ion-input>
+                  <ion-label color="primary" class="labelFont"
+                    >客户联系方式:</ion-label
+                  >
+                  <ion-input
+                    type="text"
+                    placeholder="请输入客户联系方式"
+                    formControlName="contactWay"
+                  ></ion-input>
                 </ion-item>
                 <ion-item>
-                  <ion-label color="primary" class="labelFont">推荐产品:</ion-label>
-                  <ion-input type="text" placeholder="请输入推荐产品" formControlName="recommendProduct"></ion-input>
+                  <ion-label color="primary" class="labelFont"
+                    >推荐产品:</ion-label
+                  >
+                  <ion-input
+                    type="text"
+                    placeholder="请输入推荐产品"
+                    formControlName="recommendProduct"
+                  ></ion-input>
                 </ion-item>
                 <div class="center-span ion-margin-horizontal">
-                  <ion-button class="submit" expand="block" color="danger" expand="full" (click)="addSchedule()">
-                    {{createButtonValue}}
+                  <ion-button
+                    class="submit"
+                    expand="block"
+                    color="danger"
+                    expand="full"
+                    (click)="addSchedule()"
+                  >
+                    {{ createButtonValue }}
                   </ion-button>
                 </div>
                 <!--<div class="footer row between-span">-->

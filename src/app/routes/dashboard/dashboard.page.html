@@ -12,12 +12,18 @@
   <ion-slides pager="true" [options]="slideOpts" class="static-container">
     <ion-slide>
       <div class="static-item">
-        <img src="assets/images/dashboard/dashboard-01.png" />
+        <img
+          [routerLink]="['/dashboard/message-number']"
+          src="assets/images/dashboard/dashboard-01.png"
+        />
       </div>
     </ion-slide>
     <ion-slide>
       <div class="static-item">
-        <img src="assets/images/dashboard/dashboard-02.png" />
+        <img
+          [routerLink]="['/dashboard/message-status']"
+          src="assets/images/dashboard/dashboard-02.png"
+        />
       </div>
     </ion-slide>
   </ion-slides>
@@ -53,6 +59,7 @@
     <ion-card-content>
       <ion-list *ngIf="currentMessageList.length; else empty">
         <app-message-item
+          [canFold]="true"
           *ngFor="let item of currentMessageList"
           [data]="item"
         ></app-message-item>
@@ -70,7 +77,7 @@
     slot="fixed"
     class="untreated-container"
   >
-    <ion-fab-button>
+    <ion-fab-button routerLink="/dashboard/message-list">
       <div class="col">
         <div class="untreated-number">5</div>
         <div class="untreated-name">待处理</div>

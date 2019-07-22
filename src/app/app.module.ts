@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms'
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile'
 import { NgCalendarModule } from 'ionic2-calendar'
+import { F2ChartModule } from 'ngx-f2'
 
 const isDev = !environment.production
 // #region global third module
@@ -62,6 +63,7 @@ const APPINIT_PROVIDES = [
     HttpClientModule,
     CoreModule.forRoot(),
     MockModule.forRoot(),
+    F2ChartModule.forRoot(),
     GLOBAL_THIRD_MODULES,
     LOG_MODULES,
     BrowserAnimationsModule,

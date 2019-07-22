@@ -49,13 +49,18 @@
   }
 }
 
+.container {
+  border-radius: 20px;
+  // box-shadow: -2px 5px 5px gray;
+  overflow: hidden;
+  margin: 5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
 .new-item {
   height: 120px;
-  margin: 10px 0;
-  margin: 10px;
   color: #fffff3;
-  border-radius: 20px;
-  box-shadow: -2px 5px 5px gray;
   position: relative;
 
   .new-item-badge {
@@ -69,7 +74,6 @@
 
   .left-item {
     width: 10px;
-    border-radius: 20px 0 0 20px;
   }
 
   .middle-item {
@@ -84,7 +88,6 @@
   .right-item {
     flex: 1;
     padding: 5px;
-    border-radius: 0 10px 10px 0;
 
     .title {
       font-weight: bold;

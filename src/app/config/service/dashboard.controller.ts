@@ -5,5 +5,10 @@ export const dashboardController = {
     controller,
     action: 'getMessageList',
     method: 'GET'
+  },
+  getMessageListByTime: {
+    controller,
+    action: 'getMessageListByTime',
+    method: 'GET'
   }
 }

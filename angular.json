@@ -48,7 +48,7 @@
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/style"]
             },
-            "scripts": [],
+            "scripts": ["node_modules/@antv/f2/dist/f2-all.min.js"],
             "es5BrowserSupport": true
           },
           "configurations": {
