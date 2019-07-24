@@ -1,33 +1,37 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core'
-import { BrowserModule } from '@angular/platform-browser'
-import { RouteReuseStrategy } from '@angular/router'
+import {NgModule, APP_INITIALIZER} from '@angular/core'
+import {BrowserModule} from '@angular/platform-browser'
+import {RouteReuseStrategy} from '@angular/router'
 
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular'
-import { SplashScreen } from '@ionic-native/splash-screen/ngx'
-import { StatusBar } from '@ionic-native/status-bar/ngx'
+import {IonicModule, IonicRouteStrategy} from '@ionic/angular'
+import {SplashScreen} from '@ionic-native/splash-screen/ngx'
+import {StatusBar} from '@ionic-native/status-bar/ngx'
 
-import { AppComponent } from './app.component'
-import { RoutesModule } from './routes/routes.module'
-import { MockModule } from './mock/mock.module'
-import { HttpClientModule } from '@angular/common/http'
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin'
-import { NgxsModule } from '@ngxs/store'
-import { LoggerModule, Level } from '@ngx-toolkit/logger'
-import { environment } from '@env/environment'
-import { states } from 'app/store'
-import { StartupService } from './core'
-import { CoreModule } from './core/core.module'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { FormsModule } from '@angular/forms'
-import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile'
-import { NgCalendarModule } from 'ionic2-calendar'
-import { F2ChartModule } from 'ngx-f2'
+import {AppComponent} from './app.component'
+import {RoutesModule} from './routes/routes.module'
+import {MockModule} from './mock/mock.module'
+import {HttpClientModule} from '@angular/common/http'
+import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin'
+import {NgxsStoragePluginModule} from '@ngxs/storage-plugin'
+import {NgxsModule} from '@ngxs/store'
+import {LoggerModule, Level} from '@ngx-toolkit/logger'
+import {environment} from '@env/environment'
+import {states} from 'app/store'
+import {StartupService} from './core'
+import {CoreModule} from './core/core.module'
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {FormsModule} from '@angular/forms'
+import {NgZorroAntdMobileModule} from 'ng-zorro-antd-mobile'
+import {NgCalendarModule} from 'ionic2-calendar'
+import {F2ChartModule} from 'ngx-f2'
+import localeZh from '@angular/common/locales/zh-Hans'
+import {registerLocaleData} from '@angular/common'
 
+
+registerLocaleData(localeZh, 'zh-cn')
 const isDev = !environment.production
 // #region global third module
 const GLOBAL_THIRD_MODULES = [
-  NgxsModule.forRoot(states, { developmentMode: isDev }),
+  NgxsModule.forRoot(states, {developmentMode: isDev}),
   NgxsReduxDevtoolsPluginModule.forRoot(),
   NgxsStoragePluginModule.forRoot()
 ]
@@ -51,6 +55,7 @@ const APPINIT_PROVIDES = [
     multi: true
   }
 ]
+
 // #endregion
 
 @NgModule({
@@ -73,9 +78,12 @@ const APPINIT_PROVIDES = [
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     ...APPINIT_PROVIDES
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+
+
+export class AppModule {
+}
