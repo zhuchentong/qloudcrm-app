@@ -3,6 +3,7 @@ import { dashboardController } from 'app/config/service/dashboard.controller'
 import { MockService } from '../../mock.decorators'
 import { HttpErrorResponse } from '@angular/common/http'
 import { filterParams } from 'app/mock/mock.util'
+import { Title } from '@angular/platform-browser'
 
 export class DashboardMockService {
   @MockService({
@@ -10,6 +11,12 @@ export class DashboardMockService {
   })
   public static getMessageList(requestParams) {
     const filters = [
+      {
+        key: 'title',
+        filter: params => x => {
+          return x.title.includes(params.title)
+        }
+      },
       {
         key: 'range',
         validate: params => {

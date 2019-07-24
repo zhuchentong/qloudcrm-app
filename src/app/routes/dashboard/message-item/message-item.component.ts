@@ -4,7 +4,8 @@ import {
   Input,
   HostBinding,
   ViewChild,
-  TemplateRef
+  TemplateRef,
+  HostListener
 } from '@angular/core'
 import { Router } from '@angular/router'
 import { DictType, MessageType, MessageTagType } from 'app/config/enum.config'
@@ -59,6 +60,7 @@ export class MessageItemComponent implements OnInit {
   private hostClass: string[]
   @ViewChild('detail')
   private detail: any
+
   private folded
   public isFolded = true
   public test = 'test'

@@ -15,7 +15,7 @@
     <div class="middle-item col between-span">
       <div class="title">{{ data.type | dict }}</div>
       <div class="time">
-        <div>{{ data.time }}</div>
+        <div>{{ data.time | date: 'yyyy年MM月dd日 HH:ss' }}</div>
       </div>
     </div>
     <div class="right-item">

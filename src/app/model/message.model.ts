@@ -15,6 +15,7 @@ export class MessageModel extends Model {
   public type: string
 
   // 发送时间
+  @Type(() => Date)
   public time: Date
 
   // 发送用户

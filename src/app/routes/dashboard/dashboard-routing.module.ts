@@ -14,6 +14,7 @@ import { ReviewDetailPage } from './review-detail/review-detail.page'
 import { OverdueDetailPage } from './overdue-detail/overdue-detail.page'
 import { MessageStatusPage } from './message-status/message-status.page'
 import { MessageNumberPage } from './message-number/message-number.page'
+import { MessageSearchPage } from './message-search/message-search.page'
 
 const routes: Routes = [
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path: 'message-status',
     component: MessageStatusPage
+  },
+  {
+    path: 'message-search',
+    component: MessageSearchPage
   }
 ]
 

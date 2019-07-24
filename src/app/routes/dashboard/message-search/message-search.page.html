@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar
+      [(ngModel)]="searchContent"
+      #search
+      mode="ios"
+      placeholder="查询消息"
+    ></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="onSearch()">搜索</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="messageDataSet">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-select
+            [(ngModel)]="searchDate"
+            placeholder="消息日期"
+            class="ion-text-center"
+            interface="popover"
+            showCancel
+            okText="取消"
+          >
+            <ion-select-option [value]="7">一周内</ion-select-option>
+            <ion-select-option [value]="30">一个月内</ion-select-option>
+            <ion-select-option [value]="80">三个月内</ion-select-option>
+            <ion-select-option [value]="180">六个月内</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size="6">
+          <ion-select
+            [(ngModel)]="searchType"
+            placeholder="消息类型"
+            class="ion-text-center"
+            interface="popover"
+            cancelText="确定"
+          >
+            <ion-select-option
+              [value]="item.code"
+              *ngFor="let item of messageType"
+              >{{ item.name }}</ion-select-option
+            >
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="messageDataSet && messageList.length; else empty">
+    <app-message-item
+      *ngFor="let item of messageList"
+      [data]="item"
+    ></app-message-item>
+  </ion-list>
+  <ng-template #empty>
+    <app-empty> </app-empty>
+  </ng-template>
+</ion-content>

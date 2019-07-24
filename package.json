@@ -54,6 +54,7 @@
     "ionic2-calendar": "^0.5.2",
     "linqts": "^1.12.5",
     "ng-zorro-antd-mobile": "^0.12.5",
+    "ngx-amap": "^2.2.0",
     "ngx-easy-table": "10.1.0",
     "ngx-echarts": "^4.2.1",
     "ngx-f2": "^1.0.0",

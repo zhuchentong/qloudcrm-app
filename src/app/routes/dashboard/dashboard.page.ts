@@ -101,4 +101,11 @@ export class DashboardPage implements OnInit {
   public onOpenMessageType(message) {
     this.router.navigate(['/dashboard/message-list', { type: message.code }])
   }
+
+  /**
+   * 消息搜索
+   */
+  public onSearch() {
+    this.router.navigateByUrl('/dashboard/message-search')
+  }
 }

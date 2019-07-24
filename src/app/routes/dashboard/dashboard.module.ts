@@ -17,6 +17,7 @@ import { OverdueDetailPage } from './overdue-detail/overdue-detail.page'
 import { F2ChartModule } from 'ngx-f2'
 import { MessageNumberPage } from './message-number/message-number.page'
 import { MessageStatusPage } from './message-status/message-status.page'
+import { MessageSearchPage } from './message-search/message-search.page'
 
 const PAGES = [
   DashboardPage,
@@ -30,7 +31,8 @@ const PAGES = [
   ReviewDetailPage,
   OverdueDetailPage,
   MessageNumberPage,
-  MessageStatusPage
+  MessageStatusPage,
+  MessageSearchPage
 ]
 
 const COMPONENTS = [MessageItemComponent]
