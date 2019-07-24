@@ -8,31 +8,103 @@
                 <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
             </div>
             <div class="col-span-1 row middle-span depsearchcss">
-                <img src="assets/images/depsearch.png" routerLink="/customer/customer-depquery" />
+                <img src="assets/images/depsearch.png" (click)="openEnd()" />
             </div>
         </div>
     </ion-toolbar>
 </ion-header>
-<!-- <ion-header>
-    <ion-toolbar>
-        <div class="row">
-            <div class="col-span-1 depsearchcss">
-                <img src="assets/images/depsearch.png" alt="" srcset="" routerLink="../customer-depquery">
-            </div>
-            <div class="col-span-11">
-                <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
-            </div>
-        </div>
-        <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>客户</ion-title>
-    </ion-toolbar>
-</ion-header> -->
 <ion-content>
-    <!-- <ion-card-content> -->
     <ion-list *ngFor="let item of customerList">
         <app-customer-item [data]="item"></app-customer-item>
     </ion-list>
-    <!-- </ion-card-content> -->
 </ion-content>
+<ion-menu side="end" type="push">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>筛选条件</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>客户范畴</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="danger">
+                    <ion-label>待发薪客户</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>商旅客户</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>理财达人</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>睡眠客户</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>客户类型</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="danger">
+                    <ion-label>保守型</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>激进型</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>冒险型</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>稳健型</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>谨慎型</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>客户分类</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="danger">
+                    <ion-label>普通客户</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>重要客户</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>精选客户</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>客户级别</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="danger">
+                    <ion-label>银卡客户</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>金卡客户</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>钻石客户</ion-label>
+                </ion-chip>
+                <ion-chip outline color="danger">
+                    <ion-label>全卡客户</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <div class="ion-text-right ion-padding-end">
+            <ion-button size="small" color="danger">重置</ion-button>
+            <ion-button size="small" color="danger">确定</ion-button>
+        </div>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>

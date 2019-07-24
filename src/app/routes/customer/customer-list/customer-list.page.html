@@ -1,28 +1,31 @@
+<ion-header>
+    <ion-searchbar routerLink="/customer/customer-query"></ion-searchbar>
+    <!-- <ion-searchbar (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar> -->
+</ion-header>
 <ion-content>
-  <div class="menu-container">
-    <div class="menu-items row">
-      <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
-        <div class="menu-item" [routerLink]="item.url">
-          <div class="icon row middle-psan center-span">
-            <img src="{{ item.imgurl }}" alt="" />
-          </div>
-          <div class="text">{{ item.label }}</div>
+    <div class="menu-container">
+        <div class="menu-items row">
+            <div class="col-span-4" ion-grid-column-padding *ngFor="let item of menuList">
+                <div class="menu-item" [routerLink]="item.url">
+                    <div class="icon row middle-psan center-span">
+                        <img src="{{ item.imgurl }}" alt="" />
+                    </div>
+                    <div class="text">{{ item.label }}</div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="row contenttitle ion-padding-bottom">
-    <div class="col-span-12 row">
-      <span class="leftlogo ion-margin-right"></span>
-      <span class="titlecss">我的客户</span>
-      <div  style="margin-top: 3px;margin-left: 15px;">
-        <ion-badge color="primary" slot="end">{{customerList.length}}</ion-badge>
-      </div>
+    <div class="row contenttitle ion-padding-bottom">
+        <div class="col-span-12 row">
+            <span class="leftlogo ion-margin-right"></span>
+            <span class="titlecss">我的客户</span>
+            <div style="margin-top: 3px;margin-left: 15px;">
+                <ion-badge color="primary" slot="end">{{customerList.length}}</ion-badge>
+            </div>
+        </div>
     </div>
-
-  </div>
 
     <div *ngFor="let item of customerList">
-      <app-customer-item [data]="item"></app-customer-item>
+        <app-customer-item [data]="item"></app-customer-item>
     </div>
 </ion-content>
