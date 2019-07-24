@@ -1,7 +1,11 @@
+<ion-header>
+    <ion-searchbar #searchbar cancelButtonIcon routerLink="/product/product-query"></ion-searchbar>
+    <!-- <ion-searchbar (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar> -->
+</ion-header>
 <ion-content>
     <div class="menu-container">
         <div class="menu-items row">
-            <div class="col-span-3" ion-grid-column-padding *ngFor="let item of menuList">
+            <div class="col-span-4" ion-grid-column-padding *ngFor="let item of menuList">
                 <div class="menu-item" [routerLink]="item.url">
                     <div class="icon row middle-psan center-span" color="red">
                         <ion-icon [name]="item.icon"></ion-icon>

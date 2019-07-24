@@ -14,11 +14,12 @@ export class ProductPage implements OnInit {
   public productList = []
 
   public menuList = [
+    // {
+    //   icon: 'search',
+    //   label: '产品查询',
+    //   url: '/product/product-query'
+    // },
     {
-      icon: 'search',
-      label: '产品查询',
-      url: '/product/product-query'
-    },{
       icon: 'camera',
       label: '产品视图',
       url: '/product/product-view'
@@ -41,5 +42,11 @@ export class ProductPage implements OnInit {
     this.productService.getProductList({ productName: '' }).subscribe(data => {
       this.productList = data
     })
+  }
+
+  public onSearchChange(event) {
+    if(event !== ' ' && event !== ''){
+      this.router.navigate(['/product/product-query'])
+    }
   }
 }

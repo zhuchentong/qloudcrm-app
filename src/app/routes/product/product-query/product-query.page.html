@@ -8,7 +8,8 @@
                 <ion-searchbar #searchbar cancelButtonIcon cancelButtonText="返回" debounce="500" placeholder="搜索客户" (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar>
             </div>
             <div class="col-span-1 row middle-span depsearchcss">
-                <ion-icon name="list" size="large" routerLink="/product/product-directory"></ion-icon>
+                <ion-icon name="list" size="large" (click)="openEnd()"></ion-icon>
+                <!-- <ion-icon name="list" size="large" routerLink="/product/product-directory"></ion-icon> -->
             </div>
         </div>
     </ion-toolbar>
@@ -19,3 +20,90 @@
         <app-product-item *ngFor="let item of productList" [data]="item"></app-product-item>
     </ion-list>
 </ion-content>
+<ion-menu side="end" type="push">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>筛选条件</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>理财产品分类</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="primary">
+                    <ion-label>债劵类理财</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>基金类理财</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>其他理财</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>风险</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="primary">
+                    <ion-label>R1(低级风险)</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>R2(中低级风险)</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>R3(中级风险)</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>R4(中高级风险)</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>R4(高级风险)</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>产品周期</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="primary">
+                    <ion-label>一年内</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>三年内</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>三年以上</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <ion-item-group>
+            <ion-list>
+                <ion-item-divider>
+                    <ion-label>产品起购价</ion-label>
+                </ion-item-divider>
+                <ion-chip outline color="primary">
+                    <ion-label>一万元以内</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>10万元以内</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>10万-50万内</ion-label>
+                </ion-chip>
+                <ion-chip outline color="primary">
+                    <ion-label>50万以上</ion-label>
+                </ion-chip>
+            </ion-list>
+        </ion-item-group>
+        <div class="ion-text-right ion-padding-end">
+            <ion-button size="small">重置</ion-button>
+            <ion-button size="small">确定</ion-button>
+        </div>
+    </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>
