@@ -11,6 +11,8 @@ export class UserToolsPage implements OnInit {
 
   public ngOnInit() {}
 
-
+public goToolPage(url){
+    this.router.navigate([url])
+}
 
 }
