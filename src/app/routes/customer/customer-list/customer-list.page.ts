@@ -15,12 +15,12 @@ export class CustomerListPage implements OnInit {
   public customerlength: any
 
   public menuList = [
-    {
-      icon: 'search',
-      label: '客户查询',
-      url: 'customer-query',
-      imgurl: 'assets/images/query.png'
-    },
+    // {
+    //   icon: 'search',
+    //   label: '客户查询',
+    //   url: 'customer-query',
+    //   imgurl: 'assets/images/query.png'
+    // },
     {
       icon: 'people',
       label: '客户分组',
