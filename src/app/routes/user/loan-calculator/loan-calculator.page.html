@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-label class="ion-text-center">贷款计算器</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="ion-margin">
+    <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
+      <nzm-tab-pane [title]="estateLoanTitle" (click)="restform()">
+        <div class="customerwrap ion-margin">
+          <div class="row middle-span center-span">
+            <div>
+              <ion-item>
+                <ion-label color="primary" class="labelFont"  position="floating" >贷款金额:</ion-label>
+                <ion-input type="text"  [(ngModel)]="loanAmount"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" class="labelFont" position="floating">贷款期限:</ion-label>
+                <ion-input type="text" [(ngModel)]="loanTerm"></ion-input> <ion-note slot="end">月</ion-note>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" class="labelFont"  position="floating">贷款利率:</ion-label>
+                <ion-input type="text" placeholder="0" [(ngModel)]="loanRate"></ion-input><ion-note slot="end">%</ion-note>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" class="labelFont" position="floating">还款方式:</ion-label>
+                <ion-select interface="action-sheet" [(ngModel)]="loanType">
+                  <ion-select-option value="1" selected >等额本息还款</ion-select-option>
+                  <ion-select-option value="2">等额本金还款</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <div class="center-span ion-margin-horizontal">
+                <ion-button  color="danger" expand="full"  (click)="caculateEstateLoan()">
+                  {{computeButton}}
+                </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="center-span" *ngFor="let item of calculateResult">
+          <div class="new-item row no-wrap">
+            <div class="left-item"></div>
+            <div class="middle-item col between-span">
+              <div class="title">第{{ item.periodNum }}期</div>
+            </div>
+            <div class="right-item">
+              <div class="content">
+                <div class="row middle-span">
+                  还款本息:{{ item.eachPeriodictPay | number:'.2-3'}}
+                </div>
+                <div class="row middle-span">
+                  本金:{{ item.eachPeriodicPrincipal | number:'.2-3' }}
+                </div>
+                <div class="row middle-span">利息:{{ item.eachPeriodicInterest | number:'.2-3'}}</div>
+                <div class="row middle-span">
+                  已还本金:{{ item.currentPaidPrincipal | number:'.2-3' }}
+                </div>
+                <div class="row middle-span">
+                  剩余本金:{{ item.currentRemain | number:'.2-3' }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nzm-tab-pane>
+      <nzm-tab-pane [title]="personalConsumerTite" (click)="restform()">
+        <div class="customerwrap ion-margin">
+          <div class="row middle-span center-span">
+            <div>
+              <ion-item>
+                <ion-label color="primary" class="labelFont"  position="floating" >分期金额:</ion-label>
+                <ion-input type="text"  [(ngModel)]="loanCapital"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" class="labelFont" position="floating">分期期数:</ion-label>
+                <ion-select interface="action-sheet" [(ngModel)] = "loanTerm2">
+                  <ion-select-option selected value="3" selected >3个月</ion-select-option>
+                  <ion-select-option value="6">6个月</ion-select-option>
+                  <ion-select-option value="12">12个月</ion-select-option>
+                  <ion-select-option value="18">18个月</ion-select-option>
+                  <ion-select-option value="24">24个月</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" class="labelFont" position="floating">每期本金:</ion-label>
+                <ion-input type="text" readonly [(ngModel)]="payCapitall"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label color="primary" class="labelFont"  position="floating">每期手续费:</ion-label>
+                <ion-input type="text" readonly placeholder="0" [(ngModel)]="payInterest"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label color="primary" class="labelFont"  position="floating">每期还款总额:</ion-label>
+                <ion-input type="text" readonly placeholder="0" [(ngModel)]="averagePay"></ion-input>
+              </ion-item>
+              <div class="center-span ion-margin-horizontal">
+                <ion-button  color="danger" expand="full" (click)="calculateConsumerLoan()">
+                  {{computeButton}}
+                </ion-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nzm-tab-pane>
+    </nzm-tabs>
+  </div>
+
+</ion-content>

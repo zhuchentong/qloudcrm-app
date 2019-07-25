@@ -14,6 +14,9 @@ import { FocusItemPage } from 'app/routes/user/user-focus/focus-item/focus-item.
 import { NgCalendarModule } from 'ionic2-calendar'
 import { DatePipe } from '@angular/common'
 import {UserScheduleItemPage} from 'app/routes/user/user-schedule-item/user-schedule-item.page'
+import {UserScheduleAddPage} from 'app/routes/user/user-schedule-add/user-schedule-add.page'
+import {UserScheduleListPage} from 'app/routes/user/user-schedule-list/user-schedule-list.page'
+import {LoanCalculatorPage} from 'app/routes/user/loan-calculator/loan-calculator.page'
 
 const routes: Routes = [
   {
@@ -47,6 +50,16 @@ const routes: Routes = [
   {
     path: 'user-schedule-item/:scheduleID',
     component:UserScheduleItemPage
+  },
+  {
+    path: 'user-schedule-add',
+    component: UserScheduleAddPage
+  },{
+    path: 'user-schedule-list/:scheduleDate',
+    component: UserScheduleListPage
+  },{
+    path: 'loan-calculator',
+    component: LoanCalculatorPage
   }
 ]
 
@@ -66,7 +79,10 @@ const routes: Routes = [
     UserToolsPage,
     LoginPage,
     FocusItemPage,
-    UserScheduleItemPage
+    UserScheduleItemPage,
+    UserScheduleAddPage,
+    UserScheduleListPage,
+    LoanCalculatorPage
   ],
   providers: [UserService, DatePipe]
 })

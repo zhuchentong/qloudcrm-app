@@ -3,194 +3,89 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-label class="ion-text-center">我的计划</ion-label>
+    <ion-searchbar  (click)="tolistPage()"></ion-searchbar>
+    <ion-buttons slot="primary">
+      <ion-button (click)="addSchedualPage()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <!--<ion-segment (ionChange)="segmentChanged($event)">-->
-  <!--<ion-segment-button value="friends">-->
-  <!--<ion-label>{{mySchedule}}</ion-label>-->
-  <!--</ion-segment-button>-->
-  <!--<ion-segment-button value="enemies">-->
-  <!--<ion-label>{{createSchedule}}</ion-label>-->
-  <!--</ion-segment-button>-->
-  <!--</ion-segment>-->
+
   <div class="ion-margin">
-    <nzm-tabs [page]="2" [useOnPan]="false" [animated]="false">
-      <nzm-tab-pane [title]="mySchedule">
-        <div class="customerwrap ion-margin">
-          <ion-searchbar placeholder="请输入你想查询的关键字" (ionInput)="onInputInfo($event)"></ion-searchbar>
-          <calendar [eventSource]="myScheduleList"
-                    [calendarMode]="calendar.calendarModel"
-                    [currentDate]="calendar.currentDate "
-                    [monthviewDisplayEventTemplate]="template"
-                    [monthviewEventDetailTemplate]="detialtemplate"
-                    (onCurrentDateChanged)="onCurrentDateChanged($event)"
-                    (onEventSelected)="onEventSelected($event)"
-                    (onTitleChanged)="onViewTitleChanged($event)"
-                    (onTimeSelected)="onTimeSelected($event)"
-                    [startHour]="'00:00'"
-                    [endHour]="'23:59:59'"
-                    [startingDayWeek]="1"
-                    step="30">
-          </calendar>
+    <div class="customerwrap ion-margin">
 
-          <ng-template #template let-view="view" let-row="row" let-col="col">
-            <nzm-badge [text]="view.dates[row * 7 + col].events.length">
-            </nzm-badge>
-            <div>{{ view.dates[row * 7 + col].label }}</div>
-          </ng-template>
+      <ion-toolbar color="primary">
+        <ion-title slot="start">{{viewT | date:'yyyy-MM-dd'}}</ion-title>
+        <ion-buttons slot="primary">
+          <ion-button  (click)="today()" >Today</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+      <calendar [eventSource]="myScheduleList"
+                [calendarMode]="calendar.calendarModel"
+                [currentDate]="calendar.currentDate "
+                [dateFormatter]="calendar.dateFormatter"
+                [showEventDetail]=false
+                [monthviewDisplayEventTemplate]="template"
 
-          <ng-template
-            #detialtemplate
-            let-showEventDetail="showEventDetail"
-            let-selectedDate="selectedDate"
-            let-noEventsLabel="noEventsLabel"
-          >
-            <div class="" *ngFor="let item of selectedDate.events">
-              <div
-                class="new-item row no-wrap"
-                (click)="onOpenDetail(item.scheduleID)"
-              >
-                <div class="left-item"></div>
-                <div class="middle-item col between-span">
-                  <div class="title">{{ item.title }}</div>
-                  <div class="time">
-                    <div>{{ item.contactDate }}</div>
-                  </div>
-                </div>
-                <div class="right-item">
-                  <div class="title">{{ item.title }}</div>
-                  <div class="content">
-                    <div class="row middle-span">
-                      目标客户:{{ item.targetName }}
-                    </div>
-                    <div class="row middle-span">
-                      客户等级:{{ item.targetLeve }}
-                    </div>
-                    <div class="row middle-span">状态:{{ item.statu }}</div>
-                    <div class="row middle-span">
-                      联系方式:{{ item.contactWay }}
-                    </div>
-                    <div class="row middle-span">
-                      推荐产品:{{ item.recommendProduct }}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </ng-template>
+                (onCurrentDateChanged)="onCurrentDateChanged($event)"
+                (onEventSelected)="onEventSelected($event)"
+                (onTitleChanged)="onViewTitleChanged($event)"
+                (onTimeSelected)="onTimeSelected($event)"
+                [startHour]="'00:00'"
+                [endHour]="'23:59:59'"
+                [startingDayWeek]="1"
+                step="30">
+      </calendar>
+
+      <ng-template #template let-view="view" let-row="row" let-col="col">
+        <div (click)="showEventList(view.dates[row * 7 + col].date)">
+        <nzm-badge [text]="view.dates[row * 7 + col].events.length">
+        </nzm-badge>
+        <div>{{ view.dates[row * 7 + col].label }}</div>
         </div>
-      </nzm-tab-pane>
-      <nzm-tab-pane [title]="createSchedule">
-        <div class="infoclass">
-          <div class="row middle-span center-span">
-            <div>
-              <form [formGroup]="scheduleForm">
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >计划主题:</ion-label
-                  >
-                  <ion-input
-                    type="text"
-                    placeholder="请输入计划主题"
-                    formControlName="topic"
-                  ></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >计划日期:</ion-label
-                  >
-                  <ion-datetime
-                    displayFormat="YYYY-MM-DD"
-                    min="2019"
-                    max="2099"
-                    formControlName="contactDate"
-                  ></ion-datetime>
-                </ion-item>
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >计划开始时间:</ion-label
-                  >
-                  <ion-datetime
-                    displayFormat="YYYY-MM-DD HH:mm"
-                    min="2019"
-                    max="2099"
-                    formControlName="startTime"
-                  ></ion-datetime>
-                </ion-item>
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >计划结束时间:</ion-label
-                  >
-                  <ion-datetime
-                    displayFormat="YYYY-MM-DD HH:mm"
-                    min="2019"
-                    max="2099"
-                    formControlName="endTime"
-                  ></ion-datetime>
-                </ion-item>
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >联系客户:</ion-label
-                  >
-                  <ion-input
-                    type="text"
-                    placeholder="请输入联系客户名称"
-                    formControlName="targetName"
-                  ></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >客户等级:</ion-label
-                  >
-                  <ion-input
-                    type="text"
-                    placeholder="请输入客户等级"
-                    formControlName="targetLeve"
-                  ></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >客户联系方式:</ion-label
-                  >
-                  <ion-input
-                    type="text"
-                    placeholder="请输入客户联系方式"
-                    formControlName="contactWay"
-                  ></ion-input>
-                </ion-item>
-                <ion-item>
-                  <ion-label color="primary" class="labelFont"
-                    >推荐产品:</ion-label
-                  >
-                  <ion-input
-                    type="text"
-                    placeholder="请输入推荐产品"
-                    formControlName="recommendProduct"
-                  ></ion-input>
-                </ion-item>
-                <div class="center-span ion-margin-horizontal">
-                  <ion-button
-                    class="submit"
-                    expand="block"
-                    color="danger"
-                    expand="full"
-                    (click)="addSchedule()"
-                  >
-                    {{ createButtonValue }}
-                  </ion-button>
-                </div>
-                <!--<div class="footer row between-span">-->
-                <!--<a routerLink="/user/register">还没有账户?</a>-->
-                <!--<a routerLink="/user/forget-password">忘记密码</a>-->
+      </ng-template>
+
+      <!--<ng-template-->
+        <!--#detialtemplate-->
+        <!--let-showEventDetail="showEventDetail"-->
+        <!--let-selectedDate="selectedDate"-->
+        <!--let-noEventsLabel="noEventsLabel"-->
+      <!--&gt;-->
+        <!--<div class="" *ngFor="let item of selectedDate.events">-->
+          <!--<div-->
+            <!--class="new-item row no-wrap"-->
+            <!--(click)="onOpenDetail(item.scheduleID)"-->
+          <!--&gt;-->
+            <!--<div class="left-item"></div>-->
+            <!--<div class="middle-item col between-span">-->
+              <!--<div class="title">{{ item.title }}</div>-->
+              <!--<div class="time">-->
+                <!--<div>{{ item.contactDate }}</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="right-item">-->
+              <!--<div class="title">{{ item.title }}</div>-->
+              <!--<div class="content">-->
+                <!--<div class="row middle-span">-->
+                  <!--目标客户:{{ item.targetName }}-->
                 <!--</div>-->
-              </form>
-            </div>
-          </div>
-        </div>
-      </nzm-tab-pane>
-    </nzm-tabs>
+                <!--<div class="row middle-span">-->
+                  <!--客户等级:{{ item.targetLeve }}-->
+                <!--</div>-->
+                <!--<div class="row middle-span">状态:{{ item.statu }}</div>-->
+                <!--<div class="row middle-span">-->
+                  <!--联系方式:{{ item.contactWay }}-->
+                <!--</div>-->
+                <!--<div class="row middle-span">-->
+                  <!--推荐产品:{{ item.recommendProduct }}-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</ng-template>-->
+    </div>
   </div>
 </ion-content>

@@ -55,3 +55,20 @@
     word-break: break-all;
   }
 }
+
+.contenttitle {
+  border-bottom: 1px solid #efeff1;
+  .leftlogo {
+    display: inline-block;
+    width: 4px;
+    height: 26px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background: #4c6afc;
+    border-radius: 4px;
+  }
+  .titlecss {
+    font-size: 18px;
+    vertical-align: middle;
+  }
+}

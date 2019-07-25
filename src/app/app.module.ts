@@ -23,8 +23,11 @@ import { FormsModule } from '@angular/forms'
 import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile'
 import { NgCalendarModule } from 'ionic2-calendar'
 import { F2ChartModule } from 'ngx-f2'
+import localeZh from '@angular/common/locales/zh-Hans'
+import { registerLocaleData } from '@angular/common'
 import { NgxAmapModule } from 'ngx-amap'
 
+registerLocaleData(localeZh, 'zh-cn')
 const isDev = !environment.production
 // #region global third module
 const GLOBAL_THIRD_MODULES = [
@@ -52,6 +55,7 @@ const APPINIT_PROVIDES = [
     multi: true
   }
 ]
+
 // #endregion
 
 @NgModule({

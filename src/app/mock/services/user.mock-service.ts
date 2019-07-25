@@ -59,15 +59,15 @@ export class UserMockService {
   })
   public static getUserSchedule(params: UserSchedule) {
     let result = null
-     console.log('@@@@@@@' + params.infoKeyWords)
+     console.log('infoKeyWords' + params.infoKeyWords)
     if (params.infoKeyWords === undefined) {
       //   console.log('go all')
       result = userSchedulesJSON
       return result
     } else {
-      // console.log('go search')
+     console.log('go search')
       result = userSchedulesJSON.filter(x => {
-        // console.log(x.infoKeyWords.indexOf(params.infoKeyWords))
+      //  console.log(x.infoKeyWords.indexOf(params.infoKeyWords))
         return x.infoKeyWords.indexOf(params.infoKeyWords) >= 0?x.infoKeyWords.indexOf(params.infoKeyWords):null
       })
 

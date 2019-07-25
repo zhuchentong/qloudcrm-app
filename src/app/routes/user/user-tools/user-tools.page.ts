@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import {Router} from '@angular/router'
 
 @Component({
   selector: 'app-user-tools',
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./user-tools.page.scss']
 })
 export class UserToolsPage implements OnInit {
-  constructor() {}
+  constructor(public router:Router ) {}
 
   public ngOnInit() {}
+
+
+
 }
