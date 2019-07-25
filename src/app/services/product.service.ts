@@ -6,7 +6,7 @@ import { ProductModel } from 'app/model/product.model'
 @Injectable()
 export class ProductService {
   constructor(private net: NetService) {}
-  public getProductList(params): Observable<ProductModel[]> {
+  public getProductList(params?): Observable<ProductModel[]> {
     return this.net.send({
       service: productController.getProductList,
       params,

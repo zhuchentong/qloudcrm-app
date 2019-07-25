@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar
+      mode="ios"
+      placeholder="搜索产品"
+      [debounce]="500"
+      [(ngModel)]="searchContent"
+    ></ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button (click)="onOpenMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ngx-amap
+    #map
+    class="map"
+    [resizeEnable]="true"
+    [zoom]="13"
+    [center]="center"
+    (mapClick)="currentProduct = null"
+  >
+    <amap-marker
+      *ngFor="let product of productList"
+      [position]="product.position"
+      (markerClick)="onOpenMarker(product)"
+      [label]="product.label"
+    ></amap-marker>
+  </ngx-amap>
+</ion-content>
+
+<ion-menu side="end" menuId="menu">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>产品筛选</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item-group>
+        <ion-item-divider>
+          产品类型
+        </ion-item-divider>
+        <ion-item *ngFor="let item of dictConfigService.getDict('ProductType')">
+          <ion-label>{{ item.name }}</ion-label>
+          <ion-checkbox
+            checked
+            [value]="item.code"
+            (ionChange)="onProductChange($event)"
+          ></ion-checkbox>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu side="start" menuId="product">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>产品列表</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <div *ngFor="let item of productList" class="row middle-span">
+        <app-product-item style="flex:1;" [data]="item"></app-product-item>
+        <div style="flex-basis:40px;">
+          <ion-button
+            fill="clear"
+            size="small"
+            (click)="setCenter(item.position)"
+          >
+            <ion-icon color="primary" name="locate"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="onOpenList()">
+    <div class="col">
+      <div>{{ productList.length }}</div>
+      <div>产品</div>
+    </div>
+  </ion-fab-button>
+</ion-fab>
+
+<div style="position: fixed;bottom:0px" *ngIf="currentProduct">
+  <app-product-item
+    style="background:#fff;"
+    [data]="currentProduct"
+  ></app-product-item>
+</div>
+
+<ion-router-outlet main class="menu-container"></ion-router-outlet>

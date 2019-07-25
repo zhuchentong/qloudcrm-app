@@ -33,6 +33,11 @@ export class ProductPage implements OnInit {
       icon: 'stats',
       label: '产品排名',
       url: '/product/product-rank'
+    },
+    {
+      icon: 'map',
+      label: '产品地图',
+      url: '/product/product-map'
     }
   ]
 
@@ -45,7 +50,7 @@ export class ProductPage implements OnInit {
   }
 
   public onSearchChange(event) {
-    if(event !== ' ' && event !== ''){
+    if (event !== ' ' && event !== '') {
       this.router.navigate(['/product/product-query'])
     }
   }

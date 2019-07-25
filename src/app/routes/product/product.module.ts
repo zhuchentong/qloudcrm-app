@@ -1,8 +1,4 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
-import { Routes, RouterModule } from '@angular/router'
-import { IonicModule } from '@ionic/angular'
 import { ProductPage } from './product.page'
 import { ProductDetailPage } from './product-detail/product-detail.page'
 import { ProductDirectoryPage } from './product-directory/product-directory.page'
@@ -14,55 +10,27 @@ import { ProductComparePage } from './product-compare/product-compare.page'
 import { ProductSelectPage } from './product-select/product-select.page'
 import { ProductCompareDetailPage } from './product-compare-detail/product-compare-detail.page'
 import { ProductPageComponent } from './product-view/product-view.page'
+import { ProductMapPage } from './product-map/product-map.page'
+import { ProductRoutingModule } from './product-routeing.module'
+import { NgxAmapModule } from 'ngx-amap'
 
-const routes: Routes = [
-  {
-    path: '',
-    component: ProductPage
-  },
-  {
-    path: 'product-detail',
-    component: ProductDetailPage
-  },
-  {
-    path: 'product-directory',
-    component: ProductDirectoryPage
-  },
-  {
-    path: 'product-query',
-    component: ProductQueryPage
-  },
-  {
-    path: 'product-rank',
-    component: ProductRankPage
-  },
-  {
-    path: 'product-compare',
-    component: ProductComparePage
-  },
-  {
-    path: 'product-compare-detail',
-    component: ProductCompareDetailPage
-  },{
-    path:'product-view',
-    component:ProductPageComponent
-  }
+const PAGES = [
+  ProductPage,
+  ProductDetailPage,
+  ProductDirectoryPage,
+  ProductQueryPage,
+  ProductRankPage,
+  ProductComparePage,
+  ProductCompareDetailPage,
+  ProductPageComponent,
+  ProductMapPage
 ]
 
+const COMPONENTS = [ProductItemComponent, ProductSelectPage]
+
 @NgModule({
-  imports: [SharedModule, RouterModule.forChild(routes)],
-  declarations: [
-    ProductSelectPage,
-    ProductPage,
-    ProductDetailPage,
-    ProductDirectoryPage,
-    ProductQueryPage,
-    ProductRankPage,
-    ProductComparePage,
-    ProductItemComponent,
-    ProductPageComponent,
-    ProductCompareDetailPage
-  ],
-  entryComponents: [ProductItemComponent, ProductSelectPage]
+  imports: [SharedModule, ProductRoutingModule, NgxAmapModule],
+  declarations: [...PAGES, ...COMPONENTS],
+  entryComponents: [...COMPONENTS]
 })
 export class ProductPageModule {}

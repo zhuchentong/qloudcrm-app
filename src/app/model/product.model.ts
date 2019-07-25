@@ -17,10 +17,6 @@ export class ProductModel extends Model {
   // @Expose()
   // public type: 'PATH' | 'ITEM'
 
+  public position: number[]
   public type: string
-
-  public get a() {
-    return this.type
-    // return this.type.substr(0, 4)
-  }
 }

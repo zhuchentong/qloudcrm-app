@@ -22,12 +22,16 @@ export const CommonState = [
 
 export const ProductType = [
   {
-    code: 'SHANGHUDAI',
+    code: '债券类',
     name: '债券类'
   },
   {
-    code: 'QIYEDAI',
+    code: '银行存款类',
     name: '银行存款类'
+  },
+  {
+    code: '理财类',
+    name: '理财类'
   }
 ]
 

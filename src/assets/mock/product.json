@@ -2,28 +2,29 @@
   {
     "tag": "SHANGHUDAI",
     "type": "债券类",
-    "maxRatio": 6,     // 预期最低收益
-    "minRatio": 5.5,    // 预期最高收益
-    "cnyName": "人民币(CNY)",  // 募集币种
-    "activeDays": 204,  // 实际天数
-    "assetTypeName": "债券类",  // 投资资产类型
-    "startDate": "2018-11-6",   // 募集起日
-    "endDate": "2018-11-12",  // 募集止日
-    "value": 1.3207,     // 产品净值
-    "termType": "6-12个月(含)",  // 期限类型
-    "productType": "一般个人客户",  // 产品类别
-    "saleState": "预售",  // 销售状态
-    "continueStartDate": "2018-11-11",   // 存续起日
-    "continueEndDate": "2019-6-4",   // 存续止日
-    "productName": "龙湾农商银行丰收·赢利2018年第84期",  // 产品名称
-    "orgName": "浙江温州龙湾农村商业银行股份有限公司",    // 产品发行机构
-    "riskLevel": "R2(中低)",    // 产品风险等级
-    "productType1": "封闭式非净值型",    // 产品类型
-    "initValue": 1.0,   // 初始净值
-    "operateModel": "封闭式非净值型",  //运作模式
-    "zdno": "C1123618000187",   //中登产品登记编号
-    "limitMoney": 50000,    // 起投金额
-    "profitType": "非保本浮动收益",   // 收益类型
+    "maxRatio": 6, // 预期最低收益
+    "minRatio": 5.5, // 预期最高收益
+    "cnyName": "人民币(CNY)", // 募集币种
+    "activeDays": 204, // 实际天数
+    "assetTypeName": "债券类", // 投资资产类型
+    "startDate": "2018-11-6", // 募集起日
+    "endDate": "2018-11-12", // 募集止日
+    "value": 1.3207, // 产品净值
+    "termType": "6-12个月(含)", // 期限类型
+    "productType": "一般个人客户", // 产品类别
+    "saleState": "预售", // 销售状态
+    "continueStartDate": "2018-11-11", // 存续起日
+    "continueEndDate": "2019-6-4", // 存续止日
+    "productName": "龙湾农商银行丰收·赢利2018年第84期", // 产品名称
+    "label": "龙湾农商·赢利84期",
+    "orgName": "浙江温州龙湾农村商业银行股份有限公司", // 产品发行机构
+    "riskLevel": "R2(中低)", // 产品风险等级
+    "productType1": "封闭式非净值型", // 产品类型
+    "initValue": 1.0, // 初始净值
+    "operateModel": "封闭式非净值型", //运作模式
+    "zdno": "C1123618000187", //中登产品登记编号
+    "limitMoney": 50000, // 起投金额
+    "profitType": "非保本浮动收益", // 收益类型
     "count": 1000,
     "buyDate": "2018-11-09 14:09:43",
     "fileType": "分析文档",
@@ -36,28 +37,29 @@
   {
     "tag": "SHANGHUDAI",
     "type": "债券类",
-    "maxRatio": 6.2,     // 预期最低收益
-    "minRatio": 5.2,    // 预期最高收益
-    "cnyName": "人民币(CNY)",  // 募集币种
-    "activeDays": 322,  // 实际天数
-    "assetTypeName": "债券类",  // 投资资产类型
-    "startDate": "2018-10-30",   // 募集起日
-    "endDate": "2018-11-07",  // 募集止日
-    "value": 1.1287,     // 产品净值
-    "termType": "6-12个月(含)",  // 期限类型
-    "productType": "一般个人客户",  // 产品类别
-    "saleState": "预售",  // 销售状态
-    "continueStartDate": "2018-11-06",   // 存续起日
-    "continueEndDate": "2019-09-25",   // 存续止日
-    "productName": "大庆农商银行“钻得力”-盈利1号2018年第43期人民币理财产品",  // 产品名称
-    "orgName": "大庆农村商业银行股份有限公司",    // 产品发行机构
-    "riskLevel": "R2(中低)",    // 产品风险等级
-    "productType1": "封闭式非净值型",    // 产品类型
-    "initValue": 1.0,   // 初始净值
-    "operateModel": "封闭式非净值型",  //运作模式
-    "zdno": "C1085418000069",   //中登产品登记编号
-    "limitMoney": 50000,    // 起投金额
-    "profitType": "非保本浮动收益",   // 收益类型
+    "maxRatio": 6.2, // 预期最低收益
+    "minRatio": 5.2, // 预期最高收益
+    "cnyName": "人民币(CNY)", // 募集币种
+    "activeDays": 322, // 实际天数
+    "assetTypeName": "债券类", // 投资资产类型
+    "startDate": "2018-10-30", // 募集起日
+    "endDate": "2018-11-07", // 募集止日
+    "value": 1.1287, // 产品净值
+    "termType": "6-12个月(含)", // 期限类型
+    "productType": "一般个人客户", // 产品类别
+    "saleState": "预售", // 销售状态
+    "continueStartDate": "2018-11-06", // 存续起日
+    "continueEndDate": "2019-09-25", // 存续止日
+    "productName": "大庆农商银行“钻得力”-盈利1号2018年第43期人民币理财产品", // 产品名称
+    "label": "大庆农商·盈利1号",
+    "orgName": "大庆农村商业银行股份有限公司", // 产品发行机构
+    "riskLevel": "R2(中低)", // 产品风险等级
+    "productType1": "封闭式非净值型", // 产品类型
+    "initValue": 1.0, // 初始净值
+    "operateModel": "封闭式非净值型", //运作模式
+    "zdno": "C1085418000069", //中登产品登记编号
+    "limitMoney": 50000, // 起投金额
+    "profitType": "非保本浮动收益", // 收益类型
     "count": 2000,
     "buyDate": "2018-11-01 10:09:43",
     "fileType": "分析文档",
@@ -70,28 +72,29 @@
   {
     "tag": "SHANGHUDAI",
     "type": "债券类",
-    "maxRatio": 6.2,     // 预期最低收益
-    "minRatio": 4.4,    // 预期最高收益
-    "cnyName": "人民币(CNY)",  // 募集币种
-    "activeDays": 182,  // 实际天数
-    "assetTypeName": "债券类",  // 投资资产类型
-    "startDate": "2018-10-30",   // 募集起日
-    "endDate": "2018-11-06",  // 募集止日
-    "value": 2.1287,     // 产品净值
-    "termType": "6-12个月(含)",  // 期限类型
-    "productType": "一般个人客户",  // 产品类别
-    "saleState": "预售",  // 销售状态
-    "continueStartDate": "2018-11-05",   // 存续起日
-    "continueEndDate": "2019-05-07",   // 存续止日
-    "productName": "龙湾农商银行丰收·得利2018年第90期",  // 产品名称
-    "orgName": "浙江温州龙湾农村商业银行股份有限公司",    // 产品发行机构
-    "riskLevel": "R1(低)",    // 产品风险等级
-    "productType1": "封闭式非净值型",    // 产品类型
-    "initValue": 1.0,   // 初始净值
-    "operateModel": "封闭式非净值型",  //运作模式
-    "zdno": "C1123618000183",   //中登产品登记编号
-    "limitMoney": 50000,    // 起投金额
-    "profitType": "保本浮动收益",   // 收益类型
+    "maxRatio": 6.2, // 预期最低收益
+    "minRatio": 4.4, // 预期最高收益
+    "cnyName": "人民币(CNY)", // 募集币种
+    "activeDays": 182, // 实际天数
+    "assetTypeName": "债券类", // 投资资产类型
+    "startDate": "2018-10-30", // 募集起日
+    "endDate": "2018-11-06", // 募集止日
+    "value": 2.1287, // 产品净值
+    "termType": "6-12个月(含)", // 期限类型
+    "productType": "一般个人客户", // 产品类别
+    "saleState": "预售", // 销售状态
+    "continueStartDate": "2018-11-05", // 存续起日
+    "continueEndDate": "2019-05-07", // 存续止日
+    "productName": "龙湾农商银行丰收·得利2018年第90期", // 产品名称
+    "label": "龙湾农商·得利90期",
+    "orgName": "浙江温州龙湾农村商业银行股份有限公司", // 产品发行机构
+    "riskLevel": "R1(低)", // 产品风险等级
+    "productType1": "封闭式非净值型", // 产品类型
+    "initValue": 1.0, // 初始净值
+    "operateModel": "封闭式非净值型", //运作模式
+    "zdno": "C1123618000183", //中登产品登记编号
+    "limitMoney": 50000, // 起投金额
+    "profitType": "保本浮动收益", // 收益类型
     "count": 500,
     "buyDate": "2018-11-01 10:00:00",
     "fileType": "分析文档",
@@ -104,28 +107,29 @@
   {
     "tag": "QIYEDAI",
     "type": "银行存款类",
-    "maxRatio": 4.2,     // 预期最低收益
-    "minRatio": 2.6,    // 预期最高收益
-    "cnyName": "人民币(CNY)",  // 募集币种
-    "activeDays": 91,  // 实际天数
-    "assetTypeName": "银行存款类",  // 投资资产类型
-    "startDate": "2018-10-30",   // 募集起日
-    "endDate": "2018-11-02",  // 募集止日
-    "value": 2.1287,     // 产品净值
-    "termType": "1-3个月(含)",  // 期限类型
-    "productType": "一般个人客户",  // 产品类别
-    "saleState": "预售",  // 销售状态
-    "continueStartDate": "2018-11-01",   // 存续起日
-    "continueEndDate": "2019-02-01",   // 存续止日
-    "productName": "金翼宝系列805号",  // 产品名称
-    "orgName": "新韩银行（中国）有限公司",    // 产品发行机构
-    "riskLevel": "R2(中低)",    // 产品风险等级
-    "productType1": "封闭式非净值型",    // 产品类型
-    "initValue": 1.0,   // 初始净值
-    "operateModel": "封闭式非净值型",  //运作模式
-    "zdno": "C1059518000092",   //中登产品登记编号
-    "limitMoney": 50000,    // 起投金额
-    "profitType": "保本浮动收益",   // 收益类型
+    "maxRatio": 4.2, // 预期最低收益
+    "minRatio": 2.6, // 预期最高收益
+    "cnyName": "人民币(CNY)", // 募集币种
+    "activeDays": 91, // 实际天数
+    "assetTypeName": "银行存款类", // 投资资产类型
+    "startDate": "2018-10-30", // 募集起日
+    "endDate": "2018-11-02", // 募集止日
+    "value": 2.1287, // 产品净值
+    "termType": "1-3个月(含)", // 期限类型
+    "productType": "一般个人客户", // 产品类别
+    "saleState": "预售", // 销售状态
+    "continueStartDate": "2018-11-01", // 存续起日
+    "continueEndDate": "2019-02-01", // 存续止日
+    "productName": "金翼宝系列805号", // 产品名称
+    "label": "金翼宝系列805号",
+    "orgName": "新韩银行（中国）有限公司", // 产品发行机构
+    "riskLevel": "R2(中低)", // 产品风险等级
+    "productType1": "封闭式非净值型", // 产品类型
+    "initValue": 1.0, // 初始净值
+    "operateModel": "封闭式非净值型", //运作模式
+    "zdno": "C1059518000092", //中登产品登记编号
+    "limitMoney": 50000, // 起投金额
+    "profitType": "保本浮动收益", // 收益类型
     "count": 700,
     "buyDate": "2018-11-01 10:00:00",
     "fileType": "分析文档",
