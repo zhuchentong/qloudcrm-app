@@ -1,48 +1,63 @@
 .menu-container {
-  width: 100%;
-  margin: 10px 0 20px 0;
-  .menu-items {
-    border-bottom: 0.1px solid gainsboro;
-    .menu-item {
-      padding: 5px;
-      .text {
-        margin-top: 5px;
-        font-size: 14px;
-        text-align: center;
-      }
-      .icon {
-        margin: auto;
-        font-size: 24px;
-        text-align: center;
-        border-radius: 100%;
-        ion-icon {
-          display: block;
-          height: 40px;
+    width: 100%;
+    margin: 10px 0 20px 0;
+    .menu-items {
+        $colors: rgb(214, 63, 63), rgb(250, 176, 37), rgb(41, 117, 41);
+        @for $i from 1 through length($colors) {
+            .menu-item:nth-child(#{$i}) {
+                .icon {
+                    background: lighten(nth($colors, $i), 30%);
+                }
+            }
         }
-      }
+        border-bottom: 0.1px solid gainsboro;
+        .menu-item {
+            padding: 5px;
+            .text {
+                margin-top: 5px;
+                font-size: 14px;
+                text-align: center;
+            }
+            .icon {
+                width: 50px;
+                height: 50px;
+                margin: auto;
+                font-size: 24px;
+                text-align: center;
+                border-radius: 100%;
+                border: none;
+                color: #fff;
+                margin-bottom: 5px;
+                ion-icon {
+                    display: block;
+                    height: 50px;
+                    font-size: 30px;
+                }
+            }
+        }
     }
-  }
 }
 
 .contenttitle {
-  border-bottom: 1px solid #efeff1;
-  .leftlogo {
-    display: inline-block;
-    width: 4px;
-    height: 26px;
-    margin-right: 10px;
-    vertical-align: middle;
-    background: #4c6afc;
-    border-radius: 4px;
-  }
-  .titlecss {
-    font-size: 18px;
-    vertical-align: middle;
-  }
+    border-bottom: 1px solid #efeff1;
+    .leftlogo {
+        display: inline-block;
+        width: 4px;
+        height: 26px;
+        margin-right: 10px;
+        vertical-align: middle;
+        background: #4c6afc;
+        border-radius: 4px;
+    }
+    .titlecss {
+        font-size: 18px;
+        vertical-align: middle;
+    }
 }
+
 :host ::ng-deep ion-card {
-  -webkit-margin-start: 0px;
-  margin-inline-start:0px;
-  -webkit-margin-end:0px;
-  margin-inline-end:0px;
+    -webkit-margin-start: 0px;
+    margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+    margin-inline-end: 0px;
 }
