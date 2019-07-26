@@ -36,7 +36,7 @@ export class ProductPage implements OnInit {
     },
     {
       icon: 'map',
-      label: '产品地图',
+      label: '竞品地图',
       url: '/product/product-map'
     }
   ]
