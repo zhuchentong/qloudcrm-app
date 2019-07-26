@@ -82,6 +82,7 @@ export class ProductMapPage implements OnInit {
         resp.coords.longitude,
         resp.coords.latitude
       )
+    }).catch(ex=>{
     })
   }
 

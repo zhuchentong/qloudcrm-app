@@ -32,14 +32,8 @@
                 <ion-item-divider>
                     <ion-label>理财产品分类</ion-label>
                 </ion-item-divider>
-                <ion-chip outline color="primary">
-                    <ion-label>债劵类理财</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>基金类理财</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>其他理财</ion-label>
+                <ion-chip outline color="primary" *ngFor="let item of productType" [ngClass]="{'clickcss':item.flagchage}" (click)="changeCss(item,'1')">
+                    <ion-label>{{item.name}}</ion-label>
                 </ion-chip>
             </ion-list>
         </ion-item-group>
@@ -48,20 +42,8 @@
                 <ion-item-divider>
                     <ion-label>风险</ion-label>
                 </ion-item-divider>
-                <ion-chip outline color="primary">
-                    <ion-label>R1(低级风险)</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>R2(中低级风险)</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>R3(中级风险)</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>R4(中高级风险)</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>R4(高级风险)</ion-label>
+                <ion-chip outline color="primary" *ngFor="let item of productfx" [ngClass]="{'clickcss':item.flagchage}" (click)="changeCss(item,'2')">
+                    <ion-label>{{item.name}}</ion-label>
                 </ion-chip>
             </ion-list>
         </ion-item-group>
@@ -70,14 +52,8 @@
                 <ion-item-divider>
                     <ion-label>产品周期</ion-label>
                 </ion-item-divider>
-                <ion-chip outline color="primary">
-                    <ion-label>一年内</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>三年内</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>三年以上</ion-label>
+                <ion-chip outline color="primary" *ngFor="let item of productzq" [ngClass]="{'clickcss':item.flagchage}" (click)="changeCss(item,'3')">
+                    <ion-label>{{item.name}}</ion-label>
                 </ion-chip>
             </ion-list>
         </ion-item-group>
@@ -86,23 +62,14 @@
                 <ion-item-divider>
                     <ion-label>产品起购价</ion-label>
                 </ion-item-divider>
-                <ion-chip outline color="primary">
-                    <ion-label>一万元以内</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>10万元以内</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>10万-50万内</ion-label>
-                </ion-chip>
-                <ion-chip outline color="primary">
-                    <ion-label>50万以上</ion-label>
+                <ion-chip outline color="primary" *ngFor="let item of productprice" [ngClass]="{'clickcss':item.flagchage}" (click)="changeCss(item,'4')">
+                    <ion-label>{{item.name}}</ion-label>
                 </ion-chip>
             </ion-list>
         </ion-item-group>
         <div class="ion-text-right ion-padding-end">
-            <ion-button size="small">重置</ion-button>
-            <ion-button size="small">确定</ion-button>
+            <ion-button size="small" (click)="restFun()">重置</ion-button>
+            <ion-button size="small" (click)="Querysenior()">确定</ion-button>
         </div>
     </ion-content>
 </ion-menu>

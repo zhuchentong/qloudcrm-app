@@ -13,7 +13,8 @@ export class ProductMockService {
     if (params.productName === undefined) {
       return productJson
     } else {
-      return productJson.filter(x => x.productName.includes(params.productName))
+      return productJson.filter(x => x.productName.includes(params.productName) || x.riskLevel.includes(params.riskLevel))
+      // return productJson.filter(x =>x.riskLevel.includes(params.riskLevel))
     }
   }
 }

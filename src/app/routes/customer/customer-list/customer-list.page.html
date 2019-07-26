@@ -1,17 +1,16 @@
 <ion-header>
-    <ion-searchbar routerLink="/customer/customer-query"></ion-searchbar>
-    <!-- <ion-searchbar (ionChange)="onSearchChange(searchbar.value)"></ion-searchbar> -->
+    <ion-toolbar>
+        <ion-searchbar mode="ios" #searchbar placeholder="搜索客户" routerLink="/customer/customer-query"></ion-searchbar>
+    </ion-toolbar>
 </ion-header>
 <ion-content>
     <div class="menu-container">
         <div class="menu-items row">
-            <div class="col-span-4" ion-grid-column-padding *ngFor="let item of menuList">
-                <div class="menu-item" [routerLink]="item.url">
-                    <div class="icon row middle-psan center-span">
-                        <img src="{{ item.imgurl }}" alt="" />
-                    </div>
-                    <div class="text">{{ item.label }}</div>
+            <div class="menu-item col-span-4" *ngFor="let item of menuList" [routerLink]="item.url">
+                <div class="icon row middle-psan center-span">
+                    <ion-icon [name]="item.icon"></ion-icon>
                 </div>
+                <div class="text">{{ item.label }}</div>
             </div>
         </div>
     </div>
