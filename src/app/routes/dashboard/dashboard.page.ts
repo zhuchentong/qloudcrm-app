@@ -94,6 +94,7 @@ export class DashboardPage implements OnInit {
           console.log('Strophe is connected.');
           that.connected = true;
 
+          // TODO
           // // 当接收到<message>节，调用onMessage回调函数
           that.conn.addHandler(function(msg) {
 
