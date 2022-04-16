@@ -4,7 +4,7 @@
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
-    "dev": "ng serve --open --host 0.0.0.0",
+    "dev": "ng serve --open --host 0.0.0.0 --port 8989",
     "dev:android": "ionic cordova run android -lc --debug",
     "start": "ng serve",
     "build": "ng build",
